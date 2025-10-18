@@ -16,12 +16,15 @@ struct instalacao
 {
     int custo_abertura; // Custo de abrir a instalação
     vector<pair<int, int>> ordem_por_custo; // Custo da instalação i atender o cliente j em ordem crescente pelo custo
-
+    vector<int> Dlinha; // Conjunto de clientes já atendidos e que podem mudar para nova instalação
+    vector<int> atribuicao; // guarda a atribuição dos clientes depois de ordenados
     vector<int> Y; // Clientes que ainda não foram atendidos
 };
 
 
 void greedUFL(vector<instalacao> instalacoes, vector<vector<pair<int, int>>> custo_de_conexao);
+int buscabinaria(vector<pair<int, int>>matriz_ordenacao, pair<int, int>key);
+
 
 
 int main()
@@ -30,14 +33,14 @@ int main()
     
     vector<vector<pair<int, int>>>custo_de_conexao = 
         //(valor, cliente)
-        {{{3, 1}, {2, 2}, {7, 3}, {6, 4}}, //F1
-        {{4, 1}, {1, 2}, {5, 3}, {8, 4}},  //F2
-        {{6, 1}, {3, 2}, {2, 3}, {4, 4}}}; //F3
+        {{{2, 0}, {6, 1}, {8, 2}, {7, 3}}, //F1
+        {{5, 0}, {3, 1}, {2, 2}, {6, 3}},  //F2
+        {{9, 0}, {1, 1}, {1, 2}, {2, 3}}}; //F3
 
     vector<instalacao> instalacoes = {
-        {10, {}, {}},
-        {8, {}, {}},
-        {12, {}, {}}
+        {5, {}, {}},
+        {7, {}, {}},
+        {10, {}, {}}
     };
 
     greedUFL(instalacoes, custo_de_conexao);
@@ -71,15 +74,23 @@ void greedUFL(vector<instalacao> instalacoes, vector<vector<pair<int, int>>> cus
     for(i  = 0; i < matriz_ordenacao.size(); i++)
     {
         instalacoes[i].Y.resize(matriz_ordenacao[i].size(), 0);
+        instalacoes[i].atribuicao.resize(matriz_ordenacao[i].size(), 0);
+    }
+    // Guarda as atribuições
+    for(i = 0 ; i < instalacoes.size(); i++)
+    {
+        for(j = 0; j < instalacoes[i].ordem_por_custo.size(); j++)
+        {
+            instalacoes[i].atribuicao[instalacoes[i].ordem_por_custo[j].second] = j;
+        }
     }
 
 
     // Escolha local
-    while(D.size() != custo_de_conexao.size())
+    while(D.size() != custo_de_conexao[0].size())
     {
         vector<int> deltinha(instalacoes.size(), 0); // Economia que obtemos ao mudar o cliente de instalação
         vector<pair<int, int>> bestY; // Melhor conjunto de clientes alocados
-        vector<int> Dlinha; // Conjunto de clientes já atendidos e que podem mudar para nova instalação
         int bestI; // Melhor instalação para "abrir"
         float bestphi = numeric_limits<float>::max(); // Inicia bestphi com o maior valor do tipo float
 
@@ -88,12 +99,13 @@ void greedUFL(vector<instalacao> instalacoes, vector<vector<pair<int, int>>> cus
         {
 
             // δ(D, i) = som_j∈D max(0,(d(σ(j), j) − d(i, j))
+            instalacoes[i].Dlinha = {};
             for(auto j : D)
             {
                 economia = custo_de_conexao [sigma[j]][j].first - custo_de_conexao[i][j].first;
                 if(economia > 0)
                 {
-                    Dlinha.push_back(j);
+                    instalacoes[i].Dlinha.push_back(j);
                     deltinha[i] += economia;
                 }
             }
@@ -129,26 +141,51 @@ void greedUFL(vector<instalacao> instalacoes, vector<vector<pair<int, int>>> cus
         if(O[bestI] == 1)
         {
             X.push_back(bestI);
-            for(auto j : Dlinha)
+            for(auto j : instalacoes[bestI].Dlinha)
             {
                 sigma[j] = bestI;
             }
+            
             O[bestI] = 0;
         }
 
-        //Verificar melhor esse final!!!
         for(auto j: bestY)
         {
-
+            D.push_back(j.second);
+            sigma[j.second] = bestI;
         }
-        
+
+        //Verificar melhor esse final!!!
+        // O erro deste algoritmo é esse final
+        for(i = 0; i < instalacoes.size(); i++)
+        {
+            for(auto j: bestY)
+            { 
+                instalacoes[i].Y[instalacoes[i].atribuicao[j.second]] = 1;
+            }
+        }
     }
+
+    //printa atribuições
+    cout << "Instalacoes:" << endl;
+    for(auto i: X)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    cout << "Atribuicoes:" << endl;
+    for(auto i: sigma)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
 
     return;
 }
 
 // Busca binária de pares
-int buscabinária(vector<pair<int, int>>matriz_ordenacao, pair<int, int>key)
+int buscabinaria(vector<pair<int, int>>matriz_ordenacao, pair<int, int>key)
 {
     int esquerda = 0;
     int direita = matriz_ordenacao.size() - 1;
@@ -157,11 +194,11 @@ int buscabinária(vector<pair<int, int>>matriz_ordenacao, pair<int, int>key)
     while(esquerda <= direita)
     {
         meio = (direita + esquerda) / 2;
-        if(matriz_ordenacao[meio].first == key.first)
+        if(matriz_ordenacao[meio] == key)
         {
             return meio;
         }
-        else if(matriz_ordenacao[meio].first > key.first)
+        else if(matriz_ordenacao[meio] > key)
         {
             direita = meio - 1;
         }
