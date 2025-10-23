@@ -2,6 +2,8 @@
 #include <vector>
 #include <algorithm>
 #include <limits>
+#include <fstream>
+#include <string>
 
 // Usando uma variável global
 using namespace std;
@@ -27,23 +29,65 @@ int buscabinaria(vector<pair<int, int>>matriz_ordenacao, pair<int, int>key);
 
 
 
-int main()
+int main(int argc, char* argv[])
 {
-    int i;
+    // Verifica se o arquivo foi passado
+    if(argc < 2)
+    {
+        cerr << "Uso: " << argv[0] << " <arquivo_instancia>" << endl;
+        return 1;
+    }
+
+    string Nometxt = argv[1];
+    ifstream arquivo(Nometxt);
+
+    // Verifica se foi possível abrir o arquivo
+    if(!arquivo.is_open())
+    {
+        cerr << "Erro ao abrir arquivo: " << Nometxt << endl;
+        return 1;
+    }
+
+    cout << "Arquivo aberto com sucesso" << endl;
+
+
+
+    int qtd_instalacoes, qtd_clientes, entradas, i, j, x, in = 0;
+    arquivo >> entradas;
+
+    while(in != entradas)
+    {
+        cout<< "\n" << "Instância :): " << in + 1 << endl;
+
+        arquivo >> qtd_instalacoes;
+        arquivo >> qtd_clientes;
+        vector<instalacao> instalacoes;
+        vector<vector<pair<int, int>>> custo_de_conexao;
+        
+        // monta a instancia de instalacoes
+        for(i = 0; i < qtd_instalacoes; i++)
+        {
+            arquivo >> x;
+            instalacoes.push_back({x, {}, {}, {}, {}});
+        }
+
+        // monta a instancia de clientes
+        custo_de_conexao.resize(qtd_instalacoes);
+        for(i = 0; i < qtd_instalacoes; i++)
+        {
+            for(j = 0; j < qtd_clientes; j++)
+            {
+                arquivo >> x;
+                custo_de_conexao[i].push_back({x, j});
+            }
+        }
+
+        greedUFL(instalacoes, custo_de_conexao);
+
+        in++;
+    }
     
-    vector<vector<pair<int, int>>>custo_de_conexao = 
-        //(valor, cliente)
-        {{{2, 0}, {6, 1}, {8, 2}, {7, 3}}, //F1
-        {{5, 0}, {3, 1}, {2, 2}, {6, 3}},  //F2
-        {{9, 0}, {1, 1}, {1, 2}, {2, 3}}}; //F3
-
-    vector<instalacao> instalacoes = {
-        {5, {}, {}},
-        {7, {}, {}},
-        {10, {}, {}}
-    };
-
-    greedUFL(instalacoes, custo_de_conexao);
+    return 0;
 }
 
 // Algoritmo ganancioso para o problema de localização de instalações
@@ -115,6 +159,7 @@ void greedUFL(vector<instalacao> instalacoes, vector<vector<pair<int, int>>> cus
             // Φ(i, Y) := (0_{i∉X} · f_i + ∑_{j∈Y} d(i, j) − δ(D, i)) / |Y|
             custos = 0;
             vector<pair<int, int>> Y = {};
+            float bestphilocal = numeric_limits<float>::max();
 
             for(j = 0; j < instalacoes[i].ordem_por_custo.size(); j++)
             {
@@ -125,9 +170,16 @@ void greedUFL(vector<instalacao> instalacoes, vector<vector<pair<int, int>>> cus
 
                     phi = (O[i] * instalacoes[i].custo_abertura + custos - deltinha[i]) / (float)Y.size();
 
-                    if(phi < bestphi)
+                    if(phi >= bestphilocal)
                     {
-                        bestphi = phi;
+                        break;
+                    }
+
+                    bestphilocal = phi;
+
+                    if(bestphilocal < bestphi)
+                    {
+                        bestphi = bestphilocal;
                         bestY = Y;
                         bestI = i;
                     }
@@ -182,31 +234,4 @@ void greedUFL(vector<instalacao> instalacoes, vector<vector<pair<int, int>>> cus
     cout << endl;
 
     return;
-}
-
-// Busca binária de pares
-int buscabinaria(vector<pair<int, int>>matriz_ordenacao, pair<int, int>key)
-{
-    int esquerda = 0;
-    int direita = matriz_ordenacao.size() - 1;
-    int meio;
-
-    while(esquerda <= direita)
-    {
-        meio = (direita + esquerda) / 2;
-        if(matriz_ordenacao[meio] == key)
-        {
-            return meio;
-        }
-        else if(matriz_ordenacao[meio] > key)
-        {
-            direita = meio - 1;
-        }
-        else
-        {
-            esquerda = meio + 1;
-        }
-    }
-
-    return -1;
 }
