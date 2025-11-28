@@ -1,0 +1,23 @@
+>> Comandos git:
+
+> git status: Mostra o estado atual dos arquivos no seu repositório. 
+
+> git branch: Lista, cria ou exclui branches para trabalhar em funcionalidades separadamente.
+ 
+> git checkout <nome_da_branch>: Altera para outra branch. 
+
+> git merge <nome_da_branch>: Mescla as alterações de outra branch na branch atual. 
+
+> git restore <nome_do_arquivo>: Restaura o arquivo para o último estado salvo no commit. 
+
+> git log: verifica o hsitórico de commits
+
+> git init: Inicia um repositório
+
+> git add nome_do_arquivo: adiciona um arquivo os arquivos modificados para serem incluídos
+
+> git commit -m "uma mensagem descritiva": Registra as alterações feitas.
+
+> git remote add origin <URL_do_repositório_remoto>: conecta seu repositório local a um remoto
+
+> git push -u origin main: envia as alterações para o github

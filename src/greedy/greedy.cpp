@@ -1,6 +1,6 @@
 #include <vector>
 #include "greedy.hpp"
-#include "buscabinaria.hpp"
+#include "../utils/buscabinaria.hpp"
 #include <algorithm>
 #include <iostream>
 #include <limits>
@@ -8,7 +8,7 @@
 using namespace std;
 
 // Algoritmo ganancioso para o problema de localização de instalações
-void greedUFL(vector<instalacao>& instalacoes, vector<vector<pair<int, int>>>& custo_de_conexao, vector<penalidade>& penalidades)
+Srepresentation greedUFL(vector<instalacao>& instalacoes, vector<vector<pair<int, int>>>& custo_de_conexao, vector<penalidade>& penalidades)
 {
     // variáveis gerais
     int i, j, k, l, m, custos, economia;
@@ -188,21 +188,6 @@ void greedUFL(vector<instalacao>& instalacoes, vector<vector<pair<int, int>>>& c
             }
         }
     }
-
-    //printa atribuições
-    cout << "Instalacoes:" << endl;
-    for(auto i: X)
-    {
-        cout << i << " ";
-    }
-    cout << endl;
-
-    cout << "Atribuicoes:" << endl;
-    for(auto i: sigma)
-    {
-        cout << i << " ";
-    }
-    cout << endl;
-
-    return;
+    
+    return {X, sigma};
 }
