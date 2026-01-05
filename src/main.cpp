@@ -57,29 +57,27 @@ int main(int argc, char *argv[])
     for(int in = 0; in < entradas; in++) {
         cout << "\n=== INSTÂNCIA DP BARULHO " << in+1 << " ===\n";
 
-        carregarInstancia(arquivo, qtd_inst, qtd_cli, qtd_pen,
-                          instalacoes, custo_conexao, penalidades);
+        carregarInstancia(arquivo, instance_data);
 
         // Prepara dados da instância
-        instance_data = {qtd_inst, qtd_cli, qtd_pen,
-                         instalacoes, custo_conexao, penalidades};
+        //instance_data = {qtd_inst, qtd_cli, qtd_pen, instalacoes, custo_conexao, penalidades};
                           
         // Gera solução usando algoritmo guloso
-        solucao = greedUFL(instalacoes, custo_conexao, penalidades);
+        //solucao = greedUFL(instalacoes, custo_conexao, penalidades);
 
         // Calcula o custo total da solução
-        solucao.totalCost = calculocusto(instance_data, solucao);
+        //solucao.totalCost = calculocusto(instance_data, solucao);
 
-        std::cout << "Solução inicial gerada pelo algoritmo guloso:\n";
-        printSolution(solucao, conflitos);
+        //std::cout << "Solução inicial gerada pelo algoritmo guloso:\n";
+        //printSolution(solucao, conflitos);
 
         // Busca local para melhorar a solução
-        LocalSearch ls(instance_data, solucao);
-        ls.improveSolution();
-        solucao = ls.getSolution();
+        //LocalSearch ls(instance_data, solucao);
+        //ls.improveSolution();
+        //solucao = ls.getSolution();
 
-        std::cout << "\nSolução após busca local:\n";
-        printSolution(solucao, conflitos);
+        //std::cout << "\nSolução após busca local:\n";
+        //printSolution(solucao, conflitos);
     }
 
     return 0;

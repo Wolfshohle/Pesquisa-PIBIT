@@ -12,8 +12,6 @@ class LocalSearch
         instance &inst; // Dados da instância
         Srepresentation sol; // Solução atual
 
-        std::vector<std::vector<std::pair<int, int>>> conflitos; // Grafo de conflitos
-
         std::vector<int> ocupacao; // Quantos clientes estão atribuídos a cada instalação
         std::vector<short int> openflag; // Flag de instalações abertas
 
@@ -36,15 +34,19 @@ class LocalSearch
                 delta -= inst.instalacoes[current_facility].custo_abertura;
 
             // Penalidades (soma/remover conforme vizinhos do grafo)
-            for(auto conflito : conflitos[client])
+            for(auto conflito : inst.penalidades_grafo[client])
             {
                 int conflicted_client = conflito.first;
                 int penalty_cost = conflito.second;
 
                 if(sol.assignments[conflicted_client] == current_facility)
+                {
                     delta -= penalty_cost;
+                }
                 if(sol.assignments[conflicted_client] == new_facility)
+                {
                     delta += penalty_cost;
+                }
             }
 
             return delta;
@@ -89,7 +91,7 @@ class LocalSearch
             }
         }
 
-        // Implementar métodos de busca local aqui
+        // Encontra a melhor movimentação possível
         bool bestmove()
         {
             int best_delta = 0;
@@ -141,23 +143,8 @@ class LocalSearch
         LocalSearch(instance &instancia, Srepresentation solucao):
             inst(instancia), sol(solucao)
             {
-                buildConflictGraph();
                 initializeAuxStructures();
             }
-
-        // Constrói o grafo de conflitos a partir das penalidades
-        void buildConflictGraph()
-        {
-            int c = inst.qtd_clientes;
-            std::pair<int, int> pen;
-            conflitos.assign(c, {});
-
-            for(auto pen : inst.penalidades)
-            {
-                conflitos[pen.clientes.first].push_back({pen.clientes.second, pen.custo});
-                conflitos[pen.clientes.second].push_back({pen.clientes.first, pen.custo});
-            }
-        }
 
         // Inicializa estruturas auxiliares
         void initializeAuxStructures()
@@ -182,7 +169,7 @@ class LocalSearch
         // Retorna o grafo de conflitos
         std::vector<std::vector<std::pair<int, int>>> getConflictGraph()
         {
-            return conflitos;
+            return inst.penalidades_grafo;
         }
 
         // Retorna a solução atual

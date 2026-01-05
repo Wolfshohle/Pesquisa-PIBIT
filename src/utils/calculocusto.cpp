@@ -19,7 +19,7 @@ int calculocusto(const instance& inst, const Srepresentation& sol)
     }
 
     // Custo das penalidades
-    for(const auto& pen : inst.penalidades)
+    for(const auto& pen : inst.penalidades_vetor)
     {
         int c1 = pen.clientes.first;
         int c2 = pen.clientes.second;
