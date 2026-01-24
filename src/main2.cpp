@@ -6,6 +6,9 @@
 
 using namespace std;
 
+
+// Função para printar a solução
+//----------------------------------------------------------------------//
 void printSolution(const Srepresentation& solucao, const vector<vector<pair<int, int>>>& conflitos)
 {
     //printa atribuições
@@ -26,7 +29,19 @@ void printSolution(const Srepresentation& solucao, const vector<vector<pair<int,
     cout << "Custo Total: " << solucao.totalCost << endl;
 
 }
+//----------------------------------------------------------------------//
 
+
+// Função ILS
+//----------------------------------------------------------------------//
+void ILS(instance& inst, Srepresentation& solucao, const vector<vector<pair<int, int>>>& conflitos)
+{
+    
+}
+
+
+// Main function
+//----------------------------------------------------------------------//
 int main(int argc, char *argv[])
 {
     if(argc < 2) {
@@ -70,3 +85,4 @@ int main(int argc, char *argv[])
     
     return 0;
 }
+//----------------------------------------------------------------------//

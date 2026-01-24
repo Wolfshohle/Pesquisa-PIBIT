@@ -8,6 +8,8 @@
 
 using namespace std;
 
+//Print solution
+//------------------------------------------------------------------------------
 void printSolution(const Srepresentation& solucao, const vector<vector<pair<int, int>>>& conflitos)
 {
     //printa atribuições
@@ -28,6 +30,8 @@ void printSolution(const Srepresentation& solucao, const vector<vector<pair<int,
     cout << "Custo Total: " << solucao.totalCost << endl;
 
 }
+//------------------------------------------------------------------------------
+
 
 int main(int argc, char *argv[])
 {
