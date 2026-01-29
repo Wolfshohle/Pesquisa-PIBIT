@@ -1,7 +1,5 @@
 #include <vector>
 #include "greedy.hpp"
-#include "../utils/buscabinaria.hpp"
-#include "../utils/calculocusto.hpp"
 #include <algorithm>
 #include <iostream>
 #include <limits>

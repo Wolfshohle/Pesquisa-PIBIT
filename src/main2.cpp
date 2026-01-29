@@ -55,33 +55,24 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    int entradas;
-    arquivo >> entradas;
-
     instance instance_data;
     Srepresentation solucao;
 
     vector<vector<pair<int, int>>> conflitos;
 
-    for(int in = 0; in < entradas; in++) 
-    {
-        cout << "\n=== INSTÂNCIA DP BARULHO " << in+1 << " ===\n";
-
-        carregarInstancia(arquivo, instance_data);
+    carregarInstancia(arquivo, instance_data);
         
-        greedUFL(instance_data, solucao);
+    greedUFL(instance_data, solucao);
 
-        cout << "Solução inicial:" << endl;
-        printSolution(solucao, conflitos);
+    cout << "Solução inicial:" << endl;
+    printSolution(solucao, conflitos);
 
-        LocalSearch ls(instance_data, solucao);
-        ls.improveSolution();
-        solucao = ls.getSolution();
+    LocalSearch ls(instance_data, solucao);
+    ls.improveSolution();
+    solucao = ls.getSolution();
 
-        cout << "Solução após Busca Local:" << endl;
-        printSolution(solucao, conflitos);
-
-    }
+    cout << "Solução após Busca Local:" << endl;
+    printSolution(solucao, conflitos);
     
     return 0;
 }

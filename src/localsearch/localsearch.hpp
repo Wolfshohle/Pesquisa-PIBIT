@@ -119,7 +119,7 @@ class LocalSearch
                     delta = delta_move(client, newfacility);
 
                     // Verifica se é a melhor movimentação até agora
-                    if(delta <= best_delta)
+                    if(delta < best_delta)
                     {
                         best_delta = delta;
                         best_client = client;
@@ -176,6 +176,36 @@ class LocalSearch
         Srepresentation getSolution()
         {
             return sol;
+        }
+
+        // Recalcula o custo para garantir que está correto
+        void recalculateCost()
+        {
+            sol.totalCost = 0;
+            
+            // Custo das instalações abertas
+            for(int i : sol.openfacilities)
+            {
+                sol.totalCost += inst.instalacoes[i].custo_abertura;
+            }
+            
+            // Custo das conexões
+            for(size_t cliente = 0; cliente < sol.assignments.size(); cliente++)
+            {
+                int instalacao_atribuida = sol.assignments[cliente];
+                sol.totalCost += inst.custo_conexao[instalacao_atribuida][cliente].first;
+            }
+            
+            // Custo das penalidades
+            for(const auto& pen : inst.penalidades_vetor)
+            {
+                int c1 = pen.clientes.first;
+                int c2 = pen.clientes.second;
+                if(sol.assignments[c1] == sol.assignments[c2])
+                {
+                    sol.totalCost += pen.custo;
+                }
+            }
         }
 
         // Executa a busca local para melhorar a solução

@@ -45,6 +45,8 @@ class ILS
         Srepresentation atualSolution;
         Srepresentation bestSolution;
 
+        int qtdvezesmelhorResultado = 0;
+
         int maxIter;
         int pertubsize;
 
@@ -66,7 +68,7 @@ class ILS
         {
             LocalSearch ls(inst, solucao);
             ls.improveSolution();
-            atualSolution = ls.getSolution();
+            solucao = ls.getSolution();
         };
 
 
@@ -106,7 +108,7 @@ class ILS
             int m = inst.qtd_instalacoes;
             int i;
 
-            vector<int> ocupacao(m, -1);
+            vector<int> ocupacao(m, 0);
             atualSolution.openfacilities.clear();
 
             for(i = 0; i < n; i++)
@@ -116,11 +118,13 @@ class ILS
 
             for(i = 0; i < m; i++)
             {
-                if(ocupacao[i] > -1)
+                if(ocupacao[i] > 0)
                 {
                     atualSolution.openfacilities.push_back(i);
                 }
             }
+
+            atualSolution.totalCost = calculocusto(inst, atualSolution);
         };
         // ===============================
 
@@ -152,7 +156,11 @@ class ILS
         // ==============================
         void run()
         {
+            int runtime = 0;
+
             initialSolution();
+
+            printSolution(atualSolution, vector<vector<pair<int, int>>>());
 
             localSearch(atualSolution);
 
@@ -171,6 +179,9 @@ class ILS
                 // Aplica busca local na solução perturbada
                 localSearch(candidateSolution);
 
+                cout << "Iteração " << i+1 << ": Custo da solução candidata = " << candidateSolution.totalCost << endl;
+
+                
                 // Critério de aceitação
                 if(acceptanceCriterion(candidateSolution))
                 {
@@ -181,9 +192,18 @@ class ILS
                         bestSolution = atualSolution;
                     }
                 }
+
+                if(candidateSolution.totalCost == bestSolution.totalCost)
+                {
+                    qtdvezesmelhorResultado++;
+                }
+
+                runtime++;
             }
 
             atualSolution = bestSolution;
+            cout << "Melhor resultado encontrado " << qtdvezesmelhorResultado << " vezes." << endl;
+            cout << "Número de iterações: " << runtime << endl;
         }
         // ==============================
 
@@ -225,7 +245,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    ILS ils_solver(instance_data, 100, 5);
+    ILS ils_solver(instance_data, 500, 100);
     ils_solver.run();
 
     solucao = ils_solver.getBestSolution();
