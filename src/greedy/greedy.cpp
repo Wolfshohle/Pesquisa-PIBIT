@@ -10,7 +10,7 @@ using namespace std;
 bool greedUFL(instance& inst, Srepresentation& solucao)
 {
     // variáveis gerais
-    int i, j, k, l, m, custos, economia;
+    int i, j, custos, economia;
     float phi;
 
     // Conjuntos
@@ -23,7 +23,8 @@ bool greedUFL(instance& inst, Srepresentation& solucao)
 
     // Ordena os clientes com base no menor valor pra instalação e armazena para cada instalação
     vector<vector<pair<int, int>>>matriz_ordenacao = inst.custo_conexao;
-    for(i = 0; i < matriz_ordenacao.size(); i++)
+    int matriz_size = matriz_ordenacao.size();
+    for(i = 0; i < matriz_size; i++)
     {
         sort(matriz_ordenacao[i].begin(), matriz_ordenacao[i].end());
         inst.instalacoes[i].ordem_por_custo = matriz_ordenacao[i];
@@ -31,7 +32,7 @@ bool greedUFL(instance& inst, Srepresentation& solucao)
 
 
     // Inicia o conjunto de clientes não atendidos
-    for(i  = 0; i < matriz_ordenacao.size(); i++)
+    for(i  = 0; i < matriz_size; i++)
     {
         inst.instalacoes[i].Y.resize(matriz_ordenacao[i].size(), 0);
         inst.instalacoes[i].atribuicao.resize(matriz_ordenacao[i].size(), 0);
@@ -179,7 +180,7 @@ bool greedUFL(instance& inst, Srepresentation& solucao)
             sigma[j.second] = bestI;
         }
 
-        for(i = 0; i < inst.instalacoes.size(); i++)
+        for(i = 0; i < inst.qtd_instalacoes; i++)
         {
             for(auto j: bestY)
             { 

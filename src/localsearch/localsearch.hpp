@@ -70,8 +70,9 @@ class LocalSearch
             // Verifica se é necessário fechar ou abrir instalações
             if(ocupacao[current_facility] == 0)
             {
+                int facilities_size = sol.openfacilities.size();
                 // Remove a instalação fechada da lista de instalações abertas
-                for(int i = 0; i < sol.openfacilities.size(); i++)
+                for(int i = 0; i < facilities_size; i++)
                 {
                     if(sol.openfacilities[i] == current_facility)
                     {

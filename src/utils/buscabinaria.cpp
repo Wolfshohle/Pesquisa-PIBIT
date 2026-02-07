@@ -11,7 +11,7 @@ int buscabinariadepar(vector<penalidade>& penalidades, int c1, int c2)
     {
         int mid = left + (right - left) / 2;
 
-        if(penalidades[mid].clientes.first == c1 && penalidades[mid].clientes.second == c2 || penalidades[mid].clientes.first == c2 && penalidades[mid].clientes.second == c1)
+        if((penalidades[mid].clientes.first == c1 && penalidades[mid].clientes.second == c2) || (penalidades[mid].clientes.first == c2 && penalidades[mid].clientes.second == c1))
         {
             return penalidades[mid].custo;
         }

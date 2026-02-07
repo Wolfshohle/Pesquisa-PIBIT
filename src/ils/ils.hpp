@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <fstream>
 #include "../io/inputload.hpp"
@@ -6,36 +7,8 @@
 
 using namespace std;
 
-
 //----------------------------------------------------------------------//
-// Função para printar a solução
-//----------------------------------------------------------------------//
-void printSolution(const Srepresentation& solucao, const vector<vector<pair<int, int>>>& conflitos)
-{
-    //printa atribuições
-    cout << "Instalacoes:" << endl;
-    for(auto i: solucao.openfacilities)
-    {
-        cout << i << " ";
-    }
-    cout << endl;
-
-    cout << "Atribuicoes:" << endl;
-    for(auto i: solucao.assignments)
-    {
-        cout << i << " ";
-    }
-    cout << endl;
-
-    cout << "Custo Total: " << solucao.totalCost << endl;
-
-}
-//----------------------------------------------------------------------//
-
-
-
-//----------------------------------------------------------------------//
-// Função ILS
+// Classe ILS
 //----------------------------------------------------------------------//
 class ILS
 {
@@ -84,8 +57,8 @@ class ILS
             {
                 // Seleciona um cliente aleatório
                 int client = rand() % n;
-                // Seleciona uma nova instalação aleatória
-                int new_facility = rand() % m;
+                
+                int new_facility = solucao.assignments[client];
 
                 // Garante que a nova instalação seja diferente da atual
                 while(solucao.assignments[client] == new_facility)
@@ -143,24 +116,29 @@ class ILS
         // ==============================
         // Construtor
         // ==============================
-        ILS(instance& instancia, int max_iterations, int perturbation_size):
+        ILS(instance& instancia, int max_iterations, int perturbation_size, int seed):
             inst(instancia), maxIter(max_iterations), pertubsize(perturbation_size)
             {
-                srand(time(NULL));
+                if(seed == -1)
+                {
+                    srand(time(NULL));
+                }
+                else
+                {
+                    srand(seed);
+                }
             }
         // ==============================
 
 
         // ==============================
-        // Loop principal
+        // ! Loop principal
         // ==============================
         void run()
         {
             int runtime = 0;
 
             initialSolution();
-
-            printSolution(atualSolution, vector<vector<pair<int, int>>>());
 
             localSearch(atualSolution);
 
@@ -178,9 +156,6 @@ class ILS
 
                 // Aplica busca local na solução perturbada
                 localSearch(candidateSolution);
-
-                cout << "Iteração " << i+1 << ": Custo da solução candidata = " << candidateSolution.totalCost << endl;
-
                 
                 // Critério de aceitação
                 if(acceptanceCriterion(candidateSolution))
@@ -217,41 +192,3 @@ class ILS
         }
         // ==============================
 };
-
-
-//----------------------------------------------------------------------//
-// Main function
-//----------------------------------------------------------------------//
-int main(int argc, char *argv[])
-{
-    if(argc < 2) {
-        std::cerr << "Uso: " << argv[0] << " <instancia>\n";
-        return 1;
-    }
-
-    ifstream arquivo(argv[1]);
-    if(!arquivo.is_open()) {
-        std::cerr << "Erro ao abrir arquivo.\n";
-        return 1;
-    }
-
-    instance instance_data;
-    Srepresentation solucao;
-
-    vector<vector<pair<int, int>>> conflitos;
-
-    if(!carregarInstancia(arquivo, instance_data)) {
-        std::cerr << "Erro ao carregar instancia.\n";
-        return 1;
-    }
-
-    ILS ils_solver(instance_data, 500, 100);
-    ils_solver.run();
-
-    solucao = ils_solver.getBestSolution();
-
-    printSolution(solucao, conflitos);
-    
-    return 0;
-}
-//----------------------------------------------------------------------//
