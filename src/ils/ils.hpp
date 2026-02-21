@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 #include <fstream>
+#include <chrono>
+#include <cstdlib>
 #include "../io/inputload.hpp"
 #include "../greedy/greedy.hpp"
 #include "../localsearch/localsearch.hpp"
@@ -20,7 +22,7 @@ class ILS
 
         int qtdvezesmelhorResultado = 0;
 
-        int maxIter;
+        int maxtime;
         int pertubsize;
 
 
@@ -116,8 +118,8 @@ class ILS
         // ==============================
         // Construtor
         // ==============================
-        ILS(instance& instancia, int max_iterations, int perturbation_size, int seed):
-            inst(instancia), maxIter(max_iterations), pertubsize(perturbation_size)
+        ILS(instance& instancia, int timelimit, int perturbation_size, int seed):
+            inst(instancia), maxtime(timelimit), pertubsize(perturbation_size)
             {
                 if(seed == -1)
                 {
@@ -136,7 +138,8 @@ class ILS
         // ==============================
         void run()
         {
-            int runtime = 0;
+            using clock = std::chrono::steady_clock;
+            auto start_time = clock::now();
 
             initialSolution();
 
@@ -144,8 +147,17 @@ class ILS
 
             bestSolution = atualSolution;
 
-            for(int i = 0; i < maxIter; i++)
+            while(true)
             {
+
+                auto current_time = clock::now();
+                double elapsed_time = chrono::duration<double>(current_time - start_time).count();
+                if(elapsed_time >= maxtime)
+                {
+                    break;
+                }
+
+
                 Srepresentation candidateSolution = atualSolution;
 
                 // Aplica perturbação jogando um cliente aleatório para outra instalação
@@ -172,13 +184,9 @@ class ILS
                 {
                     qtdvezesmelhorResultado++;
                 }
-
-                runtime++;
             }
 
             atualSolution = bestSolution;
-            cout << "Melhor resultado encontrado " << qtdvezesmelhorResultado << " vezes." << endl;
-            cout << "Número de iterações: " << runtime << endl;
         }
         // ==============================
 
