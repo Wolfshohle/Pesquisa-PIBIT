@@ -1,0 +1,640 @@
+-------------------------------
+Execução 1
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 19
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1010558
+Melhorias: 1
+Tempo até a melhor solução: 0.162381 segundos
+Melhor solução encontrada:
+Instalacoes:
+8 15 21 30 31 32 43 28 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+8 15 21 30 31 32 43 28 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 2
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 8
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1012278
+Melhorias: 1
+Tempo até a melhor solução: 0.359004 segundos
+Melhor solução encontrada:
+Instalacoes:
+8 15 21 31 32 43 30 28 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+8 15 21 31 32 43 30 28 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 3
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 39
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1012239
+Melhorias: 1
+Tempo até a melhor solução: 0.236203 segundos
+Melhor solução encontrada:
+Instalacoes:
+15 21 31 32 43 28 8 30 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+15 21 31 32 43 28 8 30 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 4
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 91
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1013327
+Melhorias: 1
+Tempo até a melhor solução: 0.0730693 segundos
+Melhor solução encontrada:
+Instalacoes:
+15 21 23 28 32 43 30 8 31 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+15 21 23 28 32 43 30 8 31 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 5
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 19
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1007195
+Melhorias: 1
+Tempo até a melhor solução: 0.16533 segundos
+Melhor solução encontrada:
+Instalacoes:
+8 15 21 30 31 32 43 28 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+8 15 21 30 31 32 43 28 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 6
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 97
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1006646
+Melhorias: 1
+Tempo até a melhor solução: 0.0279084 segundos
+Melhor solução encontrada:
+Instalacoes:
+15 21 23 28 30 32 43 8 31 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+15 21 23 28 30 32 43 8 31 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 7
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 95
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1008626
+Melhorias: 1
+Tempo até a melhor solução: 0.0338592 segundos
+Melhor solução encontrada:
+Instalacoes:
+15 21 28 31 43 30 32 23 8 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+15 21 28 31 43 30 32 23 8 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 8
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 7
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1012274
+Melhorias: 1
+Tempo até a melhor solução: 0.00335499 segundos
+Melhor solução encontrada:
+Instalacoes:
+8 15 21 43 30 28 31 32 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+8 15 21 43 30 28 31 32 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 9
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 15
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1008497
+Melhorias: 1
+Tempo até a melhor solução: 0.107984 segundos
+Melhor solução encontrada:
+Instalacoes:
+8 15 21 28 31 32 43 30 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+8 15 21 28 31 32 43 30 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 10
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 51
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1004492
+Melhorias: 1
+Tempo até a melhor solução: 0.197133 segundos
+Melhor solução encontrada:
+Instalacoes:
+8 15 21 30 32 43 23 31 28 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+8 15 21 30 32 43 23 31 28 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 11
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 3
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1009056
+Melhorias: 1
+Tempo até a melhor solução: 0.0130101 segundos
+Melhor solução encontrada:
+Instalacoes:
+8 15 21 30 32 43 23 31 28 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+8 15 21 30 32 43 23 31 28 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 12
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 13
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1008162
+Melhorias: 1
+Tempo até a melhor solução: 0.0421356 segundos
+Melhor solução encontrada:
+Instalacoes:
+8 15 21 28 31 32 43 23 30 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+8 15 21 28 31 32 43 23 30 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 13
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 91
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1007825
+Melhorias: 1
+Tempo até a melhor solução: 0.0746094 segundos
+Melhor solução encontrada:
+Instalacoes:
+15 21 23 28 32 43 30 8 31 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+15 21 23 28 32 43 30 8 31 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 14
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 10
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1007919
+Melhorias: 1
+Tempo até a melhor solução: 0.119877 segundos
+Melhor solução encontrada:
+Instalacoes:
+15 21 32 43 23 30 8 31 28 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+15 21 32 43 23 30 8 31 28 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 15
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 46
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1006344
+Melhorias: 1
+Tempo até a melhor solução: 0.108104 segundos
+Melhor solução encontrada:
+Instalacoes:
+15 21 28 30 32 43 8 31 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+15 21 28 30 32 43 8 31 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 16
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 79
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 998266
+Melhorias: 1
+Tempo até a melhor solução: 0.077983 segundos
+Melhor solução encontrada:
+Instalacoes:
+15 21 8 43 28 31 32 30 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+15 21 8 43 28 31 32 30 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 17
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 38
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1010293
+Melhorias: 1
+Tempo até a melhor solução: 0.0564221 segundos
+Melhor solução encontrada:
+Instalacoes:
+8 15 21 31 32 43 28 23 30 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+8 15 21 31 32 43 28 23 30 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 18
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 98
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 993362
+Melhorias: 1
+Tempo até a melhor solução: 0.0953489 segundos
+Melhor solução encontrada:
+Instalacoes:
+15 21 23 31 32 43 30 8 28 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+15 21 23 31 32 43 30 8 28 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 19
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 19
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 996483
+Melhorias: 1
+Tempo até a melhor solução: 0.165673 segundos
+Melhor solução encontrada:
+Instalacoes:
+8 15 21 30 31 32 43 28 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+8 15 21 30 31 32 43 28 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------
+-------------------------------
+Execução 20
+Instância: Data/raw//in4 - medium.txt
+Tempo limite: 120 segundos
+Seed: 76
+Solução inicial:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Solução após busca local:
+Instalacoes:
+8 30 28 23 33 31 21 32 43 
+Atribuicoes:
+32 21 43 43 8 8 23 30 28 31 30 8 21 8 21 43 32 21 31 28 31 33 28 
+Custo Total: 18200
+Total de iterações: 1002159
+Melhorias: 1
+Tempo até a melhor solução: 0.263519 segundos
+Melhor solução encontrada:
+Instalacoes:
+21 32 43 8 31 30 15 28 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+Instalacoes:
+21 32 43 8 31 30 15 28 23 
+Atribuicoes:
+32 21 43 43 15 8 23 15 28 31 30 8 21 8 21 43 32 21 31 15 31 15 28 
+Custo Total: 18069
+-------------------------------

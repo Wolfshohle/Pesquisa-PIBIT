@@ -6,6 +6,7 @@
 #include "../io/inputload.hpp"
 #include "../greedy/greedy.hpp"
 #include "../localsearch/localsearch.hpp"
+#include "../utils/print.hpp"
 
 using namespace std;
 
@@ -138,18 +139,31 @@ class ILS
         // ==============================
         void run()
         {
+            // Inicia o cronômetro para controle do tempo de execução
             using clock = std::chrono::steady_clock;
             auto start_time = clock::now();
 
+            // Variável para contar o número total de iterações
+            int total_iterations = 0;
+            int improvement_iterations = 0;
+            double time_to_best = 0.0;
+
+            // Gera solução inicial usando o método guloso
             initialSolution();
+            cout << "Solução inicial:" << endl;
+            printSolution(atualSolution);
 
+            // Aplica busca local para melhorar a solução inicial
             localSearch(atualSolution);
+            cout << "Solução após busca local:" << endl;
+            printSolution(atualSolution);
 
+            // Define a melhor solução como a solução atual
             bestSolution = atualSolution;
 
             while(true)
             {
-
+                // Verifica o tempo decorrido para garantir que não ultrapasse o limite
                 auto current_time = clock::now();
                 double elapsed_time = chrono::duration<double>(current_time - start_time).count();
                 if(elapsed_time >= maxtime)
@@ -177,16 +191,23 @@ class ILS
                     if(atualSolution.totalCost < bestSolution.totalCost)
                     {
                         bestSolution = atualSolution;
+                        improvement_iterations++;
+                        time_to_best = elapsed_time;
                     }
                 }
 
-                if(candidateSolution.totalCost == bestSolution.totalCost)
-                {
-                    qtdvezesmelhorResultado++;
-                }
+
+                total_iterations++;
             }
 
+            cout << "Total de iterações: " << total_iterations << endl;
+            cout << "Melhorias: " << improvement_iterations << endl;
+            cout << "Tempo até a melhor solução: " << time_to_best << " segundos" << endl;
+
             atualSolution = bestSolution;
+
+            cout << "Melhor solução encontrada:" << endl;
+            printSolution(atualSolution);
         }
         // ==============================
 

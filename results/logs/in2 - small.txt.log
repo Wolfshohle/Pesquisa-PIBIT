@@ -1,0 +1,640 @@
+-------------------------------
+Execução 1
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 1
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36813972
+Melhorias: 2
+Tempo até a melhor solução: 0.00200519 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 2
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 44
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36850336
+Melhorias: 3
+Tempo até a melhor solução: 0.00219307 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 3
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 39
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36868826
+Melhorias: 3
+Tempo até a melhor solução: 0.00256686 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 4
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 74
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36539833
+Melhorias: 2
+Tempo até a melhor solução: 0.00188592 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 5
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 85
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36890078
+Melhorias: 3
+Tempo até a melhor solução: 0.0017336 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 6
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 72
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36773640
+Melhorias: 3
+Tempo até a melhor solução: 0.00187298 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 7
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 53
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36866759
+Melhorias: 1
+Tempo até a melhor solução: 0.00425438 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 8
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 70
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36980522
+Melhorias: 2
+Tempo até a melhor solução: 0.00247063 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 9
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 41
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36880320
+Melhorias: 1
+Tempo até a melhor solução: 0.00185852 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 10
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 91
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36906781
+Melhorias: 3
+Tempo até a melhor solução: 0.0017252 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 11
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 60
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 35840065
+Melhorias: 2
+Tempo até a melhor solução: 0.00271004 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 12
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 94
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36874382
+Melhorias: 2
+Tempo até a melhor solução: 0.00186396 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 13
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 31
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36996057
+Melhorias: 1
+Tempo até a melhor solução: 0.00184191 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 14
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 50
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36655939
+Melhorias: 3
+Tempo até a melhor solução: 0.00199961 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 15
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 66
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36774035
+Melhorias: 3
+Tempo até a melhor solução: 0.00235988 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 16
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 49
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36864745
+Melhorias: 2
+Tempo até a melhor solução: 0.00233757 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 17
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 74
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36627794
+Melhorias: 2
+Tempo até a melhor solução: 0.00191658 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 18
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 39
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36706113
+Melhorias: 3
+Tempo até a melhor solução: 0.00276389 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 19
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 58
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36651749
+Melhorias: 1
+Tempo até a melhor solução: 0.00282222 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------
+-------------------------------
+Execução 20
+Instância: Data/raw//in2 - small.txt
+Tempo limite: 120 segundos
+Seed: 45
+Solução inicial:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Solução após busca local:
+Instalacoes:
+2 1 
+Atribuicoes:
+1 1 2 2 
+Custo Total: 38
+Total de iterações: 36405151
+Melhorias: 2
+Tempo até a melhor solução: 0.00189255 segundos
+Melhor solução encontrada:
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+Instalacoes:
+0 1 
+Atribuicoes:
+1 0 1 0 
+Custo Total: 35
+-------------------------------

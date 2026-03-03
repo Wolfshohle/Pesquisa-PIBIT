@@ -6,31 +6,6 @@
 
 using namespace std;
 
-//----------------------------------------------------------------------//
-// Função para printar a solução
-//----------------------------------------------------------------------//
-void printSolution(const Srepresentation& solucao)
-{
-    //printa atribuições
-    cout << "Instalacoes:" << endl;
-    for(auto i: solucao.openfacilities)
-    {
-        cout << i << " ";
-    }
-    cout << endl;
-
-    cout << "Atribuicoes:" << endl;
-    for(auto i: solucao.assignments)
-    {
-        cout << i << " ";
-    }
-    cout << endl;
-
-    cout << "Custo Total: " << solucao.totalCost << endl;
-
-}
-//----------------------------------------------------------------------//
-
 
 //----------------------------------------------------------------------//
 // Main function
@@ -70,7 +45,6 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-
     // Abre o arquivo de instância
     ifstream arquivo(argv[optind]);
 
@@ -81,6 +55,9 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    cout << "Instância: " << argv[optind] << endl;
+    cout << "Tempo limite: " << tempo << " segundos" << endl;
+    cout << "Seed: " << seed << endl;
 
     // Variáveis para armazenar os dados da instância e a solução
     instance instance_data;
@@ -94,7 +71,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    ILS ils_solver(instance_data, tempo, 100, seed);
+    ILS ils_solver(instance_data, tempo, 5, seed);
     ils_solver.run();
 
     solucao = ils_solver.getBestSolution();

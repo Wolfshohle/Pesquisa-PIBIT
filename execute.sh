@@ -7,9 +7,9 @@ logs="results/logs"
 exe="./main"
 
 # Variáveis de configuração
-TIME=1
-SEED=42
-REPETIR=1
+TIME=120
+# SEED=42
+REPETIR=20
 # ===============================
 
 
@@ -51,8 +51,12 @@ do
     
     for k in $(seq 1 $REPETIR)
     do
+        SEED=$((RANDOM % 100 + 1))
         echo "Execução $k"
+        echo "-------------------------------" >> "$logs/$j.log"
+        echo "Execução" $k >> "$logs/$j.log"
         $exe -T $TIME -s $SEED "$i" >> "$logs/$j.log"
+        echo "-------------------------------" >> "$logs/$j.log"
     done
 
     echo "-------------------------------"

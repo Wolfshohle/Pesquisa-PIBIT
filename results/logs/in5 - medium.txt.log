@@ -1,0 +1,640 @@
+-------------------------------
+Execução 1
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 17
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 972276
+Melhorias: 1
+Tempo até a melhor solução: 0.00862944 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 2
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 87
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 973071
+Melhorias: 1
+Tempo até a melhor solução: 0.0125175 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 3
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 45
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 976869
+Melhorias: 1
+Tempo até a melhor solução: 0.00697955 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 4
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 16
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 974011
+Melhorias: 1
+Tempo até a melhor solução: 0.00265335 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 5
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 10
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 968190
+Melhorias: 1
+Tempo até a melhor solução: 0.00233008 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 6
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 40
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 971397
+Melhorias: 1
+Tempo até a melhor solução: 0.00486138 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 7
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 10
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 965795
+Melhorias: 1
+Tempo até a melhor solução: 0.00244898 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 8
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 30
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 968063
+Melhorias: 1
+Tempo até a melhor solução: 0.0101427 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 9
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 82
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 975865
+Melhorias: 1
+Tempo até a melhor solução: 0.00385312 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 10
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 47
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 974114
+Melhorias: 1
+Tempo até a melhor solução: 0.00543809 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 11
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 74
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 975643
+Melhorias: 1
+Tempo até a melhor solução: 0.00254891 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 12
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 41
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 966754
+Melhorias: 1
+Tempo até a melhor solução: 0.00925098 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 13
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 10
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 972070
+Melhorias: 1
+Tempo até a melhor solução: 0.00216931 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 14
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 14
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 972967
+Melhorias: 1
+Tempo até a melhor solução: 0.00445282 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 15
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 10
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 967465
+Melhorias: 1
+Tempo até a melhor solução: 0.00262747 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 16
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 13
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 968164
+Melhorias: 1
+Tempo até a melhor solução: 0.0059077 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 17
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 54
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 962469
+Melhorias: 1
+Tempo até a melhor solução: 0.0043256 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 18
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 71
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 971428
+Melhorias: 1
+Tempo até a melhor solução: 0.0257641 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 19
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 40
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 973111
+Melhorias: 1
+Tempo até a melhor solução: 0.00279408 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------
+-------------------------------
+Execução 20
+Instância: Data/raw//in5 - medium.txt
+Tempo limite: 120 segundos
+Seed: 76
+Solução inicial:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Solução após busca local:
+Instalacoes:
+6 3 2 1 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 6 6 1 6 1 6 1 6 6 2 6 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 108804
+Total de iterações: 970894
+Melhorias: 1
+Tempo até a melhor solução: 0.0110705 segundos
+Melhor solução encontrada:
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+Instalacoes:
+1 2 3 15 
+Atribuicoes:
+3 3 3 3 3 3 3 3 15 3 15 15 15 15 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 3 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 15 
+Custo Total: 105190
+-------------------------------

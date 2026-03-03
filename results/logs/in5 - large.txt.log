@@ -1,0 +1,640 @@
+-------------------------------
+Execução 1
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 6
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 145550
+Melhorias: 2
+Tempo até a melhor solução: 27.6352 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 8 9 11 21 24 30 41 44 64 76 83 84 34 
+Atribuicoes:
+24 9 64 24 30 8 4 44 64 83 64 11 21 83 44 41 34 9 24 44 83 76 84 84 4 41 24 21 8 11 64 76 21 30 34 8 21 8 64 9 11 11 4 9 83 83 84 30 4 11 
+Custo Total: 28145
+Instalacoes:
+4 8 9 11 21 24 30 41 44 64 76 83 84 34 
+Atribuicoes:
+24 9 64 24 30 8 4 44 64 83 64 11 21 83 44 41 34 9 24 44 83 76 84 84 4 41 24 21 8 11 64 76 21 30 34 8 21 8 64 9 11 11 4 9 83 83 84 30 4 11 
+Custo Total: 28145
+-------------------------------
+-------------------------------
+Execução 2
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 84
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 146357
+Melhorias: 1
+Tempo até a melhor solução: 6.86823 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 9 11 21 59 64 72 83 84 44 41 8 76 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28165
+Instalacoes:
+4 9 11 21 59 64 72 83 84 44 41 8 76 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28165
+-------------------------------
+-------------------------------
+Execução 3
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 57
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 146515
+Melhorias: 2
+Tempo até a melhor solução: 74.2482 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 8 9 11 21 41 44 59 64 72 76 83 84 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+Instalacoes:
+4 8 9 11 21 41 44 59 64 72 76 83 84 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+-------------------------------
+-------------------------------
+Execução 4
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 62
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 147125
+Melhorias: 1
+Tempo até a melhor solução: 26.2921 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 8 9 11 21 41 59 64 72 83 44 84 76 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+Instalacoes:
+4 8 9 11 21 41 59 64 72 83 44 84 76 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+-------------------------------
+-------------------------------
+Execução 5
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 54
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 146605
+Melhorias: 1
+Tempo até a melhor solução: 10.9227 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 8 9 11 21 24 30 34 64 83 84 44 76 
+Atribuicoes:
+24 9 64 24 30 8 4 44 64 83 64 11 21 83 44 24 34 9 24 44 83 76 84 84 4 84 24 21 8 11 64 76 21 30 34 8 21 8 64 9 11 11 4 9 83 83 84 30 4 11 
+Custo Total: 28220
+Instalacoes:
+4 8 9 11 21 24 30 34 64 83 84 44 76 
+Atribuicoes:
+24 9 64 24 30 8 4 44 64 83 64 11 21 83 44 24 34 9 24 44 83 76 84 84 4 84 24 21 8 11 64 76 21 30 34 8 21 8 64 9 11 11 4 9 83 83 84 30 4 11 
+Custo Total: 28220
+-------------------------------
+-------------------------------
+Execução 6
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 48
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 147390
+Melhorias: 1
+Tempo até a melhor solução: 42.8771 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 9 11 21 44 59 64 72 84 8 83 41 76 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28165
+Instalacoes:
+4 9 11 21 44 59 64 72 84 8 83 41 76 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28165
+-------------------------------
+-------------------------------
+Execução 7
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 11
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 147316
+Melhorias: 3
+Tempo até a melhor solução: 22.2002 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 8 9 11 21 41 59 64 72 76 83 84 44 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+Instalacoes:
+4 8 9 11 21 41 59 64 72 76 83 84 44 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+-------------------------------
+-------------------------------
+Execução 8
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 16
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 146690
+Melhorias: 1
+Tempo até a melhor solução: 16.2807 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 8 9 21 41 44 59 64 72 76 83 84 11 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+Instalacoes:
+4 8 9 21 41 44 59 64 72 76 83 84 11 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+-------------------------------
+-------------------------------
+Execução 9
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 45
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 144578
+Melhorias: 1
+Tempo até a melhor solução: 4.7258 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 9 11 21 41 59 64 72 76 44 84 8 83 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28165
+Instalacoes:
+4 9 11 21 41 59 64 72 76 44 84 8 83 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28165
+-------------------------------
+-------------------------------
+Execução 10
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 67
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 146005
+Melhorias: 2
+Tempo até a melhor solução: 62.9869 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 9 11 21 41 59 64 72 76 83 84 8 44 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+Instalacoes:
+4 9 11 21 41 59 64 72 76 83 84 8 44 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+-------------------------------
+-------------------------------
+Execução 11
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 16
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 140769
+Melhorias: 1
+Tempo até a melhor solução: 16.3766 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 8 9 21 41 44 59 64 72 76 83 84 11 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+Instalacoes:
+4 8 9 21 41 44 59 64 72 76 83 84 11 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+-------------------------------
+-------------------------------
+Execução 12
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 74
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 145931
+Melhorias: 2
+Tempo até a melhor solução: 38.0345 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 8 9 11 21 44 59 64 72 83 84 76 41 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+Instalacoes:
+4 8 9 11 21 44 59 64 72 83 84 76 41 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+-------------------------------
+-------------------------------
+Execução 13
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 30
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 146981
+Melhorias: 1
+Tempo até a melhor solução: 35.9542 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 8 9 11 21 30 41 44 59 64 72 76 83 84 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28143
+Instalacoes:
+4 8 9 11 21 30 41 44 59 64 72 76 83 84 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28143
+-------------------------------
+-------------------------------
+Execução 14
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 5
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 146658
+Melhorias: 1
+Tempo até a melhor solução: 0.243756 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 9 11 21 59 64 72 76 83 84 8 44 41 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+Instalacoes:
+4 9 11 21 59 64 72 76 83 84 8 44 41 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+-------------------------------
+-------------------------------
+Execução 15
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 2
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 147517
+Melhorias: 3
+Tempo até a melhor solução: 109.26 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 9 11 21 41 59 64 72 83 84 44 8 76 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+Instalacoes:
+4 9 11 21 41 59 64 72 83 84 44 8 76 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+-------------------------------
+-------------------------------
+Execução 16
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 1
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 146435
+Melhorias: 2
+Tempo até a melhor solução: 7.73218 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 11 21 30 59 64 72 83 84 44 8 76 9 41 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28143
+Instalacoes:
+4 11 21 30 59 64 72 83 84 44 8 76 9 41 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28143
+-------------------------------
+-------------------------------
+Execução 17
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 86
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 147010
+Melhorias: 2
+Tempo até a melhor solução: 57.8409 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 9 11 21 41 59 64 72 76 83 84 44 8 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+Instalacoes:
+4 9 11 21 41 59 64 72 76 83 84 44 8 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+-------------------------------
+-------------------------------
+Execução 18
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 73
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 147543
+Melhorias: 1
+Tempo até a melhor solução: 2.84424 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 8 21 44 59 64 72 84 9 41 11 76 83 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+Instalacoes:
+4 8 21 44 59 64 72 84 9 41 11 76 83 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+-------------------------------
+-------------------------------
+Execução 19
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 33
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 147130
+Melhorias: 1
+Tempo até a melhor solução: 0.414275 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 8 9 11 21 44 64 72 83 84 59 76 41 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28165
+Instalacoes:
+4 8 9 11 21 44 64 72 83 84 59 76 41 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28165
+-------------------------------
+-------------------------------
+Execução 20
+Instância: Data/raw//in5 - large.txt
+Tempo limite: 120 segundos
+Seed: 62
+Solução inicial:
+Instalacoes:
+44 84 76 9 41 34 8 83 59 30 22 32 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 34 72 21 9 32 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28616
+Solução após busca local:
+Instalacoes:
+44 84 76 9 41 8 83 59 30 22 4 11 21 72 64 
+Atribuicoes:
+59 9 64 72 30 8 4 44 64 83 64 11 21 83 44 41 21 72 21 9 83 76 59 72 4 41 72 21 8 84 64 76 21 30 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28368
+Total de iterações: 147267
+Melhorias: 1
+Tempo até a melhor solução: 26.1566 segundos
+Melhor solução encontrada:
+Instalacoes:
+4 8 9 11 21 41 59 64 72 83 44 84 76 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+Instalacoes:
+4 8 9 11 21 41 59 64 72 83 44 84 76 
+Atribuicoes:
+59 9 64 72 8 8 4 44 64 83 64 11 21 83 44 41 21 9 21 72 83 76 59 72 4 41 72 21 8 84 64 76 21 64 59 8 21 8 64 9 11 11 4 9 83 83 84 84 4 11 
+Custo Total: 28017
+-------------------------------
