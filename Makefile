@@ -33,6 +33,22 @@ $(BIN): $(OBJ)
 $(OBJS_DIR)/%.o:
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $(filter %/$*.cpp,$(SRC)) -o $@
 
+# Testar mais tarde
+execute: $(BIN)
+	tempo=60; \
+	pertubacao=30; \
+	for i in $$(seq 1 10); do \
+		echo "---------Execução $$i---------"; \
+		echo "------------------------------"; \
+		./$(BIN) -T $$tempo -s $$i -P $$pertubacao "Data/raw/in1 - large.txt";\
+		echo "------------------------------"; \
+	done
+
+execute2: $(BIN)
+	tempo=60;\
+	pertubacao=5; \
+	seed=24; \
+	./$(BIN) -T $$tempo -s $$seed -P $$pertubacao "Data/raw/in1 - large.txt"
 
 clean:
 	rm -f $(OBJS_DIR)/*.o $(BIN)

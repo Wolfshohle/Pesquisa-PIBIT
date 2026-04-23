@@ -7,9 +7,10 @@ logs="results/logs"
 exe="./main"
 
 # Variáveis de configuração
-TIME=120
+TIME=30
 # SEED=42
 REPETIR=20
+PERTUBACAO=5
 # ===============================
 
 
@@ -55,7 +56,7 @@ do
         echo "Execução $k"
         echo "-------------------------------" >> "$logs/$j.log"
         echo "Execução" $k >> "$logs/$j.log"
-        $exe -T $TIME -s $SEED "$i" >> "$logs/$j.log"
+        $exe -T $TIME -s $SEED -P $PERTUBACAO "$i" >> "$logs/$j.log"
         echo "-------------------------------" >> "$logs/$j.log"
     done
 

@@ -14,11 +14,11 @@ bool greedUFL(instance& inst, Srepresentation& solucao)
     float phi;
 
     // Conjuntos
-    vector<int> X; // Instalações abertas
+    vector<int> X(inst.qtd_instalacoes, 0); // Instalações abertas
     vector<int> D; // Clientes atendidos
+    int D_size = 0;
     vector<int> sigma(inst.qtd_clientes, -1); // Atribuição de clientes a instalação
     vector<int> O(inst.qtd_instalacoes, 1); // Conjunto binário que informa se a fábrica foi aberta ou não
-
 
 
     // Ordena os clientes com base no menor valor pra instalação e armazena para cada instalação
@@ -49,7 +49,7 @@ bool greedUFL(instance& inst, Srepresentation& solucao)
 
 
     // Escolha local
-    while(D.size() != inst.qtd_clientes)
+    while(D_size != inst.qtd_clientes)
     {
         vector<int> deltinha(inst.qtd_instalacoes, 0); // Economia que obtemos ao mudar o cliente de instalação
         vector<pair<int, int>> bestY; // Melhor conjunto de clientes alocados
@@ -165,7 +165,7 @@ bool greedUFL(instance& inst, Srepresentation& solucao)
         // Verifica se uma nova facilidade foi aberta
         if(O[bestI] == 1)
         {
-            X.push_back(bestI);
+            X[bestI] = 1;
             for(auto j : inst.instalacoes[bestI].Dlinha)
             {
                 sigma[j] = bestI;
@@ -177,6 +177,7 @@ bool greedUFL(instance& inst, Srepresentation& solucao)
         for(auto j: bestY)
         {
             D.push_back(j.second);
+            D_size++;
             sigma[j.second] = bestI;
         }
 

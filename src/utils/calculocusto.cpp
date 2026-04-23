@@ -4,18 +4,24 @@
 int calculocusto(const instance& inst, const Srepresentation& sol)
 {
     int custo_total = 0;
+    int i, j, size;
 
+    size = sol.openfacilities.size();
     // Custo das instalações abertas
-    for(int i : sol.openfacilities)
+    for(i = 0; i < size; i++)
     {
-        custo_total += inst.instalacoes[i].custo_abertura;
+        if(sol.openfacilities[i] == 1)
+        {
+            custo_total += inst.instalacoes[i].custo_abertura;
+        }
     }
 
     // Custo das conexões
-    for(size_t cliente = 0; cliente < sol.assignments.size(); cliente++)
+    size = sol.assignments.size();
+    for(j = 0; j < size; j++)
     {
-        int instalacao_atribuida = sol.assignments[cliente];
-        custo_total += inst.custo_conexao[instalacao_atribuida][cliente].first;
+        int instalacao_atribuida = sol.assignments[j];
+        custo_total += inst.custo_conexao[instalacao_atribuida][j].first;
     }
 
     // Custo das penalidades

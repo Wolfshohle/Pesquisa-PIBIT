@@ -15,11 +15,12 @@ int main(int argc, char *argv[])
     // Parametros de tempo e seed padrão
     int tempo = 60;
     int seed = -1;
+    int pertubacao = 5;
     int opt;
     // !string instancia -> Verificar depois se é necessário ou não;
 
     // Processamento dos argumentos de linha de comando
-    while((opt = getopt(argc, argv, "T:s:")) != -1) 
+    while((opt = getopt(argc, argv, "T:s:P:")) != -1) 
     {
         switch(opt) 
         {
@@ -31,9 +32,13 @@ int main(int argc, char *argv[])
             case 's':
                 seed = atoi(optarg);
                 break;
+            // Processa o tamanho da pertubação
+            case 'P':
+                pertubacao = atoi(optarg);
+                break;
             // Caso de uso inválido
             default:
-                cerr << "Uso: " << argv[0] << " [-t tempo] [-s seed] <instancia>\n";
+                cerr << "Uso: " << argv[0] << " [-T tempo] [-s seed] [-P pertubacao] <instancia>\n";
                 return 1;
         }
     }
@@ -41,7 +46,7 @@ int main(int argc, char *argv[])
     // Verifica se o arquivo de instância foi fornecido
     if(optind >= argc)
     {
-        cerr << "Uso: " << argv[0] << " [-t tempo] [-s seed] <instancia>\n";
+        cerr << "Uso: " << argv[0] << " [-T tempo] [-s seed] [-P pertubacao] <instancia>\n";
         return 1;
     }
 
@@ -58,6 +63,7 @@ int main(int argc, char *argv[])
     cout << "Instância: " << argv[optind] << endl;
     cout << "Tempo limite: " << tempo << " segundos" << endl;
     cout << "Seed: " << seed << endl;
+    cout << "Tamanho da pertubação: " << pertubacao << endl;
 
     // Variáveis para armazenar os dados da instância e a solução
     instance instance_data;
@@ -71,12 +77,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    ILS ils_solver(instance_data, tempo, 5, seed);
+    ILS ils_solver(instance_data, tempo, pertubacao, seed);
     ils_solver.run();
 
     solucao = ils_solver.getBestSolution();
-
-    printSolution(solucao);
     
     return 0;
 }
