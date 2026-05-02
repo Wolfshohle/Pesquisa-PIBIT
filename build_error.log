@@ -1,0 +1,21 @@
+src/ExactAlgorithm/exact.cpp: In function ‘int main(int, char**)’:
+src/ExactAlgorithm/exact.cpp:52:40: error: ‘__gnu_cxx::__alloc_traits<std::allocator<instalacao>, instalacao>::value_type’ {aka ‘struct instalacao’} has no member named ‘custo’
+   52 |             obj += inst.instalacoes[i].custo * f[i];
+      |                                        ^~~~~
+src/ExactAlgorithm/exact.cpp:57:49: error: ‘__gnu_cxx::__alloc_traits<std::allocator<std::pair<int, int> >, std::pair<int, int> >::value_type’ {aka ‘struct std::pair<int, int>’} has no member named ‘custo’
+   57 |                 obj += inst.custo_conexao[i][j].custo * x[i][j];
+      |                                                 ^~~~~
+src/ExactAlgorithm/exact.cpp:106:34: warning: ‘IloCplex::TiLim’ is deprecated: since 12090000 [-Wdeprecated-declarations]
+  106 |         cplex.setParam(IloCplex::TiLim, 60); // limite de tempo (segundos)
+      |                                  ^~~~~
+In file included from /home/m4the/cplex/cplex/include/ilcplex/ilocplex.h:29,
+                 from src/ExactAlgorithm/exact.cpp:1:
+/home/m4the/cplex/cplex/include/ilcplex/ilocplexi.h:692:5: note: declared here
+  692 |     TiLim CPXDEPRECATEDENUMVAL(12090000) = CPX_PARAM_TILIM,
+      |     ^~~~~
+src/ExactAlgorithm/exact.cpp:106:34: warning: ‘IloCplex::TiLim’ is deprecated: since 12090000 [-Wdeprecated-declarations]
+  106 |         cplex.setParam(IloCplex::TiLim, 60); // limite de tempo (segundos)
+      |                                  ^~~~~
+/home/m4the/cplex/cplex/include/ilcplex/ilocplexi.h:692:5: note: declared here
+  692 |     TiLim CPXDEPRECATEDENUMVAL(12090000) = CPX_PARAM_TILIM,
+      |     ^~~~~

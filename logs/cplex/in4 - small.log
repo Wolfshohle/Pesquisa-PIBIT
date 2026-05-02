@@ -1,0 +1,74 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 1 time.
+Reduced MIP has 280 rows, 190 columns, and 783 nonzeros.
+Reduced MIP has 190 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (0.54 ticks)
+Found incumbent of value 125431.000000 after 0.03 sec. (0.68 ticks)
+Probing time = 0.00 sec. (0.36 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 280 rows, 190 columns, and 783 nonzeros.
+Reduced MIP has 190 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (0.65 ticks)
+Probing time = 0.00 sec. (0.36 ticks)
+Clique table members: 190.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 14 threads.
+Root relaxation solution time = 0.00 sec. (0.61 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                       125431.0000        0.0000           100.00%
+*     0+    0                        72614.0000        0.0000           100.00%
+*     0+    0                        55390.0000        0.0000           100.00%
+*     0+    0                        49411.0000        0.0000           100.00%
+*     0+    0                        48690.0000        0.0000           100.00%
+*     0+    0                        41710.0000        0.0000           100.00%
+      0     0    35446.5000    38    41710.0000    35446.5000       59   15.02%
+*     0     0      integral     0    37317.0000      Cuts: 10       74    0.00%
+      0     0        cutoff          37317.0000    37317.0000       74    0.00%
+Elapsed time = 0.17 sec. (5.15 ticks, tree = 0.01 MB, solutions = 7)
+
+Implied bound cuts applied:  6
+Zero-half cuts applied:  3
+
+Root node processing (before b&c):
+  Real time             =    0.17 sec. (5.17 ticks)
+Parallel b&c, 14 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.17 sec. (5.17 ticks)
+Status: Optimal
+Obj: 37317
+
+Instalacoes abertas:
+Instalação 0 aberta
+Instalação 1 aberta
+Instalação 2 aberta
+Instalação 3 aberta
+Instalação 7 aberta
+
+Atribuições (cliente -> instalação):
+Cliente 0 -> Instalação 0
+Cliente 1 -> Instalação 7
+Cliente 2 -> Instalação 2
+Cliente 3 -> Instalação 3
+Cliente 4 -> Instalação 3
+Cliente 5 -> Instalação 1
+Cliente 6 -> Instalação 0
+Cliente 7 -> Instalação 3
+Cliente 8 -> Instalação 0
+Cliente 9 -> Instalação 0
+Cliente 10 -> Instalação 2
+Cliente 11 -> Instalação 1
+Cliente 12 -> Instalação 3
+Cliente 13 -> Instalação 7
+Cliente 14 -> Instalação 2
+Cliente 15 -> Instalação 0
+Cliente 16 -> Instalação 0
+Cliente 17 -> Instalação 2
+Cliente 18 -> Instalação 1

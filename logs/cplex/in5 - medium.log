@@ -1,0 +1,97 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 1 time.
+Reduced MIP has 1330 rows, 846 columns, and 3840 nonzeros.
+Reduced MIP has 846 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (3.39 ticks)
+Found incumbent of value 425333.000000 after 0.03 sec. (4.07 ticks)
+Probing time = 0.00 sec. (2.45 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1330 rows, 846 columns, and 3840 nonzeros.
+Reduced MIP has 846 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (3.89 ticks)
+Probing time = 0.00 sec. (2.45 ticks)
+Clique table members: 850.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 14 threads.
+Root relaxation solution time = 0.02 sec. (1.56 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                       425333.0000        0.0000           100.00%
+*     0+    0                       222056.0000        0.0000           100.00%
+*     0+    0                       105190.0000        0.0000           100.00%
+      0     0        cutoff         105190.0000   105190.0000       44    0.00%
+      0     0        cutoff         105190.0000   105190.0000       44    0.00%
+Elapsed time = 0.09 sec. (17.15 ticks, tree = 0.01 MB, solutions = 3)
+
+Root node processing (before b&c):
+  Real time             =    0.09 sec. (17.19 ticks)
+Parallel b&c, 14 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.09 sec. (17.19 ticks)
+Status: Optimal
+Obj: 105190
+
+Instalacoes abertas:
+Instalação 1 aberta
+Instalação 2 aberta
+Instalação 3 aberta
+Instalação 15 aberta
+
+Atribuições (cliente -> instalação):
+Cliente 0 -> Instalação 3
+Cliente 1 -> Instalação 3
+Cliente 2 -> Instalação 3
+Cliente 3 -> Instalação 3
+Cliente 4 -> Instalação 3
+Cliente 5 -> Instalação 3
+Cliente 6 -> Instalação 3
+Cliente 7 -> Instalação 3
+Cliente 8 -> Instalação 15
+Cliente 9 -> Instalação 3
+Cliente 10 -> Instalação 15
+Cliente 11 -> Instalação 15
+Cliente 12 -> Instalação 15
+Cliente 13 -> Instalação 15
+Cliente 14 -> Instalação 1
+Cliente 15 -> Instalação 1
+Cliente 16 -> Instalação 1
+Cliente 17 -> Instalação 1
+Cliente 18 -> Instalação 1
+Cliente 19 -> Instalação 1
+Cliente 20 -> Instalação 1
+Cliente 21 -> Instalação 1
+Cliente 22 -> Instalação 1
+Cliente 23 -> Instalação 1
+Cliente 24 -> Instalação 1
+Cliente 25 -> Instalação 1
+Cliente 26 -> Instalação 1
+Cliente 27 -> Instalação 1
+Cliente 28 -> Instalação 2
+Cliente 29 -> Instalação 1
+Cliente 30 -> Instalação 3
+Cliente 31 -> Instalação 2
+Cliente 32 -> Instalação 2
+Cliente 33 -> Instalação 2
+Cliente 34 -> Instalação 2
+Cliente 35 -> Instalação 2
+Cliente 36 -> Instalação 2
+Cliente 37 -> Instalação 2
+Cliente 38 -> Instalação 2
+Cliente 39 -> Instalação 2
+Cliente 40 -> Instalação 2
+Cliente 41 -> Instalação 2
+Cliente 42 -> Instalação 2
+Cliente 43 -> Instalação 2
+Cliente 44 -> Instalação 2
+Cliente 45 -> Instalação 2
+Cliente 46 -> Instalação 2
+Cliente 47 -> Instalação 2
+Cliente 48 -> Instalação 2
+Cliente 49 -> Instalação 15

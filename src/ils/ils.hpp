@@ -48,6 +48,7 @@ class ILS
         {
             LocalSearch ls(inst, solucao);
             ls.improveSolution2();
+            ls.improveSolution();
             solucao = ls.getSolution();
         };
 
@@ -103,7 +104,7 @@ class ILS
 
             // =========================================================================
             // Seleciona as instalações para fechar
-            int num_to_close = max(1, (int)(0.09 * facilitys_to_close.size())); // Fecha 10% das instalações com mais conflitos
+            int num_to_close = max(1, (int)(0.09 * facilitys_to_close.size())); // Fecha 9% das instalações com mais conflitos
             vector<int> penality_for_facility(m, 0); // {custo médio de penalidade, qtd_clientes}
 
             // Calcula a penalidade total para cada instalação
@@ -199,8 +200,8 @@ class ILS
                 // Ordena as instalações candidatas pelo custo de conexão
                 sort(candidate_facilities.begin(), candidate_facilities.end());
 
-                // Considera as 5 melhores opções e seleciona aleatoriamente entre elas
-                int q = min(3, (int)candidate_facilities.size());
+                // Considera as 3 melhores opções e seleciona aleatoriamente entre elas
+                int q = min(10, (int)candidate_facilities.size());
                 // Seleciona aleatoriamente entre as q melhores opções
                 int selected_facility = candidate_facilities[rand() % q].second;
 
@@ -292,6 +293,9 @@ class ILS
 
             // Variável para contar o número total de iterações
             int total_iterations = 0;
+            long long sum = 0;
+            double mean = 0;
+            int worst_value = 0;
             int iterations_to_the_best_solution = 0;
             int improvement_iterations = 0;
             double time_to_best = 0.0;
@@ -324,6 +328,7 @@ class ILS
 
                 // Aplica perturbação jogando um cliente aleatório para outra instalação
                 perturbation2(candidateSolution);
+                perturbation(candidateSolution);
 
                 // Reconstrói a solução para ajustar instalações abertas e fechadas
                 reconstruction(candidateSolution);
@@ -344,16 +349,25 @@ class ILS
                         iterations_to_the_best_solution = total_iterations;
                     }
                 }
-
+                if(candidateSolution.totalCost > worst_value)
+                {
+                    worst_value = candidateSolution.totalCost;
+                }
+                sum += atualSolution.totalCost;
 
                 total_iterations++;
             }
+
+            mean = (double)sum / total_iterations;
 
             cout << "Total de iterações: " << total_iterations << endl;
             cout << "Melhorias: " << improvement_iterations << endl;
             cout << "Tempo até a melhor solução: " << time_to_best << " segundos" << endl;
             cout << "Iterações até a melhor solução: " << iterations_to_the_best_solution << endl;
-            
+            cout << "Soma dos custos: " << sum << endl;
+            cout << "Média dos custos: " << mean << endl;
+            cout << "Pior valor encontrado: " << worst_value << endl;
+
             atualSolution = bestSolution;
 
             cout << "Melhor solução encontrada:" << endl;

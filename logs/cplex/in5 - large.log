@@ -1,0 +1,112 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 1 time.
+Reduced MIP has 8550 rows, 4385 columns, and 25500 nonzeros.
+Reduced MIP has 4385 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.05 sec. (20.02 ticks)
+Found incumbent of value 661390.000000 after 0.06 sec. (24.19 ticks)
+Probing time = 0.01 sec. (4.44 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 8550 rows, 4385 columns, and 25500 nonzeros.
+Reduced MIP has 4385 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (23.30 ticks)
+Probing time = 0.01 sec. (4.44 ticks)
+Clique table members: 4300.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 14 threads.
+Root relaxation solution time = 0.03 sec. (17.08 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                       661390.0000        0.0000           100.00%
+*     0+    0                       205207.0000        0.0000           100.00%
+*     0+    0                       166246.0000        0.0000           100.00%
+*     0+    0                       118997.0000        0.0000           100.00%
+      0     0    27950.5000    39   118997.0000    27950.5000      413   76.51%
+*     0+    0                        32714.0000    27950.5000            14.56%
+*     0+    0                        28017.0000    27950.5000             0.24%
+      0     0        cutoff          28017.0000    28017.0000      415    0.00%
+Elapsed time = 0.19 sec. (124.13 ticks, tree = 0.01 MB, solutions = 6)
+
+Implied bound cuts applied:  4
+Zero-half cuts applied:  2
+
+Root node processing (before b&c):
+  Real time             =    0.19 sec. (124.40 ticks)
+Parallel b&c, 14 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.19 sec. (124.40 ticks)
+Status: Optimal
+Obj: 28017
+
+Instalacoes abertas:
+Instalação 4 aberta
+Instalação 8 aberta
+Instalação 9 aberta
+Instalação 11 aberta
+Instalação 21 aberta
+Instalação 41 aberta
+Instalação 44 aberta
+Instalação 59 aberta
+Instalação 64 aberta
+Instalação 72 aberta
+Instalação 76 aberta
+Instalação 83 aberta
+Instalação 84 aberta
+
+Atribuições (cliente -> instalação):
+Cliente 0 -> Instalação 59
+Cliente 1 -> Instalação 9
+Cliente 2 -> Instalação 64
+Cliente 3 -> Instalação 72
+Cliente 4 -> Instalação 8
+Cliente 5 -> Instalação 8
+Cliente 6 -> Instalação 4
+Cliente 7 -> Instalação 44
+Cliente 8 -> Instalação 64
+Cliente 9 -> Instalação 83
+Cliente 10 -> Instalação 64
+Cliente 11 -> Instalação 11
+Cliente 12 -> Instalação 21
+Cliente 13 -> Instalação 83
+Cliente 14 -> Instalação 44
+Cliente 15 -> Instalação 41
+Cliente 16 -> Instalação 21
+Cliente 17 -> Instalação 9
+Cliente 18 -> Instalação 21
+Cliente 19 -> Instalação 72
+Cliente 20 -> Instalação 83
+Cliente 21 -> Instalação 76
+Cliente 22 -> Instalação 59
+Cliente 23 -> Instalação 72
+Cliente 24 -> Instalação 4
+Cliente 25 -> Instalação 41
+Cliente 26 -> Instalação 72
+Cliente 27 -> Instalação 21
+Cliente 28 -> Instalação 8
+Cliente 29 -> Instalação 84
+Cliente 30 -> Instalação 64
+Cliente 31 -> Instalação 76
+Cliente 32 -> Instalação 21
+Cliente 33 -> Instalação 64
+Cliente 34 -> Instalação 59
+Cliente 35 -> Instalação 8
+Cliente 36 -> Instalação 21
+Cliente 37 -> Instalação 8
+Cliente 38 -> Instalação 64
+Cliente 39 -> Instalação 9
+Cliente 40 -> Instalação 11
+Cliente 41 -> Instalação 11
+Cliente 42 -> Instalação 4
+Cliente 43 -> Instalação 9
+Cliente 44 -> Instalação 83
+Cliente 45 -> Instalação 83
+Cliente 46 -> Instalação 84
+Cliente 47 -> Instalação 84
+Cliente 48 -> Instalação 4
+Cliente 49 -> Instalação 11

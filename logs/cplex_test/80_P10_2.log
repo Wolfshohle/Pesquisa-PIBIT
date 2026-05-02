@@ -1,0 +1,147 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_TimeLimit                               600
+Tried aggregator 1 time.
+Reduced MIP has 14850 rows, 3177 columns, and 44310 nonzeros.
+Reduced MIP has 3177 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.03 sec. (27.03 ticks)
+Found incumbent of value 1746477.000000 after 0.05 sec. (33.12 ticks)
+Probing time = 0.01 sec. (4.50 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 14850 rows, 3177 columns, and 44310 nonzeros.
+Reduced MIP has 3177 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.03 sec. (31.77 ticks)
+Probing time = 0.01 sec. (4.50 ticks)
+Clique table members: 2880.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 14 threads.
+Root relaxation solution time = 0.04 sec. (33.18 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                      1746477.0000        0.0000           100.00%
+*     0+    0                      1620920.0000        0.0000           100.00%
+*     0+    0                       129339.0000        0.0000           100.00%
+*     0+    0                       113889.0000        0.0000           100.00%
+*     0+    0                       104564.0000        0.0000           100.00%
+      0     0    58867.0000   148   104564.0000    58867.0000      353   43.70%
+*     0+    0                        69732.0000    58867.0000            15.58%
+      0     0    62887.0000   112    69732.0000      Cuts: 94      560    9.82%
+*     0     0      integral     0    63651.0000      Cuts: 30      635    0.00%
+      0     0        cutoff          63651.0000    63651.0000      635    0.00%
+Elapsed time = 0.39 sec. (293.76 ticks, tree = 0.01 MB, solutions = 7)
+
+Implied bound cuts applied:  76
+Zero-half cuts applied:  8
+Lift and project cuts applied:  1
+Gomory fractional cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    0.39 sec. (294.22 ticks)
+Parallel b&c, 14 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.39 sec. (294.22 ticks)
+Status: Optimal
+Obj: 63651
+
+Instalacoes abertas:
+Instalação 1 aberta
+Instalação 3 aberta
+Instalação 4 aberta
+Instalação 5 aberta
+Instalação 8 aberta
+Instalação 12 aberta
+Instalação 13 aberta
+Instalação 18 aberta
+Instalação 19 aberta
+Instalação 24 aberta
+Instalação 25 aberta
+Instalação 28 aberta
+Instalação 30 aberta
+
+Atribuições (cliente -> instalação):
+Cliente 0 -> Instalação 30
+Cliente 1 -> Instalação 1
+Cliente 2 -> Instalação 24
+Cliente 3 -> Instalação 25
+Cliente 4 -> Instalação 18
+Cliente 5 -> Instalação 12
+Cliente 6 -> Instalação 28
+Cliente 7 -> Instalação 5
+Cliente 8 -> Instalação 1
+Cliente 9 -> Instalação 18
+Cliente 10 -> Instalação 5
+Cliente 11 -> Instalação 28
+Cliente 12 -> Instalação 25
+Cliente 13 -> Instalação 5
+Cliente 14 -> Instalação 18
+Cliente 15 -> Instalação 4
+Cliente 16 -> Instalação 25
+Cliente 17 -> Instalação 28
+Cliente 18 -> Instalação 3
+Cliente 19 -> Instalação 28
+Cliente 20 -> Instalação 13
+Cliente 21 -> Instalação 5
+Cliente 22 -> Instalação 30
+Cliente 23 -> Instalação 13
+Cliente 24 -> Instalação 18
+Cliente 25 -> Instalação 19
+Cliente 26 -> Instalação 3
+Cliente 27 -> Instalação 5
+Cliente 28 -> Instalação 1
+Cliente 29 -> Instalação 24
+Cliente 30 -> Instalação 18
+Cliente 31 -> Instalação 24
+Cliente 32 -> Instalação 1
+Cliente 33 -> Instalação 28
+Cliente 34 -> Instalação 24
+Cliente 35 -> Instalação 30
+Cliente 36 -> Instalação 19
+Cliente 37 -> Instalação 18
+Cliente 38 -> Instalação 4
+Cliente 39 -> Instalação 5
+Cliente 40 -> Instalação 12
+Cliente 41 -> Instalação 18
+Cliente 42 -> Instalação 8
+Cliente 43 -> Instalação 3
+Cliente 44 -> Instalação 8
+Cliente 45 -> Instalação 3
+Cliente 46 -> Instalação 1
+Cliente 47 -> Instalação 25
+Cliente 48 -> Instalação 1
+Cliente 49 -> Instalação 24
+Cliente 50 -> Instalação 30
+Cliente 51 -> Instalação 25
+Cliente 52 -> Instalação 8
+Cliente 53 -> Instalação 25
+Cliente 54 -> Instalação 25
+Cliente 55 -> Instalação 5
+Cliente 56 -> Instalação 18
+Cliente 57 -> Instalação 12
+Cliente 58 -> Instalação 30
+Cliente 59 -> Instalação 19
+Cliente 60 -> Instalação 8
+Cliente 61 -> Instalação 4
+Cliente 62 -> Instalação 4
+Cliente 63 -> Instalação 30
+Cliente 64 -> Instalação 19
+Cliente 65 -> Instalação 18
+Cliente 66 -> Instalação 12
+Cliente 67 -> Instalação 4
+Cliente 68 -> Instalação 25
+Cliente 69 -> Instalação 19
+Cliente 70 -> Instalação 3
+Cliente 71 -> Instalação 18
+Cliente 72 -> Instalação 12
+Cliente 73 -> Instalação 13
+Cliente 74 -> Instalação 24
+Cliente 75 -> Instalação 13
+Cliente 76 -> Instalação 8
+Cliente 77 -> Instalação 5
+Cliente 78 -> Instalação 28
+Cliente 79 -> Instalação 3

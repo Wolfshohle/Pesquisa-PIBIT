@@ -1,0 +1,278 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_TimeLimit                               600
+Tried aggregator 1 time.
+Reduced MIP has 113480 rows, 5995 columns, and 340200 nonzeros.
+Reduced MIP has 5995 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.33 sec. (145.25 ticks)
+Found incumbent of value 1.2343934e+07 after 0.43 sec. (187.18 ticks)
+Probing time = 0.29 sec. (12.13 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 113480 rows, 5995 columns, and 340200 nonzeros.
+Reduced MIP has 5995 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.37 sec. (178.68 ticks)
+Probing time = 0.31 sec. (12.13 ticks)
+Clique table members: 2880.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 14 threads.
+Root relaxation solution time = 0.51 sec. (193.63 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                       1.23439e+07        0.0000           100.00%
+*     0+    0                       1.22184e+07        0.0000           100.00%
+*     0+    0                       619687.0000        0.0000           100.00%
+*     0+    0                       608927.0000        0.0000           100.00%
+      0     0    60038.5000   179   608927.0000    60038.5000      411   90.14%
+      0     0    72982.5917   301   608927.0000     Cuts: 896     1425   88.01%
+      0     0    81272.0749   335   608927.0000     Cuts: 739     2849   86.65%
+      0     0    86757.7422   320   608927.0000     Cuts: 769     3428   85.75%
+*     0+    0                       477534.0000    86757.7422            81.83%
+      0     0  -1.00000e+75     0   477534.0000    86757.7422     3428   81.83%
+      0     0    90538.1453   337   477534.0000     Cuts: 659     3924   81.04%
+      0     0    94047.4354   328   477534.0000     Cuts: 636     4539   80.31%
+Detecting symmetries...
+      0     0    96795.0521   392   477534.0000     Cuts: 519     5453   79.73%
+      0     0    98638.3836   407   477534.0000     Cuts: 496     5958   79.34%
+      0     0   100927.9997   374   477534.0000     Cuts: 563     6631   78.86%
+      0     0   102866.9707   418   477534.0000     Cuts: 447     7307   78.46%
+      0     0   104430.0808   408   477534.0000     Cuts: 416     7832   78.13%
+*     0+    0                       383827.0000   104430.0808            72.79%
+      0     0   106076.4938   409   383827.0000     Cuts: 600     8605   72.36%
+      0     0   107306.9932   408   383827.0000     Cuts: 401     9166   72.04%
+*     0+    0                       281589.0000   107306.9932            61.89%
+      0     0   108305.4768   385   281589.0000     Cuts: 389     9802   61.54%
+      0     0   109314.1084   362   281589.0000     Cuts: 348    10314   61.18%
+      0     0   110101.3795   401   281589.0000     Cuts: 426    10900   60.90%
+*     0+    0                       273547.0000   110101.3795            59.75%
+      0     0   110899.7965   392   273547.0000     Cuts: 243    11531   59.46%
+      0     0   111744.9882   428   273547.0000     Cuts: 467    12224   59.15%
+      0     0   112477.6207   431   273547.0000     Cuts: 295    12748   58.88%
+      0     0   113113.3495   459   273547.0000     Cuts: 211    13298   58.65%
+*     0+    0                       266225.0000   113113.3495            57.51%
+      0     0   113714.2515   394   266225.0000     Cuts: 389    13873   57.29%
+      0     0   114341.3649   416   266225.0000     Cuts: 369    14496   57.05%
+      0     0   115036.2276   412   266225.0000     Cuts: 301    15107   56.79%
+      0     0   115642.6725   413   266225.0000     Cuts: 275    15604   56.56%
+      0     0   116129.6443   416   266225.0000     Cuts: 296    16199   56.38%
+*     0+    0                       254651.0000   116129.6443            54.40%
+      0     0   116584.9371   418   254651.0000     Cuts: 321    16758   54.22%
+      0     0   117025.1487   445   254651.0000     Cuts: 259    17415   54.04%
+*     0+    0                       248586.0000   117025.1487            52.92%
+      0     0   117420.5575   427   248586.0000     Cuts: 243    17912   52.76%
+      0     0   117854.9758   455   248586.0000     Cuts: 276    18519   52.59%
+      0     0   118168.2300   458   248586.0000     Cuts: 376    19091   52.46%
+      0     0   118465.1380   469   248586.0000     Cuts: 225    19621   52.34%
+      0     0   118792.8362   485   248586.0000     Cuts: 335    20241   52.21%
+      0     0   118974.1469   452   248586.0000     Cuts: 339    20724   52.14%
+      0     0   119195.2200   480   248586.0000     Cuts: 351    21179   52.05%
+      0     0   119462.0532   429   248586.0000     Cuts: 223    21722   51.94%
+      0     0   119678.0385   429   248586.0000     Cuts: 300    22185   51.86%
+      0     0   119965.5904   456   248586.0000     Cuts: 235    22764   51.74%
+      0     0   120197.7504   433   248586.0000     Cuts: 320    23300   51.65%
+      0     0   120365.8250   461   248586.0000     Cuts: 210    23798   51.58%
+      0     0   120602.4631   445   248586.0000     Cuts: 310    24314   51.48%
+      0     0   120845.0908   434   248586.0000     Cuts: 211    24812   51.39%
+      0     0   121107.0663   438   248586.0000     Cuts: 262    25412   51.28%
+      0     0   121352.1345   483   248586.0000     Cuts: 223    25942   51.18%
+      0     0   121613.2676   480   248586.0000     Cuts: 193    26544   51.08%
+      0     0   121846.3726   487   248586.0000     Cuts: 348    27019   50.98%
+      0     0   122047.5346   495   248586.0000     Cuts: 210    27614   50.90%
+      0     0   122203.9667   524   248586.0000     Cuts: 172    28105   50.84%
+      0     0   122393.4406   496   248586.0000     Cuts: 226    28664   50.76%
+      0     0   122564.0923   470   248586.0000     Cuts: 175    29144   50.70%
+      0     0   122791.8043   472   248586.0000     Cuts: 244    29734   50.60%
+      0     0   122999.1699   472   248586.0000     Cuts: 171    30257   50.52%
+      0     0   123152.9700   477   248586.0000     Cuts: 180    30671   50.46%
+      0     0   123251.3208   474   248586.0000     Cuts: 151    30994   50.42%
+      0     0   123365.0981   494   248586.0000     Cuts: 180    31401   50.37%
+      0     0   123480.4132   479   248586.0000     Cuts: 125    31753   50.33%
+      0     0   123586.2763   497   248586.0000     Cuts: 240    32086   50.28%
+      0     0   123690.7530   472   248586.0000     Cuts: 115    32521   50.24%
+      0     0   123809.9338   523   248586.0000     Cuts: 155    32961   50.19%
+      0     0   123929.6457   548   248586.0000     Cuts: 164    33404   50.15%
+      0     0   124064.2599   496   248586.0000     Cuts: 266    33890   50.09%
+      0     0   124205.0557   498   248586.0000     Cuts: 171    34327   50.04%
+      0     0   124363.1857   505   248586.0000     Cuts: 311    34884   49.97%
+      0     0   124484.6157   482   248586.0000     Cuts: 101    35332   49.92%
+*     0+    0                       244609.0000   124484.6157            49.11%
+      0     0   124589.1946   503   244609.0000     Cuts: 181    35775   49.07%
+      0     0   124743.7028   504   244609.0000     Cuts: 168    36274   49.00%
+      0     0   124883.7179   508   244609.0000     Cuts: 232    36770   48.95%
+      0     0   125000.2083   475   244609.0000     Cuts: 153    37226   48.90%
+      0     0   125105.3867   503   244609.0000     Cuts: 131    37585   48.85%
+      0     0   125235.2142   504   244609.0000     Cuts: 205    38116   48.80%
+      0     0   125328.3806   490   244609.0000     Cuts: 123    38581   48.76%
+      0     0   125410.3683   519   244609.0000     Cuts: 154    38967   48.73%
+      0     0   125519.7130   503   244609.0000     Cuts: 227    39483   48.69%
+      0     0   125597.6283   496   244609.0000     Cuts: 110    39946   48.65%
+Heuristic still looking.
+*     0+    0                       242936.0000   125597.6283            48.30%
+*     0+    0                       242823.0000   125597.6283            48.28%
+      0     0  -1.00000e+75     0   242823.0000   125597.6283    39946   48.28%
+Detecting symmetries...
+      0     2   125597.6283   496   242823.0000   125597.6283    39946   48.28%
+Elapsed time = 309.49 sec. (192086.68 ticks, tree = 0.02 MB, solutions = 14)
+      1     3   125612.9616   479   242823.0000   125598.3096    40251   48.28%
+      3     4   125617.3951   475   242823.0000   125598.3096    40453   48.28%
+      5     7   125629.4390   483   242823.0000   125610.4963    41160   48.27%
+      7     4   126143.8173   437   242823.0000   125610.4963    41295   48.27%
+      9     9   125675.0611   445   242823.0000   125610.4963    41884   48.27%
+     12    12   125692.0228   445   242823.0000   125610.4963    43486   48.27%
+     15    13   125669.7491   475   242823.0000   125610.4963    43861   48.27%
+     20    21   125711.0142   457   242823.0000   125621.8502    47563   48.27%
+     23     7   126139.4905   477   242823.0000   125621.8502    41974   48.27%
+     38    25   126182.8751   454   242823.0000   125643.4580    49871   48.26%
+Elapsed time = 361.89 sec. (197204.85 ticks, tree = 0.06 MB, solutions = 14)
+     49    32   127836.0515   449   242823.0000   125643.4580    54169   48.26%
+     58    36   128387.3372   450   242823.0000   125643.4580    56806   48.26%
+     71    45   126604.7009   441   242823.0000   125643.4580    59985   48.26%
+     80    59   129302.4245   407   242823.0000   125643.4580    68534   48.26%
+     92    82   126509.0707   479   242823.0000   125643.4580    82373   48.26%
+    103    90   128859.0642   423   242823.0000   125643.4580    87353   48.26%
+    109    98   130607.5873   438   242823.0000   125643.4580    91239   48.26%
+    121   112   127153.6760   399   242823.0000   125643.4580   100574   48.26%
+    131   124   131303.9048   427   242823.0000   125643.4580   107210   48.26%
+    141   123   129335.5107   390   242823.0000   125643.4580   106606   48.26%
+Elapsed time = 533.73 sec. (207444.82 ticks, tree = 0.96 MB, solutions = 14)
+    155   143   127905.7224   433   242823.0000   125643.4580   118450   48.26%
+Starting limited solution polishing.
+    164   137   130897.0669   422   242823.0000   125643.4580   114864   48.26%
+    174   151   134170.2164   359   242823.0000   125643.4580   120903   48.26%
+*   178+   13                       241695.0000   125643.4580            48.02%
+    182    15   127881.1940   401   241695.0000   125643.4580    45393   48.02%
+    191   164   128851.5636   413   241695.0000   125643.4580   127160   48.02%
+    194   144   129458.0764   407   241695.0000   125643.4580   118735   48.02%
+
+Implied bound cuts applied:  568
+Zero-half cuts applied:  1123
+
+Root node processing (before b&c):
+  Real time             =  309.07 sec. (191934.92 ticks)
+Parallel b&c, 14 threads:
+  Real time             =  291.08 sec. (35772.94 ticks)
+  Sync time (average)   =   50.84 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =  600.15 sec. (227707.86 ticks)
+Status: Feasible
+Obj: 241695
+
+Instalacoes abertas:
+Instalação 0 aberta
+Instalação 1 aberta
+Instalação 2 aberta
+Instalação 3 aberta
+Instalação 4 aberta
+Instalação 5 aberta
+Instalação 7 aberta
+Instalação 8 aberta
+Instalação 9 aberta
+Instalação 10 aberta
+Instalação 11 aberta
+Instalação 12 aberta
+Instalação 13 aberta
+Instalação 14 aberta
+Instalação 15 aberta
+Instalação 16 aberta
+Instalação 17 aberta
+Instalação 18 aberta
+Instalação 19 aberta
+Instalação 20 aberta
+Instalação 21 aberta
+Instalação 22 aberta
+Instalação 23 aberta
+Instalação 24 aberta
+Instalação 25 aberta
+Instalação 26 aberta
+Instalação 27 aberta
+Instalação 28 aberta
+Instalação 29 aberta
+Instalação 30 aberta
+Instalação 31 aberta
+Instalação 32 aberta
+Instalação 33 aberta
+
+Atribuições (cliente -> instalação):
+Cliente 0 -> Instalação 30
+Cliente 1 -> Instalação 23
+Cliente 2 -> Instalação 2
+Cliente 3 -> Instalação 7
+Cliente 4 -> Instalação 8
+Cliente 5 -> Instalação 12
+Cliente 6 -> Instalação 21
+Cliente 7 -> Instalação 10
+Cliente 8 -> Instalação 15
+Cliente 9 -> Instalação 18
+Cliente 10 -> Instalação 27
+Cliente 11 -> Instalação 28
+Cliente 12 -> Instalação 16
+Cliente 13 -> Instalação 24
+Cliente 14 -> Instalação 16
+Cliente 15 -> Instalação 9
+Cliente 16 -> Instalação 32
+Cliente 17 -> Instalação 28
+Cliente 18 -> Instalação 3
+Cliente 19 -> Instalação 15
+Cliente 20 -> Instalação 2
+Cliente 21 -> Instalação 26
+Cliente 22 -> Instalação 30
+Cliente 23 -> Instalação 33
+Cliente 24 -> Instalação 27
+Cliente 25 -> Instalação 20
+Cliente 26 -> Instalação 22
+Cliente 27 -> Instalação 5
+Cliente 28 -> Instalação 0
+Cliente 29 -> Instalação 24
+Cliente 30 -> Instalação 18
+Cliente 31 -> Instalação 4
+Cliente 32 -> Instalação 10
+Cliente 33 -> Instalação 14
+Cliente 34 -> Instalação 26
+Cliente 35 -> Instalação 24
+Cliente 36 -> Instalação 21
+Cliente 37 -> Instalação 7
+Cliente 38 -> Instalação 7
+Cliente 39 -> Instalação 23
+Cliente 40 -> Instalação 25
+Cliente 41 -> Instalação 32
+Cliente 42 -> Instalação 8
+Cliente 43 -> Instalação 25
+Cliente 44 -> Instalação 8
+Cliente 45 -> Instalação 20
+Cliente 46 -> Instalação 29
+Cliente 47 -> Instalação 3
+Cliente 48 -> Instalação 21
+Cliente 49 -> Instalação 9
+Cliente 50 -> Instalação 22
+Cliente 51 -> Instalação 14
+Cliente 52 -> Instalação 15
+Cliente 53 -> Instalação 1
+Cliente 54 -> Instalação 29
+Cliente 55 -> Instalação 33
+Cliente 56 -> Instalação 0
+Cliente 57 -> Instalação 13
+Cliente 58 -> Instalação 11
+Cliente 59 -> Instalação 4
+Cliente 60 -> Instalação 9
+Cliente 61 -> Instalação 5
+Cliente 62 -> Instalação 4
+Cliente 63 -> Instalação 19
+Cliente 64 -> Instalação 11
+Cliente 65 -> Instalação 17
+Cliente 66 -> Instalação 30
+Cliente 67 -> Instalação 20
+Cliente 68 -> Instalação 13
+Cliente 69 -> Instalação 19
+Cliente 70 -> Instalação 3
+Cliente 71 -> Instalação 5
+Cliente 72 -> Instalação 12
+Cliente 73 -> Instalação 25
+Cliente 74 -> Instalação 22
+Cliente 75 -> Instalação 31
+Cliente 76 -> Instalação 14
+Cliente 77 -> Instalação 17
+Cliente 78 -> Instalação 1
+Cliente 79 -> Instalação 31

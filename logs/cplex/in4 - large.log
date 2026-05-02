@@ -1,0 +1,158 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 1 time.
+Reduced MIP has 10531 rows, 6678 columns, and 31320 nonzeros.
+Reduced MIP has 6678 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.04 sec. (33.76 ticks)
+Found incumbent of value 800904.000000 after 0.06 sec. (39.21 ticks)
+Probing time = 0.03 sec. (4.88 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 10531 rows, 6678 columns, and 31320 nonzeros.
+Reduced MIP has 6678 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.04 sec. (38.13 ticks)
+Probing time = 0.02 sec. (4.88 ticks)
+Clique table members: 6643.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 14 threads.
+Root relaxation solution time = 0.07 sec. (39.37 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                       800904.0000        0.0000           100.00%
+*     0+    0                       325938.0000        0.0000           100.00%
+*     0+    0                       317299.0000        0.0000           100.00%
+*     0+    0                       176023.0000        0.0000           100.00%
+*     0+    0                       121141.0000        0.0000           100.00%
+*     0+    0                       119654.0000        0.0000           100.00%
+      0     0    48969.6667   178   119654.0000    48969.6667      666   59.07%
+*     0+    0                        54683.0000    48969.6667            10.45%
+*     0+    0                        49839.0000    48969.6667             1.74%
+
+Implied bound cuts applied:  6
+Zero-half cuts applied:  2
+Lift and project cuts applied:  1
+Gomory fractional cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    0.47 sec. (264.13 ticks)
+Parallel b&c, 14 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.47 sec. (264.13 ticks)
+Status: Optimal
+Obj: 49839
+
+Instalacoes abertas:
+Instalação 1 aberta
+Instalação 4 aberta
+Instalação 14 aberta
+Instalação 18 aberta
+Instalação 20 aberta
+Instalação 21 aberta
+Instalação 22 aberta
+Instalação 30 aberta
+Instalação 34 aberta
+Instalação 35 aberta
+Instalação 39 aberta
+Instalação 44 aberta
+Instalação 50 aberta
+Instalação 53 aberta
+Instalação 59 aberta
+Instalação 63 aberta
+
+Atribuições (cliente -> instalação):
+Cliente 0 -> Instalação 44
+Cliente 1 -> Instalação 20
+Cliente 2 -> Instalação 4
+Cliente 3 -> Instalação 53
+Cliente 4 -> Instalação 53
+Cliente 5 -> Instalação 63
+Cliente 6 -> Instalação 44
+Cliente 7 -> Instalação 35
+Cliente 8 -> Instalação 50
+Cliente 9 -> Instalação 30
+Cliente 10 -> Instalação 35
+Cliente 11 -> Instalação 14
+Cliente 12 -> Instalação 1
+Cliente 13 -> Instalação 50
+Cliente 14 -> Instalação 1
+Cliente 15 -> Instalação 4
+Cliente 16 -> Instalação 35
+Cliente 17 -> Instalação 21
+Cliente 18 -> Instalação 22
+Cliente 19 -> Instalação 30
+Cliente 20 -> Instalação 21
+Cliente 21 -> Instalação 53
+Cliente 22 -> Instalação 1
+Cliente 23 -> Instalação 34
+Cliente 24 -> Instalação 21
+Cliente 25 -> Instalação 34
+Cliente 26 -> Instalação 18
+Cliente 27 -> Instalação 39
+Cliente 28 -> Instalação 59
+Cliente 29 -> Instalação 1
+Cliente 30 -> Instalação 21
+Cliente 31 -> Instalação 30
+Cliente 32 -> Instalação 63
+Cliente 33 -> Instalação 20
+Cliente 34 -> Instalação 18
+Cliente 35 -> Instalação 20
+Cliente 36 -> Instalação 14
+Cliente 37 -> Instalação 63
+Cliente 38 -> Instalação 59
+Cliente 39 -> Instalação 1
+Cliente 40 -> Instalação 35
+Cliente 41 -> Instalação 63
+Cliente 42 -> Instalação 63
+Cliente 43 -> Instalação 34
+Cliente 44 -> Instalação 20
+Cliente 45 -> Instalação 39
+Cliente 46 -> Instalação 59
+Cliente 47 -> Instalação 44
+Cliente 48 -> Instalação 35
+Cliente 49 -> Instalação 34
+Cliente 50 -> Instalação 53
+Cliente 51 -> Instalação 63
+Cliente 52 -> Instalação 22
+Cliente 53 -> Instalação 14
+Cliente 54 -> Instalação 39
+Cliente 55 -> Instalação 53
+Cliente 56 -> Instalação 39
+Cliente 57 -> Instalação 44
+Cliente 58 -> Instalação 30
+Cliente 59 -> Instalação 30
+Cliente 60 -> Instalação 20
+Cliente 61 -> Instalação 18
+Cliente 62 -> Instalação 18
+Cliente 63 -> Instalação 4
+Cliente 64 -> Instalação 44
+Cliente 65 -> Instalação 22
+Cliente 66 -> Instalação 50
+Cliente 67 -> Instalação 59
+Cliente 68 -> Instalação 53
+Cliente 69 -> Instalação 34
+Cliente 70 -> Instalação 39
+Cliente 71 -> Instalação 35
+Cliente 72 -> Instalação 35
+Cliente 73 -> Instalação 39
+Cliente 74 -> Instalação 1
+Cliente 75 -> Instalação 22
+Cliente 76 -> Instalação 34
+Cliente 77 -> Instalação 39
+Cliente 78 -> Instalação 35
+Cliente 79 -> Instalação 4
+Cliente 80 -> Instalação 14
+Cliente 81 -> Instalação 30
+Cliente 82 -> Instalação 53
+Cliente 83 -> Instalação 1
+Cliente 84 -> Instalação 59
+Cliente 85 -> Instalação 35
+Cliente 86 -> Instalação 34
+Cliente 87 -> Instalação 20
+Cliente 88 -> Instalação 34
+Cliente 89 -> Instalação 21
+Cliente 90 -> Instalação 50

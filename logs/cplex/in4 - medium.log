@@ -1,0 +1,75 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 1 time.
+Reduced MIP has 2093 rows, 1126 columns, and 6210 nonzeros.
+Reduced MIP has 1126 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (4.42 ticks)
+Found incumbent of value 330916.000000 after 0.03 sec. (5.45 ticks)
+Probing time = 0.00 sec. (2.91 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 2093 rows, 1126 columns, and 6210 nonzeros.
+Reduced MIP has 1126 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (5.19 ticks)
+Probing time = 0.00 sec. (2.91 ticks)
+Clique table members: 1081.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 14 threads.
+Root relaxation solution time = 0.01 sec. (2.45 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                       330916.0000        0.0000           100.00%
+*     0+    0                       118729.0000        0.0000           100.00%
+*     0+    0                        67048.0000        0.0000           100.00%
+*     0+    0                        55511.0000        0.0000           100.00%
+*     0     0      integral     0    18069.0000    18069.0000      110    0.00%
+Elapsed time = 0.09 sec. (21.92 ticks, tree = 0.00 MB, solutions = 5)
+
+Root node processing (before b&c):
+  Real time             =    0.09 sec. (21.99 ticks)
+Parallel b&c, 14 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.09 sec. (21.99 ticks)
+Status: Optimal
+Obj: 18069
+
+Instalacoes abertas:
+Instalação 8 aberta
+Instalação 15 aberta
+Instalação 21 aberta
+Instalação 23 aberta
+Instalação 28 aberta
+Instalação 30 aberta
+Instalação 31 aberta
+Instalação 32 aberta
+Instalação 43 aberta
+
+Atribuições (cliente -> instalação):
+Cliente 0 -> Instalação 32
+Cliente 1 -> Instalação 21
+Cliente 2 -> Instalação 43
+Cliente 3 -> Instalação 43
+Cliente 4 -> Instalação 15
+Cliente 5 -> Instalação 8
+Cliente 6 -> Instalação 23
+Cliente 7 -> Instalação 15
+Cliente 8 -> Instalação 28
+Cliente 9 -> Instalação 31
+Cliente 10 -> Instalação 30
+Cliente 11 -> Instalação 8
+Cliente 12 -> Instalação 21
+Cliente 13 -> Instalação 8
+Cliente 14 -> Instalação 21
+Cliente 15 -> Instalação 43
+Cliente 16 -> Instalação 32
+Cliente 17 -> Instalação 21
+Cliente 18 -> Instalação 31
+Cliente 19 -> Instalação 15
+Cliente 20 -> Instalação 31
+Cliente 21 -> Instalação 15
+Cliente 22 -> Instalação 28

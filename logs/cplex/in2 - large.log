@@ -1,0 +1,133 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 1 time.
+Reduced MIP has 7328 rows, 3845 columns, and 21756 nonzeros.
+Reduced MIP has 3845 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.04 sec. (19.56 ticks)
+Found incumbent of value 743466.000000 after 0.07 sec. (23.14 ticks)
+Probing time = 0.02 sec. (3.92 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 7328 rows, 3845 columns, and 21756 nonzeros.
+Reduced MIP has 3845 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.03 sec. (22.39 ticks)
+Probing time = 0.01 sec. (3.92 ticks)
+Clique table members: 3800.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 14 threads.
+Root relaxation solution time = 0.02 sec. (12.48 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                       743466.0000        0.0000           100.00%
+*     0+    0                       317340.0000        0.0000           100.00%
+*     0+    0                       101040.0000        0.0000           100.00%
+*     0+    0                        78486.0000        0.0000           100.00%
+*     0     0      integral     0    44369.0000    44369.0000      325    0.00%
+Elapsed time = 0.20 sec. (77.46 ticks, tree = 0.00 MB, solutions = 5)
+
+Root node processing (before b&c):
+  Real time             =    0.20 sec. (77.71 ticks)
+Parallel b&c, 14 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.20 sec. (77.71 ticks)
+Status: Optimal
+Obj: 44369
+
+Instalacoes abertas:
+Instalação 1 aberta
+Instalação 2 aberta
+Instalação 7 aberta
+Instalação 13 aberta
+Instalação 25 aberta
+Instalação 27 aberta
+Instalação 29 aberta
+Instalação 35 aberta
+Instalação 36 aberta
+Instalação 37 aberta
+Instalação 38 aberta
+Instalação 40 aberta
+Instalação 43 aberta
+Instalação 45 aberta
+
+Atribuições (cliente -> instalação):
+Cliente 0 -> Instalação 45
+Cliente 1 -> Instalação 40
+Cliente 2 -> Instalação 1
+Cliente 3 -> Instalação 29
+Cliente 4 -> Instalação 29
+Cliente 5 -> Instalação 35
+Cliente 6 -> Instalação 27
+Cliente 7 -> Instalação 27
+Cliente 8 -> Instalação 27
+Cliente 9 -> Instalação 38
+Cliente 10 -> Instalação 7
+Cliente 11 -> Instalação 37
+Cliente 12 -> Instalação 35
+Cliente 13 -> Instalação 25
+Cliente 14 -> Instalação 1
+Cliente 15 -> Instalação 29
+Cliente 16 -> Instalação 29
+Cliente 17 -> Instalação 29
+Cliente 18 -> Instalação 13
+Cliente 19 -> Instalação 40
+Cliente 20 -> Instalação 40
+Cliente 21 -> Instalação 2
+Cliente 22 -> Instalação 37
+Cliente 23 -> Instalação 29
+Cliente 24 -> Instalação 43
+Cliente 25 -> Instalação 35
+Cliente 26 -> Instalação 1
+Cliente 27 -> Instalação 13
+Cliente 28 -> Instalação 2
+Cliente 29 -> Instalação 7
+Cliente 30 -> Instalação 7
+Cliente 31 -> Instalação 27
+Cliente 32 -> Instalação 13
+Cliente 33 -> Instalação 1
+Cliente 34 -> Instalação 37
+Cliente 35 -> Instalação 7
+Cliente 36 -> Instalação 45
+Cliente 37 -> Instalação 37
+Cliente 38 -> Instalação 36
+Cliente 39 -> Instalação 2
+Cliente 40 -> Instalação 45
+Cliente 41 -> Instalação 13
+Cliente 42 -> Instalação 29
+Cliente 43 -> Instalação 43
+Cliente 44 -> Instalação 43
+Cliente 45 -> Instalação 40
+Cliente 46 -> Instalação 43
+Cliente 47 -> Instalação 38
+Cliente 48 -> Instalação 25
+Cliente 49 -> Instalação 1
+Cliente 50 -> Instalação 37
+Cliente 51 -> Instalação 7
+Cliente 52 -> Instalação 43
+Cliente 53 -> Instalação 40
+Cliente 54 -> Instalação 45
+Cliente 55 -> Instalação 2
+Cliente 56 -> Instalação 2
+Cliente 57 -> Instalação 35
+Cliente 58 -> Instalação 7
+Cliente 59 -> Instalação 35
+Cliente 60 -> Instalação 29
+Cliente 61 -> Instalação 2
+Cliente 62 -> Instalação 13
+Cliente 63 -> Instalação 45
+Cliente 64 -> Instalação 38
+Cliente 65 -> Instalação 37
+Cliente 66 -> Instalação 36
+Cliente 67 -> Instalação 7
+Cliente 68 -> Instalação 2
+Cliente 69 -> Instalação 25
+Cliente 70 -> Instalação 25
+Cliente 71 -> Instalação 13
+Cliente 72 -> Instalação 45
+Cliente 73 -> Instalação 36
+Cliente 74 -> Instalação 37
+Cliente 75 -> Instalação 7
