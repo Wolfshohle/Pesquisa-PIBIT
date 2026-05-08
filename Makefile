@@ -53,7 +53,7 @@ execute2: $(BIN)
 	tempo=180;\
 	pertubacao=5; \
 	seed=24; \
-	./$(BIN) -T $$tempo -s $$seed -P $$pertubacao "Data/raw/80_P40_10.txt"
+	./$(BIN) -T $$tempo -s $$seed -P $$pertubacao "Data/raw/80_P80_9.txt"
 
 
 
