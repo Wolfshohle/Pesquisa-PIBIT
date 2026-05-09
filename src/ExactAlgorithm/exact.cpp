@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
         // =========================================================
 
         IloCplex cplex(model);
-        cplex.setParam(IloCplex::Param::TimeLimit, 600); // Define um tempo limite de 10min para a resolução
+        cplex.setParam(IloCplex::Param::TimeLimit, 3600); // Define um tempo limite de 10min para a resolução
         cplex.exportModel("C:\\Users\\m4the\\Documents\\Pibit-Pibic\\Repositório\\src\\ExactAlgorithm\\model.lp"); // Exporta o modelo para um arquivo .lp
         cplex.solve();
 

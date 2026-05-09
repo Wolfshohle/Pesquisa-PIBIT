@@ -86,27 +86,70 @@ cplex:
 # Rodar direto
 run_cplex: cplex
 	instancias="Data/raw"; \
-	logs="logs/cplex_test"; \
+	logs="logs/exato"; \
 	mkdir -p $$logs; \
 	for i in $$instancias/*.txt; do \
 		nome=$$(basename "$$i" .txt); \
 		if [ -f "$$logs/$$nome.log" ]; then \
-			echo "Log para $$i já existe, pulando..."; \
+			echo "EXATO já rodou para $$i, pulando..."; \
 			continue; \
 		fi; \
-		echo "Processando $$i..."; \
+		echo "Rodando EXATO na instância $$i"; \
 		./$(CPLEX_BIN) "$$i" > "$$logs/$$nome.log"; \
 	done
+# ============================================================
 
-PDIG:
-	for p in 0.05 0.1 0.2 0.3 0.4 0.5 0.6; do \
-		for i in $$(seq 1 10); do \
-			echo "---------Execução $$i (p=$$p)---------"; \
-			echo "------------------------------"; \
-			./Data/examples/PDIG -p $$p;\
-			echo "------------------------------"; \
+run_heuristic: $(BIN)
+	instancias="Data/raw"; \
+	logs="logs/heuristica"; \
+	mkdir -p $$logs; \
+	tempo=30; \
+	perturbacao=5; \
+	for arquivo in $$instancias/*.txt; do \
+		nome=$$(basename "$$arquivo" .txt); \
+		for seed in $$(seq 1 10); do \
+			if [ -f "$$logs/$${nome}_seed$${seed}.log" ]; then \
+				echo "HEURÍSTICA já rodou para $$arquivo seed $$seed, pulando..."; \
+			else \
+				echo "Rodando HEURÍSTICA na instância $$arquivo com seed $$seed"; \
+				./$(BIN) -T $$tempo -s $$seed -P $$perturbacao "$$arquivo" > "$$logs/$${nome}_seed$${seed}.log"; \
+			fi; \
 		done; \
 	done
 
+
+# ============================================================
+# GERADOR DE INSTÂNCIAS PDIG
+# ============================================================
+PDIG_BIN := Data/examples/PDIG
+
+PDIG:
+	for m in 0 1; do \
+		for p in 0.05 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0; do \
+			for i in $$(seq 1 10); do \
+				echo "---------Execução $$i | mode=$$m | p=$$p ---------"; \
+				echo "------------------------------"; \
+				./$(PDIG_BIN) -p $$p -m $$m -s $$i; \
+				echo "------------------------------"; \
+			done; \
+		done; \
+	done
+# ============================================================
+
+
+build:
+	make all
+	make cplex
+
+experiment:
+	make build
+	make run_cplex
+	make run_heuristic
+	make clean
+
+
+# ============================================================
+# Limpeza
+# ============================================================
 clean:
 	rm -f $(OBJS_DIR)/*.o $(BIN) $(CPLEX_BIN)
