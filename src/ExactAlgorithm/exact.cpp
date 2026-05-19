@@ -3,6 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <iomanip>
 
 #include "../io/inputload.hpp"
 
@@ -155,6 +156,7 @@ int main(int argc, char *argv[])
         cplex.solve();
 
         cout << "Status: " << cplex.getStatus() << endl;
+        cout << fixed << setprecision(0);
         cout << "Obj: " << cplex.getObjValue() << endl; 
 
         cout << "\nInstalacoes abertas:\n";

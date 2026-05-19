@@ -37,23 +37,24 @@ $(OBJS_DIR)/%.o:
 
 # Testar mais tarde
 execute: $(BIN)
-	tempo=60; \
-	pertubacao=30; \
+	tempo=30; \
+	pertubacao=5; \
 	for i in $$(seq 1 10); do \
 		echo "---------Execução $$i---------"; \
 		echo "------------------------------"; \
-		./$(BIN) -T $$tempo -s $$i -P $$pertubacao "Data/raw/in1 - large.txt";\
+		./$(BIN) -T $$tempo -s $$i -P $$pertubacao "Data/examples/wlp18-convertida.txt" >"Data/examples/wlp18-convertida_heuristic_seed_$${i}.log";\
 		echo "------------------------------"; \
 	done
 
 
 
 # Para teste rápido
-execute2: $(BIN)
-	tempo=180;\
+run_individual_heuristic: $(BIN)
+	tempo=30;\
 	pertubacao=5; \
-	seed=24; \
-	./$(BIN) -T $$tempo -s $$seed -P $$pertubacao "Data/raw/80_P80_9.txt"
+	seed=25; \
+	archive_name="Data/examples/wlp18-convertida.txt"; \
+	./$(BIN) -T $$tempo -s $$seed -P $$pertubacao $$archive_name > "$${archive_name}_heuristic.log"
 
 
 
@@ -98,6 +99,11 @@ run_cplex: cplex
 		./$(CPLEX_BIN) "$$i" > "$$logs/$$nome.log"; \
 	done
 # ============================================================
+
+run_individual_cplex: cplex
+	archive_name="Data/examples/wlp02-convertida.txt"; \
+	echo "Rodando o exato para o arquivo"; \
+	./$(CPLEX_BIN) $$archive_name > "$${archive_name}_exact.log"
 
 run_heuristic: $(BIN)
 	instancias="Data/raw"; \
@@ -147,6 +153,11 @@ experiment:
 	make run_heuristic
 	make clean
 
+individual_experiment:
+	make build
+	make run_individual_cplex
+	execute
+	make clean
 
 # ============================================================
 # Limpeza

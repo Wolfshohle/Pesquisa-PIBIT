@@ -1,0 +1,142 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_TimeLimit                               3600
+Tried aggregator 1 time.
+MIP Presolve eliminated 50 rows and 1 columns.
+Reduced MIP has 7650 rows, 2652 columns, and 22850 nonzeros.
+Reduced MIP has 2652 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (15.25 ticks)
+Found incumbent of value 5631579.000000 after 0.02 sec. (18.66 ticks)
+Probing time = 0.01 sec. (3.82 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 7650 rows, 2652 columns, and 22850 nonzeros.
+Reduced MIP has 2652 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (17.86 ticks)
+Probing time = 0.01 sec. (3.82 ticks)
+Clique table members: 2500.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.02 sec. (12.46 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                      5631579.0000        0.0000           100.00%
+*     0+    0                      3560568.0000        0.0000           100.00%
+*     0+    0                       352743.0000        0.0000           100.00%
+*     0+    0                       208327.0000        0.0000           100.00%
+      0     0    93774.0000   100   208327.0000    93774.0000      162   54.99%
+*     0+    0                       193309.0000    93774.0000            51.49%
+      0     0   106217.5000   100   193309.0000     Cuts: 269      265   45.05%
+      0     0   118774.0000    98   193309.0000     Cuts: 269      385   38.56%
+      0     0   125327.1340   171   193309.0000  ZeroHalf: 61      652   35.17%
+*     0+    0                       147546.0000   125327.1340            15.06%
+      0     0   127247.2039   165   147546.0000  ZeroHalf: 65      773   13.76%
+*     0+    0                       144882.0000   127247.2039            12.17%
+*     0+    0                       144295.0000   127247.2039            11.81%
+      0     0  -1.00000e+75     0   144295.0000   127247.2039      773   11.81%
+Detecting symmetries...
+
+Repeating presolve.
+Tried aggregator 1 time.
+MIP Presolve eliminated 6642 rows and 2068 columns.
+MIP Presolve modified 791 coefficients.
+Reduced MIP has 1008 rows, 584 columns, and 3436 nonzeros.
+Reduced MIP has 584 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (6.44 ticks)
+Probing time = 0.00 sec. (0.69 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 1008 rows, 584 columns, and 3436 nonzeros.
+Reduced MIP has 584 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (3.75 ticks)
+Represolve time = 0.02 sec. (18.66 ticks)
+Probing time = 0.00 sec. (0.69 ticks)
+Clique table members: 885.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.02 sec. (16.98 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                       144295.0000   128043.0455            11.26%
+      0     0   139180.2500   122   144295.0000   139180.2500     1210    3.54%
+*     0+    0                       143215.0000   139180.2500             2.82%
+      0     0   141255.5818   160   143215.0000      Cuts: 74     1339    1.37%
+      0     0   141567.5000    82   143215.0000      Cuts: 77     1383    1.15%
+
+Implied bound cuts applied:  61
+Zero-half cuts applied:  44
+Gomory fractional cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    0.62 sec. (404.18 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.62 sec. (404.18 ticks)
+Status: Optimal
+Obj: 143215
+
+Instalacoes abertas:
+Instalação 4 aberta
+Instalação 9 aberta
+Instalação 20 aberta
+Instalação 22 aberta
+
+Atribuições (cliente -> instalação):
+Cliente 0 -> Instalação 9
+Cliente 1 -> Instalação 9
+Cliente 2 -> Instalação 20
+Cliente 3 -> Instalação 9
+Cliente 4 -> Instalação 4
+Cliente 5 -> Instalação 9
+Cliente 6 -> Instalação 20
+Cliente 7 -> Instalação 20
+Cliente 8 -> Instalação 20
+Cliente 9 -> Instalação 9
+Cliente 10 -> Instalação 9
+Cliente 11 -> Instalação 20
+Cliente 12 -> Instalação 4
+Cliente 13 -> Instalação 9
+Cliente 14 -> Instalação 9
+Cliente 15 -> Instalação 4
+Cliente 16 -> Instalação 9
+Cliente 17 -> Instalação 20
+Cliente 18 -> Instalação 4
+Cliente 19 -> Instalação 4
+Cliente 20 -> Instalação 20
+Cliente 21 -> Instalação 4
+Cliente 22 -> Instalação 22
+Cliente 23 -> Instalação 9
+Cliente 24 -> Instalação 9
+Cliente 25 -> Instalação 20
+Cliente 26 -> Instalação 4
+Cliente 27 -> Instalação 22
+Cliente 28 -> Instalação 20
+Cliente 29 -> Instalação 9
+Cliente 30 -> Instalação 9
+Cliente 31 -> Instalação 20
+Cliente 32 -> Instalação 20
+Cliente 33 -> Instalação 9
+Cliente 34 -> Instalação 4
+Cliente 35 -> Instalação 9
+Cliente 36 -> Instalação 9
+Cliente 37 -> Instalação 20
+Cliente 38 -> Instalação 9
+Cliente 39 -> Instalação 4
+Cliente 40 -> Instalação 4
+Cliente 41 -> Instalação 4
+Cliente 42 -> Instalação 4
+Cliente 43 -> Instalação 20
+Cliente 44 -> Instalação 9
+Cliente 45 -> Instalação 4
+Cliente 46 -> Instalação 9
+Cliente 47 -> Instalação 9
+Cliente 48 -> Instalação 20
+Cliente 49 -> Instalação 4

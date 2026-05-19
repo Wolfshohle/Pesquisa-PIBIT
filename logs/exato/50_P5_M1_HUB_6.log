@@ -1,0 +1,151 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_TimeLimit                               3600
+Tried aggregator 1 time.
+MIP Presolve eliminated 102 rows and 53 columns.
+Reduced MIP has 5498 rows, 2558 columns, and 16394 nonzeros.
+Reduced MIP has 2558 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (12.41 ticks)
+Found incumbent of value 3787440.000000 after 0.01 sec. (15.14 ticks)
+Probing time = 0.00 sec. (3.53 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+Reduced MIP has 5498 rows, 2558 columns, and 16394 nonzeros.
+Reduced MIP has 2558 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (14.16 ticks)
+Probing time = 0.01 sec. (3.53 ticks)
+Clique table members: 2448.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.01 sec. (10.57 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                      3787440.0000        0.0000           100.00%
+*     0+    0                      1900656.0000        0.0000           100.00%
+*     0+    0                      1603382.0000        0.0000           100.00%
+*     0+    0                      1490777.0000        0.0000           100.00%
+      0     0    93774.0000   100  1490777.0000    93774.0000      156   93.71%
+*     0+    0                       973609.0000    93774.0000            90.37%
+      0     0   106217.5000   100   973609.0000     Cuts: 154      282   89.09%
+*     0+    0                       138788.0000   106217.5000            23.47%
+      0     0   118516.0000    90   138788.0000     Cuts: 154      403   14.61%
+*     0+    0                       138357.0000   118516.0000            14.34%
+      0     0  -1.00000e+75     0   138357.0000   118516.0000      403   14.34%
+Detecting symmetries...
+*     0+    0                       138064.0000   118516.0000            14.16%
+
+Repeating presolve.
+Tried aggregator 1 time.
+MIP Presolve eliminated 4837 rows and 2083 columns.
+MIP Presolve modified 345 coefficients.
+Reduced MIP has 661 rows, 475 columns, and 2168 nonzeros.
+Reduced MIP has 475 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (4.34 ticks)
+Probing time = 0.00 sec. (0.47 ticks)
+Tried aggregator 1 time.
+Detecting symmetries...
+MIP Presolve eliminated 3 rows and 0 columns.
+Reduced MIP has 658 rows, 475 columns, and 2162 nonzeros.
+Reduced MIP has 475 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.00 sec. (2.24 ticks)
+Represolve time = 0.01 sec. (11.93 ticks)
+Probing time = 0.00 sec. (0.47 ticks)
+Clique table members: 502.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+Root relaxation solution time = 0.01 sec. (6.70 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                       138064.0000   118516.0000            14.16%
+      0     0   118516.0000    90   138064.0000   118516.0000      621   14.16%
+      0     0   122913.2000   131   138064.0000      Cuts: 33      763   10.97%
+      0     0   125077.2222   168   138064.0000      Cuts: 56      866    9.41%
+      0     0   126015.6667   144   138064.0000      Cuts: 45      942    8.73%
+      0     0   126557.7333   170   138064.0000      Cuts: 33     1019    8.33%
+      0     0   126924.5774   178   138064.0000      Cuts: 35     1070    8.07%
+Detecting symmetries...
+      0     0   127326.3062   175   138064.0000      Cuts: 31     1138    7.78%
+      0     0   128687.1481   154   138064.0000      Cuts: 18     1246    6.79%
+      0     0   129254.6375   156   138064.0000      Cuts: 36     1329    6.38%
+      0     0   129471.1958   171   138064.0000      Cuts: 23     1381    6.22%
+      0     0   129981.3469   154   138064.0000      Cuts: 17     1454    5.85%
+*     0+    0                       137989.0000   129981.3469             5.80%
+      0     0        cutoff         137989.0000   137989.0000     1511    0.00%
+Elapsed time = 0.36 sec. (279.90 ticks, tree = 0.01 MB, solutions = 9)
+
+Implied bound cuts applied:  60
+Zero-half cuts applied:  53
+
+Root node processing (before b&c):
+  Real time             =    0.36 sec. (280.12 ticks)
+Parallel b&c, 8 threads:
+  Real time             =    0.00 sec. (0.00 ticks)
+  Sync time (average)   =    0.00 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.36 sec. (280.12 ticks)
+Status: Optimal
+Obj: 137989
+
+Instalacoes abertas:
+Instalação 4 aberta
+Instalação 9 aberta
+Instalação 20 aberta
+Instalação 22 aberta
+
+Atribuições (cliente -> instalação):
+Cliente 0 -> Instalação 9
+Cliente 1 -> Instalação 4
+Cliente 2 -> Instalação 9
+Cliente 3 -> Instalação 20
+Cliente 4 -> Instalação 4
+Cliente 5 -> Instalação 9
+Cliente 6 -> Instalação 9
+Cliente 7 -> Instalação 9
+Cliente 8 -> Instalação 4
+Cliente 9 -> Instalação 9
+Cliente 10 -> Instalação 20
+Cliente 11 -> Instalação 20
+Cliente 12 -> Instalação 4
+Cliente 13 -> Instalação 9
+Cliente 14 -> Instalação 9
+Cliente 15 -> Instalação 9
+Cliente 16 -> Instalação 20
+Cliente 17 -> Instalação 20
+Cliente 18 -> Instalação 20
+Cliente 19 -> Instalação 9
+Cliente 20 -> Instalação 20
+Cliente 21 -> Instalação 9
+Cliente 22 -> Instalação 22
+Cliente 23 -> Instalação 9
+Cliente 24 -> Instalação 9
+Cliente 25 -> Instalação 9
+Cliente 26 -> Instalação 9
+Cliente 27 -> Instalação 20
+Cliente 28 -> Instalação 20
+Cliente 29 -> Instalação 4
+Cliente 30 -> Instalação 20
+Cliente 31 -> Instalação 9
+Cliente 32 -> Instalação 4
+Cliente 33 -> Instalação 4
+Cliente 34 -> Instalação 9
+Cliente 35 -> Instalação 9
+Cliente 36 -> Instalação 9
+Cliente 37 -> Instalação 20
+Cliente 38 -> Instalação 4
+Cliente 39 -> Instalação 20
+Cliente 40 -> Instalação 9
+Cliente 41 -> Instalação 20
+Cliente 42 -> Instalação 4
+Cliente 43 -> Instalação 9
+Cliente 44 -> Instalação 9
+Cliente 45 -> Instalação 4
+Cliente 46 -> Instalação 4
+Cliente 47 -> Instalação 4
+Cliente 48 -> Instalação 4
+Cliente 49 -> Instalação 4
