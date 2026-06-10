@@ -1,0 +1,29 @@
+Instância: Data/raw/50_P70_M1_HUB_7.txt
+Tempo limite: 30 segundos
+Seed: 4
+Tamanho da pertubação: 5
+Solução inicial:
+Instalacoes:
+1 0 1 0 1 0 1 1 1 1 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 1 1 0 1 1 0 0 1 0 0 0 
+Atribuicoes:
+0 0 2 39 4 2 6 7 8 9 42 42 7 16 19 9 42 7 42 19 4 43 22 42 16 2 42 2 28 29 30 30 43 16 0 9 39 7 4 39 30 4 8 19 8 46 46 19 39 0 
+Custo Total: 2332856
+Solução após busca local:
+Instalacoes:
+1 1 1 0 1 0 0 1 1 1 0 0 0 1 0 0 1 0 1 1 1 0 1 1 0 1 0 0 0 0 1 1 1 0 0 0 0 0 0 1 0 0 1 0 0 0 1 1 0 1 
+Atribuicoes:
+16 0 2 39 20 2 9 7 4 13 1 25 1 25 19 9 42 7 47 19 4 9 22 1 16 20 8 31 4 23 30 30 32 16 49 9 20 13 8 39 30 13 20 47 8 46 46 19 39 18 
+Custo Total: 801810
+Total de iterações: 21874
+Melhorias: 17
+Tempo até a melhor solução: 8.66862 segundos
+Iterações até a melhor solução: 6194
+Soma dos custos: 12835640437
+Média dos custos: 586799
+Pior valor encontrado: 830919
+Melhor solução encontrada:
+Instalacoes:
+1 1 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1 0 1 1 1 0 1 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 1 0 1 
+Atribuicoes:
+1 0 30 39 20 20 9 13 4 19 16 13 47 13 47 9 35 19 18 47 16 9 22 4 49 20 8 0 20 23 16 1 30 49 4 1 13 13 8 39 1 35 20 8 8 46 47 47 39 9 
+Custo Total: 582363

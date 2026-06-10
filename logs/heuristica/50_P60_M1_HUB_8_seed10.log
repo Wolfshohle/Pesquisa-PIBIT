@@ -1,0 +1,29 @@
+Instância: Data/raw/50_P60_M1_HUB_8.txt
+Tempo limite: 30 segundos
+Seed: 10
+Tamanho da pertubação: 5
+Solução inicial:
+Instalacoes:
+1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 1 1 1 0 1 0 0 1 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 
+Atribuicoes:
+0 0 13 25 18 5 18 22 18 16 16 20 39 13 19 0 27 18 27 19 20 16 22 13 42 25 42 27 5 18 5 31 5 13 0 27 25 39 20 39 16 20 18 19 42 20 18 19 39 0 
+Custo Total: 2041321
+Solução após busca local:
+Instalacoes:
+1 1 1 0 1 1 0 0 1 1 0 0 0 1 0 0 1 0 1 1 1 0 1 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 1 0 1 
+Atribuicoes:
+0 0 25 25 1 8 47 13 4 16 9 20 1 1 35 0 18 18 9 19 47 49 22 13 42 25 42 27 25 47 5 16 1 13 49 16 39 39 20 8 16 35 4 19 42 20 0 19 39 20 
+Custo Total: 704296
+Total de iterações: 24517
+Melhorias: 20
+Tempo até a melhor solução: 19.7157 segundos
+Iterações até a melhor solução: 16280
+Soma dos custos: 11833933849
+Média dos custos: 482683
+Pior valor encontrado: 754625
+Melhor solução encontrada:
+Instalacoes:
+1 1 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 
+Atribuicoes:
+0 0 4 4 1 25 47 23 42 8 22 8 9 1 9 0 13 30 20 8 47 1 0 23 9 25 9 47 4 1 30 30 13 23 20 8 13 13 20 22 8 9 42 4 9 20 8 47 25 20 
+Custo Total: 471650

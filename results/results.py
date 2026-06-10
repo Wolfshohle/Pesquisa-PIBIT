@@ -6,6 +6,17 @@ import matplotlib.pyplot as plt
 
 # =============================================
 # Pega os principais dados da instância que iremos construir o gráfico e a tabela
+# Retorna:
+#   instance_name
+#   qtd_facilits
+#   qtd_clients
+#   qtd_penalitys
+#   max_penalitys
+#   percent_penalitys
+#   p
+#   mode
+#   instance_type
+#   seed
 # =============================================
 def read_instance(instance_name):
     qtd_facilits = None
@@ -71,7 +82,16 @@ def read_instance(instance_name):
 
 # =============================================
 # Pega os dados do log do CPLEX
+# Retorna:
+#   time_limit
+#   total_time
+#   status
+#   Obj
+#   best_integer
+#   best_bound
+#   gap
 # =============================================
+#! Modificar URGENTE!!!
 def read_cplex_log(log_cplex_name):
     time_limit = None
     total_time = None
@@ -103,14 +123,20 @@ def read_cplex_log(log_cplex_name):
     # Pega o best bound, best integer e o gap
     text = data_cplex.splitlines()
 
+    marcadores = [
+        "Implied bound cuts applied",
+        "Zero-half cuts applied"
+    ]
+
     table_last = None
     for i, linha in enumerate(text):
-        if "Implied bound cuts applied" in linha:
-            table_last = i
-            break
+        for marcador in marcadores:
+            if marcador in linha:
+                table_last = i
+                break
 
-    if table_last == None:
-        return None
+        if table_last is not None:
+            break
     
     for j in range(table_last - 1, -1, -1):
         linha = text[j].strip()
@@ -118,11 +144,12 @@ def read_cplex_log(log_cplex_name):
             important_values = re.findall(r'(\d+\.\d+)', linha)
             if status == "Optimal":
                 gap = 0.0
+                best_bound = Obj
+                best_integer = Obj
             else:
                 gap = float(important_values[-1])
-
-            best_bound = float(important_values[-2])
-            best_integer = float(important_values[-3])
+                best_bound = float(important_values[-2])
+                best_integer = float(important_values[-3])
             break
 
     cplex_log_data = {
@@ -141,6 +168,17 @@ def read_cplex_log(log_cplex_name):
 
 # =============================================
 # Pegar os dados da heurística
+# Retorna:
+#   limit_time / 10
+#   seed / 10
+#   obj / 10
+#   time_to_best / 10
+#   it_to_best / 10
+#   best_obt
+#   mean_obj / 10
+#   worst_obj / 10
+#   bad_obj
+#   improvments / 10
 # =============================================
 def read_heuristic_log(log_heuristic_name):
     limit_time = 0
@@ -156,7 +194,7 @@ def read_heuristic_log(log_heuristic_name):
     bad_obj = None
 
     for i in range(1, 11):
-        with open(f"{log_heuristic_name}_seed_{i}.log", 'r', encoding='utf-8') as heuristic_data:
+        with open(f"{log_heuristic_name}_seed{i}.log", 'r', encoding='utf-8') as heuristic_data:
             data_heuristic = heuristic_data.read()
 
         # Pega o tempo limite
@@ -213,6 +251,58 @@ def read_heuristic_log(log_heuristic_name):
     return heuristic_log_data
 # =============================================
 
+def plota_grafico(title1, title2, y, pathsave1, pathsave2, avaliation, df_mode0, df_mode1):
+    p_mode_0 = df_mode0.groupby(["p", "type"])[avaliation].mean().reset_index()
+
+
+    plt.figure()
+
+    dados_tipo = p_mode_0[p_mode_0["type"] == "PROB_UNIF"]
+
+    plt.plot(
+        dados_tipo["p"],
+        dados_tipo[avaliation],
+        marker="o",
+        label= "Probabilístico uniforme"
+    )
+
+    plt.xlabel("p")
+    plt.ylabel(y)
+    plt.title(title1)
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(os.path.join(directory_output, pathsave1), dpi=300, bbox_inches="tight")
+    plt.close()
+
+    p_mode_1 = df_mode1.groupby(["p", "type"])[avaliation].mean().reset_index()
+
+    plt.figure()
+
+    dados_uniforme = p_mode_1[p_mode_1["type"] == "DENS_FIX_UNIF"]
+    dados_hub = p_mode_1[p_mode_1["type"] == "DENS_FIX_HUB"]
+
+    plt.plot(
+        dados_uniforme["p"],
+        dados_uniforme[avaliation],
+        marker="o",
+        label= "Densidade fixa uniforme"
+    )
+    
+    plt.plot(
+        dados_hub["p"],
+        dados_hub[avaliation],
+        marker="o",
+        label= "Densidade fixa HUB"
+    )
+
+    plt.xlabel("p")
+    plt.ylabel(y)
+    plt.title(title2)
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(os.path.join(directory_output, pathsave2), dpi=300, bbox_inches="tight")
+
+
 if __name__ == "__main__":
 
     log_cplex_directory = "logs/exato"
@@ -242,7 +332,7 @@ if __name__ == "__main__":
         # Pega o caminho da heurística
         heuristic_log_path = os.path.join(log_heuristic_directory, base_name)
         # Verifica se existe pelo menos seed 1 da heurística
-        if not os.path.exists(heuristic_log_path + "_seed_1.log"):
+        if not os.path.exists(heuristic_log_path + "_seed1.log"):
             print("Log heurística não encontrado:", heuristic_log_path + "_seed_1.log")
             continue
 
@@ -252,6 +342,10 @@ if __name__ == "__main__":
         instance_data = read_instance(instance_path)
         cplex_data = read_cplex_log(cplex_log_path)
         heuristic_data = read_heuristic_log(heuristic_log_path)
+
+        if cplex_data is None:
+            print("Não consegui ler CPLEX:", cplex_log_path)
+            continue
 
         row = {}
 
@@ -264,10 +358,280 @@ if __name__ == "__main__":
             row["ils_" + key] = value
 
         row["gap_best_ils_vs_cplex"] = ((row["ils_best_obj"] - row["cplex_Obj"]) / row["cplex_Obj"]) * 100
-        row["gap_mean_ils_vs_cplex"] = ((row["ils_obj"] - row["cplex_Obj"]) / row["cplex_Obj"]) * 100
+        row["gap_obj_ils_vs_cplex"] = ((row["ils_obj"] - row["cplex_Obj"]) / row["cplex_Obj"]) * 100
+        row["gap_mean_ils_vs_cplex"] = ((row["ils_mean_obj"] - row["cplex_Obj"]) / row["cplex_Obj"]) * 100
 
         all_results.append(row)
-    
+        
     df = pd.DataFrame(all_results)
+    
+    avg_for_p = df.groupby("p").agg({
+        "qtd_penalitys": "mean",
+        "percent_penalitys": "mean",
+
+        "cplex_total_time": "mean",
+        "cplex_Obj": "mean",
+        "cplex_best_integer": "mean",
+        "cplex_best_bound": "mean",
+        "cplex_gap": "mean",
+
+        "ils_obj": "mean",
+        "ils_best_obj": "mean",
+        "ils_mean_obj": "mean",
+        "ils_worst_obj": "mean",
+        "ils_bad_obj": "mean",
+        "ils_time_to_best": "mean",
+        "ils_it_to_best": "mean",
+        "ils_improvment": "mean",
+
+        "gap_best_ils_vs_cplex": "mean",
+        "gap_obj_ils_vs_cplex": "mean",
+        "gap_mean_ils_vs_cplex": "mean",
+
+    }).reset_index()
 
 
+    avg_for_p_and_type = df.groupby(["p", "type"]).agg({
+        "qtd_penalitys": "mean",
+        "percent_penalitys": "mean",
+
+        "cplex_total_time": "mean",
+        "cplex_Obj": "mean",
+        "cplex_gap": "mean",
+
+        "ils_obj": "mean",
+        "ils_bad_obj": "mean",
+        "ils_time_to_best": "mean",
+        "ils_best_obj": "mean",
+        "ils_mean_obj": "mean",
+        "ils_worst_obj": "mean",
+
+        "gap_best_ils_vs_cplex": "mean",
+        "gap_obj_ils_vs_cplex": "mean",
+        "gap_mean_ils_vs_cplex": "mean",
+    }).reset_index()
+
+    # ==========================================
+    # Organização para o Excel
+    # ==========================================
+
+    df["seed"] = df["seed"].astype(int)
+
+    df = df.sort_values(by=["mode", "type", "p", "seed"])
+
+    colunas_resultados = [
+        "instance_name",
+        "mode",
+        "type",
+        "p",
+        "seed",
+
+        "qtd_facilits",
+        "qtd_clients",
+        "qtd_penalitys",
+        "max_penalitys",
+        "percent_penalitys",
+
+        "cplex_time_limit",
+        "cplex_total_time",
+        "cplex_status",
+        "cplex_Obj",
+        "cplex_best_integer",
+        "cplex_best_bound",
+        "cplex_gap",
+
+        "ils_limit_time",
+        "ils_obj",
+        "ils_best_obj",
+        "ils_mean_obj",
+        "ils_worst_obj",
+        "ils_bad_obj",
+        "ils_time_to_best",
+        "ils_it_to_best",
+        "ils_improvment",
+
+        "gap_best_ils_vs_cplex",
+        "gap_obj_ils_vs_cplex",
+        "gap_mean_ils_vs_cplex"
+    ]
+
+    df_excel = df[colunas_resultados].copy()
+
+    df_excel = df_excel.round({
+        "p": 2,
+        "percent_penalitys": 4,
+        "cplex_total_time": 2,
+        "cplex_gap": 2,
+        "ils_obj": 2,
+        "ils_best_obj": 2,
+        "ils_mean_obj": 2,
+        "ils_worst_obj": 2,
+        "ils_bad_obj": 2,
+        "ils_time_to_best": 2,
+        "ils_it_to_best": 2,
+        "ils_improvment": 2,
+        "gap_best_ils_vs_cplex": 2,
+        "gap_obj_ils_vs_cplex": 2,
+        "gap_mean_ils_vs_cplex": 2
+    })
+
+    avg_for_p = avg_for_p.sort_values(by=["p"]).round(2)
+    avg_for_p_and_type = avg_for_p_and_type.sort_values(by=["type", "p"]).round(2)
+
+    nomes_colunas = {
+        "instance_name": "Instância",
+        "mode": "Modo",
+        "type": "Tipo",
+        "p": "P",
+        "seed": "Seed",
+
+        "qtd_facilits": "Qtd. Instalações",
+        "qtd_clients": "Qtd. Clientes",
+        "qtd_penalitys": "Qtd. Penalidades",
+        "max_penalitys": "Máx. Penalidades",
+        "percent_penalitys": "% Penalidades",
+
+        "cplex_time_limit": "CPLEX Limite Tempo",
+        "cplex_total_time": "CPLEX Tempo Total",
+        "cplex_status": "CPLEX Status",
+        "cplex_Obj": "CPLEX Objetivo",
+        "cplex_best_integer": "CPLEX Best Integer",
+        "cplex_best_bound": "CPLEX Best Bound",
+        "cplex_gap": "CPLEX Gap (%)",
+
+        "ils_limit_time": "ILS Limite Tempo",
+        "ils_obj": "ILS Objetivo Médio",
+        "ils_best_obj": "ILS Melhor Objetivo",
+        "ils_mean_obj": "ILS Média dos Custos",
+        "ils_worst_obj": "ILS Pior Médio",
+        "ils_bad_obj": "ILS Pior Encontrado",
+        "ils_time_to_best": "ILS Tempo até Melhor",
+        "ils_it_to_best": "ILS Iterações até Melhor",
+        "ils_improvment": "ILS Melhorias",
+
+        "gap_best_ils_vs_cplex": "Gap Melhor ILS vs CPLEX (%)",
+        "gap_obj_ils_vs_cplex": "Gap ILS Médio vs CPLEX (%)",
+        "gap_mean_ils_vs_cplex": "Gap Média ILS vs CPLEX (%)"
+    }
+
+    df_excel = df_excel.rename(columns=nomes_colunas)
+    avg_for_p_excel = avg_for_p.rename(columns=nomes_colunas)
+    avg_for_p_and_type_excel = avg_for_p_and_type.rename(columns=nomes_colunas)
+
+    
+    with pd.ExcelWriter("tabela de saída.xlsx") as writer:
+        df.to_excel(writer, sheet_name="Resultados completos", index=False)
+        avg_for_p_and_type.to_excel(writer, sheet_name="Media por p e tipo", index=False)
+        avg_for_p.to_excel(writer, sheet_name="Media por p", index=False)
+
+    df_m0 = df[df["mode"] == 0]
+    df_m1 = df[df["mode"] == 1]
+
+    # ==========================================================================
+    # Plotando o gráfico Tempo total do CPLEX por p
+    # ==========================================================================
+    plota_grafico("Tempo total do cplex por p - mode 0", 
+                  "Tempo total do cplex por p - mode 0",
+                  "Tempo médio do CPLEX (s)",
+                  "tempo_cplex_por_p_Mode_0.png",
+                  "tempo_cplex_por_p_Mode_1.png",
+                  "cplex_total_time",
+                  df_m0, df_m1)
+    # ==========================================================================
+
+    # ==========================================================================
+    # Plotando o gráfico Gap médio do CPLEX por p
+    # ==========================================================================  
+    plota_grafico("Gap médio do CPLEX por p: mode 0", 
+                  "Gap médio do CPLEX por p: mode 1",
+                  "Gap médio do CPLEX (%)",
+                  "gap_cplex_por_p_Mode_0.png",
+                  "gap_cplex_por_p_Mode_1.png",
+                  "cplex_gap",
+                  df_m0, df_m1)
+    # ==========================================================================
+
+    # ==========================================================================
+    # Plotando o gráfico do Gap entre o melhor do ILS vs CPLEX por p
+    # ==========================================================================
+    plota_grafico("Gap entre o melhor do ILS vs CPLEX por p: mode 0", 
+                  "Gap entre o melhor do ILS vs CPLEX por p: mode 1",
+                  "Gap entre o melhor do ILS vs CPLEX (%)",
+                  "gap_best_ils_vs_cplex_por_p_Mode_0.png",
+                  "gap_best_ils_vs_cplex_por_p_Mode_1.png",
+                  "gap_best_ils_vs_cplex",
+                  df_m0, df_m1)
+    # ==========================================================================
+
+    # ==========================================================================
+    # Plotando o gráfico do Gap ILS vs CPLEX por p
+    # ==========================================================================
+    plota_grafico("Gap entre ILS vs CPLEX por p: mode 0", 
+                  "Gap entre ILS vs CPLEX por p: mode 1",
+                  "Gap entre ILS vs CPLEX (%)",
+                  "gap_obj_ils_vs_cplex_por_p_Mode_0.png",
+                  "gap_obj_ils_vs_cplex_por_p_Mode_1.png",
+                  "gap_obj_ils_vs_cplex",
+                  df_m0, df_m1)
+    # ==========================================================================
+
+    # ==========================================================================
+    # Plotando o gráfico do Gap entre a media do ILS vs CPLEX por p
+    # ==========================================================================
+    plota_grafico("Gap entre a media do ILS vs CPLEX por p: mode 0", 
+                  "Gap entre a media do ILS vs CPLEX por p: mode 1",
+                  "Gap entre a media do ILS vs CPLEX (%)",
+                  "gap_mean_ils_vs_cplex_por_p_Mode_0.png",
+                  "gap_mean_ils_vs_cplex_por_p_Mode_1.png",
+                  "gap_mean_ils_vs_cplex",
+                  df_m0, df_m1)
+    # ==========================================================================
+
+    # Gráfico 5
+    obj_por_p_mode0 = df_m0.groupby(["p", "type"])[["cplex_Obj", "ils_best_obj", "ils_obj"]].mean().reset_index()
+
+    obj_mode0 = obj_por_p_mode0[obj_por_p_mode0["type"] == "PROB_UNIF"]
+
+    plt.figure()
+    plt.plot(obj_mode0["p"], obj_mode0["cplex_Obj"], marker="o", label="CPLEX")
+    plt.plot(obj_mode0["p"], obj_mode0["ils_best_obj"], marker="o", label="Melhor ILS")
+    plt.plot(obj_mode0["p"], obj_mode0["ils_obj"], marker="o", label="Média das SEEDS ILS")
+    plt.xlabel("p")
+    plt.ylabel("Custo médio")
+    plt.title("CPLEX vs ILS por p")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(os.path.join(directory_output, "obj_cplex_vs_ils_por_p_mode0.png"), dpi=300, bbox_inches="tight")
+    plt.close()
+
+    obj_por_p_mode1 = df_m1.groupby(["p", "type"])[["cplex_Obj", "ils_best_obj", "ils_obj"]].mean().reset_index()
+
+    obj_mode1_continuo = obj_por_p_mode1[obj_por_p_mode1["type"] == "DENS_FIX_UNIF"]
+
+    plt.figure()
+    plt.plot(obj_mode1_continuo["p"], obj_mode1_continuo["cplex_Obj"], marker="o", label="CPLEX")
+    plt.plot(obj_mode1_continuo["p"], obj_mode1_continuo["ils_best_obj"], marker="o", label="Melhor ILS")
+    plt.plot(obj_mode1_continuo["p"], obj_mode1_continuo["ils_obj"], marker="o", label="Média das SEEDS ILS")
+    plt.xlabel("p")
+    plt.ylabel("Custo médio")
+    plt.title("CPLEX vs ILS por p")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(os.path.join(directory_output, "obj_cplex_vs_ils_por_p_mode1_den_fix_uni.png"), dpi=300, bbox_inches="tight")
+    plt.close()
+
+    obj_mode1_hub = obj_por_p_mode1[obj_por_p_mode1["type"] == "DENS_FIX_UNIF"]
+
+    plt.figure()
+    plt.plot(obj_mode1_hub["p"], obj_mode1_hub["cplex_Obj"], marker="o", label="CPLEX")
+    plt.plot(obj_mode1_hub["p"], obj_mode1_hub["ils_best_obj"], marker="o", label="Melhor ILS")
+    plt.plot(obj_mode1_hub["p"], obj_mode1_hub["ils_obj"], marker="o", label="Média das SEEDS ILS")
+    plt.xlabel("p")
+    plt.ylabel("Custo médio")
+    plt.title("CPLEX vs ILS por p")
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(os.path.join(directory_output, "obj_cplex_vs_ils_por_p_mode1_den_fix_hub.png"), dpi=300, bbox_inches="tight")
+    plt.close()
+
+    print("Gráficos gerados na pasta:", directory_output)

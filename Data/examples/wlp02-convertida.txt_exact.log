@@ -1,0 +1,9 @@
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+CPXPARAM_TimeLimit                               3600
+Tried aggregator 1 time.
+Reduced MIP has 197353 rows, 27118 columns, and 591300 nonzeros.
+Reduced MIP has 27118 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.70 sec. (448.67 ticks)
+Found incumbent of value 6.8206631e+07 after 0.87 sec. (526.08 ticks)
+Probing time = 0.48 sec. (19.97 ticks)
+Tried aggregator 1 time.

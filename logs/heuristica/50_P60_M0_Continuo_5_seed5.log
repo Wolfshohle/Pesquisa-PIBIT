@@ -1,0 +1,29 @@
+Instância: Data/raw/50_P60_M0_Continuo_5.txt
+Tempo limite: 30 segundos
+Seed: 5
+Tamanho da pertubação: 5
+Solução inicial:
+Instalacoes:
+1 1 0 0 1 1 0 0 1 1 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 
+Atribuicoes:
+1 1 5 30 9 4 4 1 8 42 16 9 22 13 19 47 16 22 35 1 35 47 22 13 16 5 42 9 5 30 9 4 4 9 1 16 30 22 8 13 16 16 9 19 42 8 8 47 13 19 
+Custo Total: 2060002
+Solução após busca local:
+Instalacoes:
+0 1 0 0 1 1 0 0 1 1 0 0 0 1 0 0 1 0 0 1 1 0 1 0 0 1 0 0 0 0 1 1 0 0 1 1 0 0 0 1 0 0 1 0 0 0 1 1 0 1 
+Atribuicoes:
+47 1 5 8 9 5 4 39 20 16 16 25 4 25 1 47 4 22 35 19 35 47 22 20 16 30 42 20 1 30 13 4 9 9 1 16 30 39 8 13 8 49 9 19 42 8 46 47 13 34 
+Custo Total: 672511
+Total de iterações: 23525
+Melhorias: 16
+Tempo até a melhor solução: 17.6411 segundos
+Iterações até a melhor solução: 13733
+Soma dos custos: 11915637990
+Média dos custos: 506510
+Pior valor encontrado: 749384
+Melhor solução encontrada:
+Instalacoes:
+1 1 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 1 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+Atribuicoes:
+19 1 25 8 9 25 4 9 20 4 16 22 4 31 49 0 4 47 20 0 47 19 22 20 49 25 16 31 20 9 13 20 0 1 1 8 49 47 8 13 16 0 1 49 47 8 13 47 13 9 
+Custo Total: 494364

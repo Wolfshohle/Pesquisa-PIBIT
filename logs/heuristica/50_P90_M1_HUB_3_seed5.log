@@ -1,0 +1,29 @@
+Instância: Data/raw/50_P90_M1_HUB_3.txt
+Tempo limite: 30 segundos
+Seed: 5
+Tamanho da pertubação: 5
+Solução inicial:
+Instalacoes:
+1 0 1 0 0 1 0 1 0 1 0 1 0 0 1 0 0 0 1 1 0 0 1 1 0 1 0 0 1 1 0 0 0 0 0 0 0 0 1 1 0 1 1 0 0 1 1 1 0 0 
+Atribuicoes:
+47 47 2 25 23 5 29 7 45 9 25 11 7 2 14 9 41 23 18 47 41 14 22 23 42 5 19 11 28 29 2 25 5 46 47 9 25 23 38 39 28 18 42 19 47 45 46 19 39 47 
+Custo Total: 2369220
+Solução após busca local:
+Instalacoes:
+0 1 1 0 1 1 0 1 1 1 0 1 0 1 1 0 1 0 1 1 1 0 1 1 0 1 0 1 0 1 1 1 0 0 1 1 0 0 0 1 0 1 1 0 0 1 1 1 0 1 
+Atribuicoes:
+47 47 2 35 23 5 16 31 35 8 25 11 7 4 14 9 41 7 49 1 8 34 22 23 1 20 19 27 9 29 30 25 5 9 34 31 13 1 45 39 2 18 42 20 4 46 46 19 31 22 
+Custo Total: 1058128
+Total de iterações: 15417
+Melhorias: 21
+Tempo até a melhor solução: 23.5273 segundos
+Iterações até a melhor solução: 12160
+Soma dos custos: 13112648299
+Média dos custos: 850532
+Pior valor encontrado: 1081805
+Melhor solução encontrada:
+Instalacoes:
+1 1 0 0 1 0 0 0 1 1 0 1 0 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 1 1 1 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 1 0 1 
+Atribuicoes:
+47 9 25 39 1 31 23 20 9 34 22 11 0 39 28 4 16 49 18 47 19 49 22 9 25 13 1 27 28 29 30 28 47 49 34 20 16 1 8 30 31 35 8 13 4 4 4 19 20 0 
+Custo Total: 843615

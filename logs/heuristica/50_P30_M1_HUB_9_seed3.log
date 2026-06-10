@@ -1,0 +1,29 @@
+Instância: Data/raw/50_P30_M1_HUB_9.txt
+Tempo limite: 30 segundos
+Seed: 3
+Tamanho da pertubação: 5
+Solução inicial:
+Instalacoes:
+1 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 
+Atribuicoes:
+0 9 0 16 4 30 16 39 4 9 4 9 47 39 0 9 9 47 4 0 4 16 22 30 4 30 0 9 47 16 30 47 30 39 47 9 39 47 47 39 9 4 4 30 0 47 47 47 39 4 
+Custo Total: 2409251
+Solução após busca local:
+Instalacoes:
+1 1 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 
+Atribuicoes:
+0 9 0 4 4 47 4 20 8 4 9 9 47 4 0 9 9 47 4 47 4 16 22 8 4 30 13 9 39 8 8 1 30 13 20 9 13 4 47 20 1 20 1 0 9 19 20 20 13 8 
+Custo Total: 444092
+Total de iterações: 40297
+Melhorias: 22
+Tempo até a melhor solução: 29.2661 segundos
+Iterações até a melhor solução: 39265
+Soma dos custos: 11587051583
+Média dos custos: 287541
+Pior valor encontrado: 523087
+Melhor solução encontrada:
+Instalacoes:
+0 1 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
+Atribuicoes:
+47 9 4 4 4 13 4 20 8 9 9 9 1 13 47 9 9 4 13 9 4 47 22 8 9 13 47 9 1 8 22 1 8 20 20 20 20 4 4 20 47 20 4 47 9 8 4 47 13 8 
+Custo Total: 269529

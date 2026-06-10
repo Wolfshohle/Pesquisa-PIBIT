@@ -1,0 +1,29 @@
+Instância: Data/raw/50_P80_M1_Continuo_6.txt
+Tempo limite: 30 segundos
+Seed: 6
+Tamanho da pertubação: 5
+Solução inicial:
+Instalacoes:
+1 0 1 1 0 1 0 1 0 1 0 1 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 1 0 1 1 1 0 0 1 0 0 0 
+Atribuicoes:
+0 0 2 3 38 5 5 7 42 9 46 11 7 2 19 9 41 23 18 19 41 43 22 23 42 5 43 11 28 29 2 28 43 39 0 9 3 23 38 39 28 18 0 19 42 38 46 19 39 0 
+Custo Total: 2290602
+Solução após busca local:
+Instalacoes:
+1 1 1 0 1 1 0 1 1 1 0 1 0 1 0 0 1 0 1 1 1 0 1 1 0 1 0 1 1 0 0 1 0 0 0 0 0 0 1 1 0 1 1 1 0 0 1 1 0 1 
+Atribuicoes:
+0 20 2 25 47 4 39 7 42 16 49 11 31 20 19 8 41 31 18 19 16 43 22 23 46 5 47 8 28 0 2 8 47 39 49 9 25 22 0 39 13 31 1 13 9 4 46 1 25 42 
+Custo Total: 969277
+Total de iterações: 19378
+Melhorias: 13
+Tempo até a melhor solução: 27.1193 segundos
+Iterações até a melhor solução: 17518
+Soma dos custos: 12817153215
+Média dos custos: 661428
+Pior valor encontrado: 925170
+Melhor solução encontrada:
+Instalacoes:
+1 1 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1 0 1 0 1 0 1 0 0 1 0 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 1 0 1 
+Atribuicoes:
+0 20 30 25 1 4 39 4 13 16 35 49 31 20 8 8 13 31 18 0 16 1 22 0 35 25 9 8 31 20 30 49 1 47 25 47 1 22 18 39 22 31 46 47 9 4 46 9 13 49 
+Custo Total: 646010

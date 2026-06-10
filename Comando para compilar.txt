@@ -1,0 +1,3 @@
+g++ -std=c++17 src/ils/ils.cpp     src/io/inputload.cpp     src/greedy/greedy.cpp     src/utils/buscabinaria.cpp     src/utils/calculocusto.cpp     -o ufl
+
+./ufl Data/examples/in.txt -> roda o algoritmo em com a instância in.txt

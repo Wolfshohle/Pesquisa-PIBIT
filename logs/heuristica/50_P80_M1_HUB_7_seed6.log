@@ -1,0 +1,29 @@
+Instância: Data/raw/50_P80_M1_HUB_7.txt
+Tempo limite: 30 segundos
+Seed: 6
+Tamanho da pertubação: 5
+Solução inicial:
+Instalacoes:
+1 0 1 1 0 1 0 1 0 1 0 1 0 0 1 0 0 0 1 1 0 0 1 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 1 1 1 0 0 1 0 0 0 
+Atribuicoes:
+0 0 2 3 42 5 14 7 42 9 41 11 7 2 14 9 41 7 18 19 41 43 22 29 42 5 42 11 28 29 2 28 43 2 0 9 3 7 42 39 28 18 0 19 42 42 46 19 39 0 
+Custo Total: 2730278
+Solução após busca local:
+Instalacoes:
+1 1 0 1 1 1 0 1 1 1 0 1 0 1 1 0 0 0 1 1 1 0 1 0 0 1 0 0 1 1 1 1 0 0 0 1 0 0 0 1 0 1 1 1 0 0 0 1 0 0 
+Atribuicoes:
+20 47 31 30 4 5 31 7 1 18 25 11 30 25 14 9 20 18 35 19 41 43 22 13 31 2 42 47 28 29 4 9 1 25 8 9 3 31 42 39 28 9 0 35 42 8 19 19 39 0 
+Custo Total: 1031786
+Total de iterações: 18706
+Melhorias: 22
+Tempo até a melhor solução: 22.073 segundos
+Iterações até a melhor solução: 13731
+Soma dos custos: 13516436590
+Média dos custos: 722572
+Pior valor encontrado: 958540
+Melhor solução encontrada:
+Instalacoes:
+1 1 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1 0 1 1 1 0 1 1 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 1 0 1 
+Atribuicoes:
+20 49 16 30 35 25 20 20 0 1 47 18 13 1 19 9 19 25 18 8 8 1 22 23 16 13 4 49 13 29 30 47 0 18 46 47 20 16 4 1 35 47 13 4 4 46 8 1 9 9 
+Custo Total: 700194

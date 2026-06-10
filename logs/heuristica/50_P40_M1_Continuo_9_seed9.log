@@ -1,0 +1,29 @@
+Instância: Data/raw/50_P40_M1_Continuo_9.txt
+Tempo limite: 30 segundos
+Seed: 9
+Tamanho da pertubação: 5
+Solução inicial:
+Instalacoes:
+1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 1 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Atribuicoes:
+20 20 4 30 4 23 30 16 8 16 22 31 22 23 19 0 20 20 20 19 20 30 22 23 16 31 4 31 30 23 16 31 23 30 0 20 30 20 4 23 31 20 8 19 4 8 8 19 16 0 
+Custo Total: 1420856
+Solução após busca local:
+Instalacoes:
+1 1 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 1 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
+Atribuicoes:
+20 20 4 9 4 13 30 16 8 1 22 1 47 13 1 0 8 20 9 19 1 30 22 23 16 9 47 31 30 47 4 31 8 47 0 1 9 20 4 8 4 20 13 20 9 8 8 19 16 0 
+Custo Total: 467010
+Total de iterações: 34517
+Melhorias: 18
+Tempo até a melhor solução: 11.494 segundos
+Iterações até a melhor solução: 12902
+Soma dos custos: 11444262650
+Média dos custos: 331554
+Pior valor encontrado: 568632
+Melhor solução encontrada:
+Instalacoes:
+1 1 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 
+Atribuicoes:
+0 1 23 13 4 20 13 9 8 47 20 47 1 13 47 9 8 20 9 4 0 47 22 23 1 9 9 20 13 4 4 9 8 4 1 47 9 20 4 8 47 47 20 1 20 8 8 9 13 0 
+Custo Total: 328629

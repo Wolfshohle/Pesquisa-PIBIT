@@ -1,0 +1,29 @@
+Instância: Data/raw/50_P90_M0_Continuo_8.txt
+Tempo limite: 30 segundos
+Seed: 4
+Tamanho da pertubação: 5
+Solução inicial:
+Instalacoes:
+1 1 1 0 0 0 0 1 1 1 0 1 0 1 1 0 1 0 1 1 0 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 
+Atribuicoes:
+47 1 2 46 1 30 23 7 8 9 16 11 7 13 14 9 16 19 18 47 23 14 22 2 0 13 19 11 16 13 30 22 30 22 1 9 46 23 1 39 16 18 0 14 47 1 46 47 39 8 
+Custo Total: 2358321
+Solução após busca local:
+Instalacoes:
+1 1 1 0 1 1 0 1 1 1 0 1 0 1 1 0 1 0 1 1 1 0 1 1 0 1 0 0 1 0 1 1 0 0 1 1 0 0 0 1 0 0 1 0 0 0 1 1 0 1 
+Atribuicoes:
+4 28 2 16 1 0 23 7 8 9 23 11 7 47 14 9 16 19 18 28 20 34 22 25 0 13 4 31 30 5 30 5 31 16 49 35 20 13 42 5 2 34 42 18 47 1 46 8 39 8 
+Custo Total: 1011071
+Total de iterações: 17462
+Melhorias: 21
+Tempo até a melhor solução: 26.0958 segundos
+Iterações até a melhor solução: 15200
+Soma dos custos: 13499217434
+Média dos custos: 773063
+Pior valor encontrado: 1040129
+Melhor solução encontrada:
+Instalacoes:
+1 1 0 0 1 0 0 0 1 1 0 0 0 1 0 0 1 0 1 1 1 0 1 1 0 1 0 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0 1 0 0 1 1 0 1 
+Atribuicoes:
+9 19 1 23 46 13 39 18 8 49 16 25 16 47 0 1 35 18 20 19 47 34 22 23 34 25 19 22 30 4 30 4 23 35 49 16 20 39 20 4 1 9 13 43 47 46 0 8 13 8 
+Custo Total: 757008
