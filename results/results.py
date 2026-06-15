@@ -387,6 +387,7 @@ if __name__ == "__main__":
         "cplex_total_time": "mean",
         "cplex_Obj": "mean",
         "cplex_gap": "mean",
+        "cplex_status": lambda x: x.mode()[0],
 
         "ils_obj": "mean",
         "ils_time_to_best": "mean",
