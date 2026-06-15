@@ -170,12 +170,10 @@ def read_cplex_log(log_cplex_name):
 # Pegar os dados da heurística
 # Retorna:
 #   limit_time / 10
-#   seed / 10
 #   obj / 10
 #   time_to_best / 10
 #   it_to_best / 10
 #   best_obt
-#   mean_obj / 10
 #   worst_obj / 10
 #   bad_obj
 #   improvments / 10
@@ -237,14 +235,12 @@ def read_heuristic_log(log_heuristic_name):
 
     heuristic_log_data = {
         "limit_time": limit_time / 10,
-        "seed": seed / 10,
         "obj": obj / 10,
         "time_to_best": time_to_best / 10,
         "it_to_best": it_to_best / 10,
         "best_obj": best_obt,
-        "mean_obj": mean_obj / 10,
-        "worst_obj": worst_obj / 10,
         "bad_obj": bad_obj,
+        "worst_obj": worst_obj / 10,
         "improvment": improvments / 10
     }
 
@@ -359,7 +355,6 @@ if __name__ == "__main__":
 
         row["gap_best_ils_vs_cplex"] = ((row["ils_best_obj"] - row["cplex_Obj"]) / row["cplex_Obj"]) * 100
         row["gap_obj_ils_vs_cplex"] = ((row["ils_obj"] - row["cplex_Obj"]) / row["cplex_Obj"]) * 100
-        row["gap_mean_ils_vs_cplex"] = ((row["ils_mean_obj"] - row["cplex_Obj"]) / row["cplex_Obj"]) * 100
 
         all_results.append(row)
         
@@ -371,22 +366,16 @@ if __name__ == "__main__":
 
         "cplex_total_time": "mean",
         "cplex_Obj": "mean",
-        "cplex_best_integer": "mean",
-        "cplex_best_bound": "mean",
         "cplex_gap": "mean",
+        "cplex_status": lambda x: x.mode()[0],
 
         "ils_obj": "mean",
         "ils_best_obj": "mean",
-        "ils_mean_obj": "mean",
-        "ils_worst_obj": "mean",
-        "ils_bad_obj": "mean",
         "ils_time_to_best": "mean",
         "ils_it_to_best": "mean",
-        "ils_improvment": "mean",
 
         "gap_best_ils_vs_cplex": "mean",
         "gap_obj_ils_vs_cplex": "mean",
-        "gap_mean_ils_vs_cplex": "mean",
 
     }).reset_index()
 
@@ -400,15 +389,11 @@ if __name__ == "__main__":
         "cplex_gap": "mean",
 
         "ils_obj": "mean",
-        "ils_bad_obj": "mean",
         "ils_time_to_best": "mean",
         "ils_best_obj": "mean",
-        "ils_mean_obj": "mean",
-        "ils_worst_obj": "mean",
 
         "gap_best_ils_vs_cplex": "mean",
         "gap_obj_ils_vs_cplex": "mean",
-        "gap_mean_ils_vs_cplex": "mean",
     }).reset_index()
 
     # ==========================================
@@ -436,23 +421,17 @@ if __name__ == "__main__":
         "cplex_total_time",
         "cplex_status",
         "cplex_Obj",
-        "cplex_best_integer",
-        "cplex_best_bound",
         "cplex_gap",
 
         "ils_limit_time",
         "ils_obj",
         "ils_best_obj",
-        "ils_mean_obj",
-        "ils_worst_obj",
-        "ils_bad_obj",
         "ils_time_to_best",
         "ils_it_to_best",
         "ils_improvment",
 
         "gap_best_ils_vs_cplex",
         "gap_obj_ils_vs_cplex",
-        "gap_mean_ils_vs_cplex"
     ]
 
     df_excel = df[colunas_resultados].copy()
@@ -464,7 +443,6 @@ if __name__ == "__main__":
         "cplex_gap": 2,
         "ils_obj": 2,
         "ils_best_obj": 2,
-        "ils_mean_obj": 2,
         "ils_worst_obj": 2,
         "ils_bad_obj": 2,
         "ils_time_to_best": 2,
@@ -472,13 +450,12 @@ if __name__ == "__main__":
         "ils_improvment": 2,
         "gap_best_ils_vs_cplex": 2,
         "gap_obj_ils_vs_cplex": 2,
-        "gap_mean_ils_vs_cplex": 2
     })
 
     avg_for_p = avg_for_p.sort_values(by=["p"]).round(2)
     avg_for_p_and_type = avg_for_p_and_type.sort_values(by=["type", "p"]).round(2)
 
-    nomes_colunas = {
+    nomes_colunas1 = {
         "instance_name": "Instância",
         "mode": "Modo",
         "type": "Tipo",
@@ -500,29 +477,49 @@ if __name__ == "__main__":
         "cplex_gap": "CPLEX Gap (%)",
 
         "ils_limit_time": "ILS Limite Tempo",
-        "ils_obj": "ILS Objetivo Médio",
-        "ils_best_obj": "ILS Melhor Objetivo",
-        "ils_mean_obj": "ILS Média dos Custos",
+        "ils_obj": "Obj médio do ILS",
+        "ils_best_obj": "Melhor Obj do ILS",
         "ils_worst_obj": "ILS Pior Médio",
         "ils_bad_obj": "ILS Pior Encontrado",
         "ils_time_to_best": "ILS Tempo até Melhor",
         "ils_it_to_best": "ILS Iterações até Melhor",
         "ils_improvment": "ILS Melhorias",
 
-        "gap_best_ils_vs_cplex": "Gap Melhor ILS vs CPLEX (%)",
-        "gap_obj_ils_vs_cplex": "Gap ILS Médio vs CPLEX (%)",
-        "gap_mean_ils_vs_cplex": "Gap Média ILS vs CPLEX (%)"
+        "gap_best_ils_vs_cplex": "Gap Melhor obj ILS vs CPLEX (%)",
+        "gap_obj_ils_vs_cplex": "Gap ILS vs CPLEX (%)(Média do obj encontrado)",
     }
 
-    df_excel = df_excel.rename(columns=nomes_colunas)
-    avg_for_p_excel = avg_for_p.rename(columns=nomes_colunas)
-    avg_for_p_and_type_excel = avg_for_p_and_type.rename(columns=nomes_colunas)
+    nomes_colunas2 = {
+        "instance_name": "Instância",
+        "p": "P",
+
+        "qtd_penalitys": "Qtd. Penalidades",
+        "percent_penalitys": "% Penalidades",
+
+        "cplex_total_time": "CPLEX Tempo Total",
+        "cplex_Obj": "CPLEX Objetivo",
+        "cplex_status": "CPLEX Status",
+        "cplex_gap": "CPLEX Gap (%)",
+
+        "ils_limit_time": "ILS Limite Tempo",
+        "ils_obj": "Obj médio do ILS",
+        "ils_best_obj": "Melhor Obj do ILS",
+        "ils_time_to_best": "ILS Tempo até Melhor",
+        "ils_it_to_best": "ILS Iterações até Melhor",
+
+        "gap_best_ils_vs_cplex": "Gap Melhor obj ILS vs CPLEX (%)",
+        "gap_obj_ils_vs_cplex": "Gap ILS vs CPLEX (%)(Média do obj encontrado)",
+    }
+
+    df_excel = df_excel.rename(columns=nomes_colunas1)
+    avg_for_p_excel = avg_for_p.rename(columns=nomes_colunas2)
+    avg_for_p_and_type_excel = avg_for_p_and_type.rename(columns=nomes_colunas1)
 
     
     with pd.ExcelWriter("tabela de saída.xlsx") as writer:
-        df.to_excel(writer, sheet_name="Resultados completos", index=False)
-        avg_for_p_and_type.to_excel(writer, sheet_name="Media por p e tipo", index=False)
-        avg_for_p.to_excel(writer, sheet_name="Media por p", index=False)
+        df_excel.to_excel(writer, sheet_name="Resultados completos", index=False)
+        avg_for_p_and_type_excel.to_excel(writer, sheet_name="Media por p e tipo", index=False)
+        avg_for_p_excel.to_excel(writer, sheet_name="Media por p", index=False)
 
     df_m0 = df[df["mode"] == 0]
     df_m1 = df[df["mode"] == 1]
@@ -531,7 +528,7 @@ if __name__ == "__main__":
     # Plotando o gráfico Tempo total do CPLEX por p
     # ==========================================================================
     plota_grafico("Tempo total do cplex por p - mode 0", 
-                  "Tempo total do cplex por p - mode 0",
+                  "Tempo total do cplex por p - mode 1",
                   "Tempo médio do CPLEX (s)",
                   "tempo_cplex_por_p_Mode_0.png",
                   "tempo_cplex_por_p_Mode_1.png",
@@ -572,18 +569,6 @@ if __name__ == "__main__":
                   "gap_obj_ils_vs_cplex_por_p_Mode_0.png",
                   "gap_obj_ils_vs_cplex_por_p_Mode_1.png",
                   "gap_obj_ils_vs_cplex",
-                  df_m0, df_m1)
-    # ==========================================================================
-
-    # ==========================================================================
-    # Plotando o gráfico do Gap entre a media do ILS vs CPLEX por p
-    # ==========================================================================
-    plota_grafico("Gap entre a media do ILS vs CPLEX por p: mode 0", 
-                  "Gap entre a media do ILS vs CPLEX por p: mode 1",
-                  "Gap entre a media do ILS vs CPLEX (%)",
-                  "gap_mean_ils_vs_cplex_por_p_Mode_0.png",
-                  "gap_mean_ils_vs_cplex_por_p_Mode_1.png",
-                  "gap_mean_ils_vs_cplex",
                   df_m0, df_m1)
     # ==========================================================================
 

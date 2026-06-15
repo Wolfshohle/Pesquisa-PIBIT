@@ -20,13 +20,25 @@ class ILS
     private:
         instance& inst;
 
-        Srepresentation atualSolution;
-        Srepresentation bestSolution;
+        Srepresentation atual_solution;
+        Srepresentation global_solution;
+        Srepresentation candidate_solution;
+        int localBestcost;
 
-        int qtdvezesmelhorResultado = 0;
 
         int maxtime;
-        int pertubsize;
+        int perturbsize;
+
+        // É usada para definir o quão aleatório é a escolha das instalações a serem fechadas
+        // Usado na perturbação PGP para aumentar um pouco a lista de instalações aumentando a aleatoridade
+        int restricted_candidate_list_factor = 2;
+
+        // É usada para definir o tamanho da lista de instalações consideradas para realocar os clientes
+        // Usado na perturbação PGP para dar um limite máximo de instalações consideradas
+        int restricted_candidate_list_size = 10;
+
+        // É usado para controlar qual perturbação ou busca local aplicar
+        int iteration = 0;
 
         int SEED;
 
@@ -36,32 +48,34 @@ class ILS
         // ===============================
         void initialSolution()
         {
-            greedUFL(inst, atualSolution);
+            greedUFL(inst, atual_solution);
         }
         // ===============================
 
 
         // ===============================
         // Busca local na solução atual
+        //! MODIFICAR AQUI PARA DEIXAR A BUSCA LOCAL DINÂMICA, DEIXAR DO TIPO VND
         // ===============================
         void localSearch(Srepresentation& solucao)
         {
             LocalSearch ls(inst, solucao);
-            ls.improveSolution2();
-            ls.improveSolution();
+            ls.improveByBatchRelocation();
+            ls.improveBySingleClientRelocation();
             solucao = ls.getSolution();
         };
 
 
         // ===============================
-        // Perturbação da solução atual
+        // Perturbação Random client reassigment pertubation (RCRP)
+        // Ou perturbação de realocação aleatória de clientes
         // ===============================
-        void perturbation(Srepresentation& solucao)
+        void RCRP(Srepresentation& solucao)
         {
             int n = inst.qtd_clientes;
             int m = inst.qtd_instalacoes;
 
-            for(int i = 0; i < pertubsize; i++)
+            for(int i = 0; i < perturbsize; i++)
             {
                 // Seleciona um cliente aleatório
                 int client = rand() % n;
@@ -81,10 +95,10 @@ class ILS
 
 
         // ===============================
-        // Pertubação nova
-        //! Verificar melhor depois
+        // Pertubação Penality-Guided Perturbation (PGP)
+        // Ou perturbação guiada por penalidades
         // ===============================
-        void perturbation2(Srepresentation& solucao)
+        void PGP(Srepresentation& solucao)
         {
             int n = inst.qtd_clientes;
             int m = inst.qtd_instalacoes;
@@ -97,15 +111,19 @@ class ILS
                     facilitys_to_close.push_back(i);
             }
 
+            // Se não houver instalações abertas, não há o que perturbar
             if(facilitys_to_close.empty())
             {
-                return; // Se não houver instalações abertas, não há o que perturbar
+                return;
             }
 
             // =========================================================================
             // Seleciona as instalações para fechar
-            int num_to_close = max(1, (int)(0.09 * facilitys_to_close.size())); // Fecha 9% das instalações com mais conflitos
-            vector<int> penality_for_facility(m, 0); // {custo médio de penalidade, qtd_clientes}
+            // Fecha uma quantidade de instalações baseada no tamanho da perturbação
+            int num_to_close = min(perturbsize, (int)facilitys_to_close.size());
+
+            // Vetor para armazenar a penalidade total associada a cada instalação
+            vector<int> penality_for_facility(m, 0);
 
             // Calcula a penalidade total para cada instalação
             for(auto penality: inst.penalidades_vetor)
@@ -127,7 +145,8 @@ class ILS
             }
 
             // Calcula a penalidade média por cliente para cada instalação
-            vector<pair<double, int>> ranking; // {penalidade média por cliente, instalação}
+            // {penalidade média por cliente, instalação}
+            vector<pair<double, int>> ranking;
             for(int f: facilitys_to_close)
             {
                 if(clients_per_facility[f] > 0)
@@ -140,16 +159,16 @@ class ILS
             sort(ranking.rbegin(), ranking.rend());
 
             // Seleciona as instalações para fechar, dando preferência às que têm maior penalidade média por cliente
-            int rcl_size = min((int)ranking.size(), num_to_close * 2);
+            int restricted_candidate_close_size = min((int)ranking.size(), num_to_close * restricted_candidate_list_factor);
             vector<int> selected_to_close; // instalações que serão fechadas
 
-            vector<bool> used(rcl_size, false);
+            vector<bool> used(restricted_candidate_close_size, false);
 
             for(int i = 0; i < num_to_close; i++)
             {
                 int idx;
                 do {
-                    idx = rand() % rcl_size;
+                    idx = rand() % restricted_candidate_close_size;
                 } while(used[idx]);
 
                 used[idx] = true;
@@ -201,36 +220,30 @@ class ILS
                 sort(candidate_facilities.begin(), candidate_facilities.end());
 
                 // Considera as 3 melhores opções e seleciona aleatoriamente entre elas
-                int q = min(10, (int)candidate_facilities.size());
+                int interval_selected = min(restricted_candidate_list_size, (int)candidate_facilities.size());
+
                 // Seleciona aleatoriamente entre as q melhores opções
-                int selected_facility = candidate_facilities[rand() % q].second;
+                int selected_facility = candidate_facilities[rand() % interval_selected].second;
 
                 solucao.assignments[client] = selected_facility;
             }
 
-            // Adiciona um pouco de randomização a solução
-            /*int extra_moves = max(1, (int)(0.05 * n)); // Move 5% dos clientes para instalações aleatórias
-            for(int i = 0; i < extra_moves; i++)
-            {
-                int client = rand() % n;
-                int new_facility = solucao.assignments[client];
-
-                // Garante que a nova instalação seja diferente da atual
-                do 
-                {
-                    new_facility = rand() % m;
-                } 
-                while(solucao.openfacilities[new_facility] == 0 ||solucao.assignments[client] == new_facility);
-            }*/
             return;
         }
         // ===============================
 
 
         // ===============================
+        // Escolhe qual perturbação aplicar
+        // ===============================
+        
+        // ===============================
+
+
+        // ===============================
         // Reconstrução da solução
         // ===============================
-        void reconstruction(Srepresentation& atualSolution)
+        void reconstruction(Srepresentation& atual_solution)
         {
             int n = inst.qtd_clientes;
             int m = inst.qtd_instalacoes;
@@ -238,27 +251,28 @@ class ILS
 
             for(i = 0; i < m; i++)
             {
-                atualSolution.openfacilities[i] = 0;
+                atual_solution.openfacilities[i] = 0;
             }
 
             for(i = 0; i < n; i++)
             {
-                atualSolution.openfacilities[atualSolution.assignments[i]] = 1;
+                atual_solution.openfacilities[atual_solution.assignments[i]] = 1;
             }
             
 
-            atualSolution.totalCost = calculocusto(inst, atualSolution);
+            atual_solution.totalCost = calculocusto(inst, atual_solution);
         };
         // ===============================
 
 
         // ===============================
         // Critério de aceitação
+        //! MODIFICAR AQUI PARA DEIXAR A ATUALIZACAO DE PERTURBSIZE MAIS DINÂMICA, DEIXAR DO TIPO ANEALING
         // ===============================
         bool acceptanceCriterion(const Srepresentation& candidate)
         {
             double margem = 0.2;
-            return candidate.totalCost < atualSolution.totalCost /* (1 + margem)*/;
+            return candidate.totalCost < atual_solution.totalCost /* (1 + margem)*/;
         };
         // ===============================
 
@@ -268,7 +282,7 @@ class ILS
         // Construtor
         // ==============================
         ILS(instance& instancia, int timelimit, int perturbation_size, int seed):
-            inst(instancia), maxtime(timelimit), pertubsize(perturbation_size), SEED(seed)
+            inst(instancia), maxtime(timelimit), perturbsize(perturbation_size), SEED(seed)
             {
                 if(seed == -1)
                 {
@@ -287,32 +301,47 @@ class ILS
         // ==============================
         void run()
         {
-            // Inicia o cronômetro para controle do tempo de execução
+            // ===========================================
+            // Inicia o cronômetro para controle do tempo de execução e métricas de desempenho
+            // ===========================================
             using clock = std::chrono::steady_clock;
             auto start_time = clock::now();
 
-            // Variável para contar o número total de iterações
-            int total_iterations = 0;
-            long long sum = 0;
-            double mean = 0;
             int worst_value = 0;
             int iterations_to_the_best_solution = 0;
             int improvement_iterations = 0;
             double time_to_best = 0.0;
+            // ===========================================
 
+
+            // ===========================================
             // Gera solução inicial usando o método guloso
+            // ===========================================
             initialSolution();
             cout << "Solução inicial:" << endl;
-            printSolution(atualSolution);
+            printSolution(atual_solution);
+            // ===========================================
 
+
+            // ===========================================
             // Aplica busca local para melhorar a solução inicial
-            localSearch(atualSolution);
+            // ===========================================
+            localSearch(atual_solution);
             cout << "Solução após busca local:" << endl;
-            printSolution(atualSolution);
+            printSolution(atual_solution);
+            // ===========================================
 
+
+            // ===========================================
             // Define a melhor solução como a solução atual
-            bestSolution = atualSolution;
+            // ===========================================
+            global_solution = atual_solution;
+            // ===========================================
 
+
+            // ===========================================
+            // Loop principal do ILS
+            // ===========================================
             while(true)
             {
                 // Verifica o tempo decorrido para garantir que não ultrapasse o limite
@@ -324,54 +353,56 @@ class ILS
                 }
 
 
-                Srepresentation candidateSolution = atualSolution;
+                candidate_solution = atual_solution;
 
                 // Aplica perturbação jogando um cliente aleatório para outra instalação
-                perturbation2(candidateSolution);
-                perturbation(candidateSolution);
+                //! MODIFICAR AQUI PARA PARA DEIXAR DINÂMICO O TIPO DE PERTURBAÇÃO A SER APLICADA
+                PGP(candidate_solution);
+                RCRP(candidate_solution);
 
                 // Reconstrói a solução para ajustar instalações abertas e fechadas
-                reconstruction(candidateSolution);
+                reconstruction(candidate_solution);
 
                 // Aplica busca local na solução perturbada
-                localSearch(candidateSolution);
+                localSearch(candidate_solution);
                 
                 // Critério de aceitação
-                if(acceptanceCriterion(candidateSolution))
+                if(acceptanceCriterion(candidate_solution))
                 {
-                    atualSolution = candidateSolution;
+                    atual_solution = candidate_solution;
 
-                    if(atualSolution.totalCost < bestSolution.totalCost)
+                    if(atual_solution.totalCost < global_solution.totalCost)
                     {
-                        bestSolution = atualSolution;
+                        global_solution = atual_solution;
                         improvement_iterations++;
                         time_to_best = elapsed_time;
-                        iterations_to_the_best_solution = total_iterations;
+                        iterations_to_the_best_solution = iteration;
                     }
                 }
-                if(candidateSolution.totalCost > worst_value)
+                if(candidate_solution.totalCost > worst_value)
                 {
-                    worst_value = candidateSolution.totalCost;
+                    worst_value = candidate_solution.totalCost;
                 }
-                sum += atualSolution.totalCost;
 
-                total_iterations++;
+                iteration++;
             }
+            // ===========================================
 
-            mean = (double)sum / total_iterations;
 
-            cout << "Total de iterações: " << total_iterations << endl;
+            // ===========================================
+            // Imprime os resultados e a melhor solução encontrada
+            // ===========================================
+            cout << "Total de iterações: " << iteration << endl;
             cout << "Melhorias: " << improvement_iterations << endl;
             cout << "Tempo até a melhor solução: " << time_to_best << " segundos" << endl;
             cout << "Iterações até a melhor solução: " << iterations_to_the_best_solution << endl;
-            cout << "Soma dos custos: " << sum << endl;
-            cout << "Média dos custos: " << mean << endl;
             cout << "Pior valor encontrado: " << worst_value << endl;
 
-            atualSolution = bestSolution;
+            atual_solution = global_solution;
 
             cout << "Melhor solução encontrada:" << endl;
-            printSolution(atualSolution);
+            printSolution(atual_solution);
+            // ===========================================
         }
         // ==============================
 
@@ -379,9 +410,9 @@ class ILS
         // ==============================
         // Obtém a melhor solução encontrada
         // ==============================
-        Srepresentation getBestSolution()
+        Srepresentation getglobal_solution()
         {
-            return bestSolution;
+            return global_solution;
         }
         // ==============================
 };

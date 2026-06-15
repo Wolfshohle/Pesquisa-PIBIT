@@ -19,7 +19,7 @@ class LocalSearch
         // ===============================
         // Calcula a diferença de custo ao mover um cliente para uma nova instalação (Versão para movimentação cliente a cliente)
         // ===============================
-        int delta_move(int client, int new_facility)
+        int calculateSingleClientRelocationDelta(int client, int new_facility)
         {
             int current_facility = sol.assignments[client];
             int delta = 0;
@@ -60,7 +60,7 @@ class LocalSearch
         // ===============================
         // Calcula a diferença de custo ao mover um cliente para uma nova instalação (versão para movimentação em lote)
         // ===============================
-        int delta_move2(int client, int new_facility, std::vector<int>& assignments_backup)
+        int calculateBatchRelocationDelta(int client, int new_facility, std::vector<int>& assignments_backup)
         {
             int current_facility = assignments_backup[client];
             int old_facility_close = inst.instalacoes[current_facility].custo_abertura;
@@ -111,7 +111,7 @@ class LocalSearch
         // ===============================
         // Aplica a movimentação (Versão para movimentação cliente a cliente)
         // ===============================
-        void apply_move(int best_client, int best_facility, int best_delta)
+        void applySingleClientRelocation(int best_client, int best_facility, int best_delta)
         {
             int current_facility = sol.assignments[best_client];
 
@@ -145,7 +145,7 @@ class LocalSearch
         // ===============================
         // Aplica a movimentação (Versão para movimentação em lote)
         // ===============================
-        void apply_move2(const std::vector<int>& clients, int facility, int delta_total)
+        void applyBatchRelocation(const std::vector<int>& clients, int facility, int delta_total)
         {
             int i;
             std::vector<int> facilitys_to_close(inst.qtd_instalacoes, 0);
@@ -183,7 +183,7 @@ class LocalSearch
 
         // ===============================
         // Encontra a melhor movimentação possível (Versão para movimentação cliente a cliente)
-        bool bestmove()
+        bool findBestSingleClientRelocation()
         {
             int best_delta = 0;
             int best_client = -1, best_new_facility = -1;
@@ -207,7 +207,7 @@ class LocalSearch
                     int delta = 0;
 
                     // Calcula o delta de custo para a movimentação
-                    delta = delta_move(client, newfacility);
+                    delta = calculateSingleClientRelocationDelta(client, newfacility);
 
                     // Verifica se é a melhor movimentação até agora
                     if(delta < best_delta)
@@ -222,7 +222,7 @@ class LocalSearch
             // Aplica a melhor movimentação encontrada
             if(best_client != -1 && best_new_facility != -1)
             {
-                apply_move(best_client, best_new_facility, best_delta);
+                applySingleClientRelocation(best_client, best_new_facility, best_delta);
                 return true;
             }
 
@@ -236,7 +236,7 @@ class LocalSearch
         //! RESOLVER MELHOR ESSA BESTMOVE2, ESTÁ MUITO FEIA E INEFICIENTE
         // Verificar depois se é possível mover clientes que estão em instalações diferentes, mas que ainda assim geram uma redução de custo
         // ===============================
-        bool bestmove2()
+        bool findBestBatchRelocation()
         {
             // ----------------------------------------------------------
             // Variaveis para armazenar a melhor movimentação encontrada
@@ -287,7 +287,7 @@ class LocalSearch
 
                 for(int client = 0; client < inst.qtd_clientes; client++)
                 {
-                    int delta = delta_move2(client, facility, sol.assignments);
+                    int delta = calculateBatchRelocationDelta(client, facility, sol.assignments);
 
                     if(delta < 0)
                     {
@@ -339,7 +339,7 @@ class LocalSearch
                     int client = top.second;
                     next_clients.pop();
 
-                    int delta = delta_move2(client, facility, assignments_backup);
+                    int delta = calculateBatchRelocationDelta(client, facility, assignments_backup);
                     if(delta + delta_atual < delta_atual)
                     {
                         S.push_back(client);
@@ -354,7 +354,7 @@ class LocalSearch
 
                             if(!in_queue[conflicted_client])
                             {
-                                int new_delta = delta_move2(conflicted_client, facility, assignments_backup);
+                                int new_delta = calculateBatchRelocationDelta(conflicted_client, facility, assignments_backup);
                                 next_clients.push({new_delta, conflicted_client});
                                 in_queue[conflicted_client] = true;
                             }
@@ -390,7 +390,7 @@ class LocalSearch
             // -----------------------------------------------------------
             if(best_facility != -1 && !best_move.empty() && best_delta < 0)
             {
-                apply_move2(best_move, best_facility, best_delta);
+                applyBatchRelocation(best_move, best_facility, best_delta);
                 return true;
             }
             // -----------------------------------------------------------
@@ -495,12 +495,12 @@ class LocalSearch
         // ===============================
         // Executa a busca local para melhorar a solução (Versão para movimentação cliente a cliente)
         // ===============================
-        void improveSolution()
+        void improveBySingleClientRelocation()
         {
             bool improved = true;
             while(improved)
             {
-                improved = bestmove();
+                improved = findBestSingleClientRelocation();
             }
         }
         // ===============================
@@ -509,13 +509,13 @@ class LocalSearch
         // ===============================
         // Executa a busca local para melhorar a solução (Versão para movimentação em lote)
         // ===============================
-        void improveSolution2()
+        void improveByBatchRelocation()
         {
             bool improved = true;
             int seguranca = 90;
             while(improved && seguranca > 0)
             {
-                improved = bestmove2();
+                improved = findBestBatchRelocation();
                 seguranca--;
             }
 
