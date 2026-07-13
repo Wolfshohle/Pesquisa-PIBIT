@@ -18,6 +18,7 @@ class LocalSearch
 
         // ===============================
         // Calcula a diferença de custo ao mover um cliente para uma nova instalação (Versão para movimentação cliente a cliente)
+        //! Modificar aqui com a estrutura solutioninfo
         // ===============================
         int calculateSingleClientRelocationDelta(int client, int new_facility)
         {
@@ -29,12 +30,25 @@ class LocalSearch
             inst.custo_conexao[current_facility][client].first;
 
             // Se vai abrir uma instalação nova
-            if(openflag[new_facility] == 0)
+            if(sol.openfacilities[new_facility] == 0)
                 delta += inst.instalacoes[new_facility].custo_abertura;
 
             // Se vai fechar a instalação antiga
-            if(ocupacao[current_facility] == 1)
+            bool has_other_client = false;
+
+            for(int i = 0; i < inst.qtd_clientes; i++)
+            {
+                if(i != client && sol.assignments[i] == current_facility)
+                {
+                    has_other_client = true;
+                    break;
+                }
+            }
+
+            if(!has_other_client)
+            {
                 delta -= inst.instalacoes[current_facility].custo_abertura;
+            }
 
             // Penalidades (soma/remover conforme vizinhos do grafo)
             for(auto conflito : inst.penalidades_grafo[client])
@@ -59,6 +73,7 @@ class LocalSearch
 
         // ===============================
         // Calcula a diferença de custo ao mover um cliente para uma nova instalação (versão para movimentação em lote)
+        //! Verificar se tem o que modificar aqui com a estrutura solutioninfo
         // ===============================
         int calculateBatchRelocationDelta(int client, int new_facility, std::vector<int>& assignments_backup)
         {
@@ -94,7 +109,7 @@ class LocalSearch
             //* Verifica se a instalação antiga vai ser fechada
             for(int i = 0; i < inst.qtd_clientes; i++)
             {
-                if(assignments_backup[i] == current_facility)
+                if(assignments_backup[i] == current_facility && i != client)
                 {
                     old_facility_close = 0;
                     break;
@@ -110,6 +125,7 @@ class LocalSearch
 
         // ===============================
         // Aplica a movimentação (Versão para movimentação cliente a cliente)
+        //! Modificar aqui com a estrutura solutioninfo
         // ===============================
         void applySingleClientRelocation(int best_client, int best_facility, int best_delta)
         {
@@ -122,21 +138,28 @@ class LocalSearch
             sol.totalCost += best_delta;
 
             // Atualiza a ocupação das instalações
-            ocupacao[current_facility]--;
-            ocupacao[best_facility]++;
+            bool has_other_client = false;
 
-            // Verifica se é necessário fechar ou abrir instalações
-            if(ocupacao[current_facility] == 0)
+            for(int i = 0; i < inst.qtd_clientes; i++)
+            {
+                if(i != best_client && sol.assignments[i] == current_facility)
+                {
+                    has_other_client = true;
+                    break;
+                }
+            }
+
+            if(!has_other_client)
             {
                 sol.openfacilities[current_facility] = 0;
-                openflag[current_facility] = 0;
+                sol.info.decrementFacilitiesCount();
             }
 
             // Verifica se a instalação nova precisa ser marcada como aberta
-            if(openflag[best_facility] == 0)
+            if(sol.openfacilities[best_facility] == 0)
             {
-                openflag[best_facility] = 1;
                 sol.openfacilities[best_facility] = 1;
+                sol.info.incrementFacilitiesCount();
             }
         }
         // ===============================
@@ -144,6 +167,7 @@ class LocalSearch
 
         // ===============================
         // Aplica a movimentação (Versão para movimentação em lote)
+        //! Modificar aqui com a estrutura solutioninfo
         // ===============================
         void applyBatchRelocation(const std::vector<int>& clients, int facility, int delta_total)
         {
@@ -165,12 +189,15 @@ class LocalSearch
                 facilitys_to_close[sol.assignments[i]]++;
             }
             
+            sol.info.resetFacilitiesCount();
+
             // Verifica se é necessário fechar ou abrir instalações
             for(i = 0; i < inst.qtd_instalacoes; i++)
             {
                 if(facilitys_to_close[i] > 0)
                 {
                     sol.openfacilities[i] = 1;
+                    sol.info.incrementFacilitiesCount();
                 }
                 else
                 {
@@ -233,7 +260,6 @@ class LocalSearch
 
         // ===============================
         // Encontra a melhor movimentação possível (Versão para movimentação em lote)
-        //! RESOLVER MELHOR ESSA BESTMOVE2, ESTÁ MUITO FEIA E INEFICIENTE
         // Verificar depois se é possível mover clientes que estão em instalações diferentes, mas que ainda assim geram uma redução de custo
         // ===============================
         bool findBestBatchRelocation()
@@ -253,7 +279,7 @@ class LocalSearch
             std::vector<int> facilitys_to_open;
             for(int f = 0; f < inst.qtd_instalacoes; f++)
             {
-                if(openflag[f] == 0)
+                if(sol.openfacilities[f] == 0)
                 {
                     facilitys_to_open.push_back(f);
                 }
@@ -305,7 +331,7 @@ class LocalSearch
                 // ----------------------------
                 // Inicialização
                 // ----------------------------
-                std::vector<int> S;
+                std::vector<int> C;
                 std::vector<bool> in_queue(inst.qtd_clientes, false);
                 std::vector<int> assignments_backup = sol.assignments;
 
@@ -331,8 +357,6 @@ class LocalSearch
                 // Processa a fila de clientes a serem movidos
                 // ----------------------------
                 int delta_atual = 0;
-                //int neutro_index = 0;
-                //int neutro_size = neutral.size();
                 while(!next_clients.empty())
                 {
                     auto top = next_clients.top();
@@ -342,7 +366,7 @@ class LocalSearch
                     int delta = calculateBatchRelocationDelta(client, facility, assignments_backup);
                     if(delta + delta_atual < delta_atual)
                     {
-                        S.push_back(client);
+                        C.push_back(client);
                         delta_atual += delta;
 
                         // Atualiza o backup das atribuições para refletir a movimentação
@@ -359,18 +383,6 @@ class LocalSearch
                                 in_queue[conflicted_client] = true;
                             }
                         }
-
-                        // Se houver clientes neutros, adiciona um
-                        /*if(neutro_index < neutro_size && in_queue[neutral[neutro_index].first] == false)
-                        {
-                            next_clients.push(neutral[neutro_index].first);
-                            in_queue[neutral[neutro_index].first] = true;
-                            neutro_index++;
-                        }
-                        else if(neutro_index < neutro_size)
-                        {
-                            neutro_index++;
-                        }*/
                     }
                 }
                 // ----------------------------
@@ -380,7 +392,7 @@ class LocalSearch
                 {
                     best_delta = delta_total;
                     best_facility = facility;
-                    best_move = S;
+                    best_move = C;
                 }
             }
             // -----------------------------------------------------------
@@ -413,6 +425,7 @@ class LocalSearch
 
         // ===============================
         // Inicializa estruturas auxiliares
+        //! REMOVER FUTURAMENTE
         // ===============================
         void initializeAuxStructures()
         {

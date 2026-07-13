@@ -20,6 +20,7 @@ class ILS
     private:
         instance& inst;
 
+        // Soluções representadas
         Srepresentation atual_solution;
         Srepresentation global_solution;
         Srepresentation candidate_solution;
@@ -28,6 +29,9 @@ class ILS
 
         int maxtime;
         int perturbsize;
+
+        // Variável de qual tipo de perturbação e busca local aplicar
+        int perturbationAndlocalsearchType = 0;
 
         // É usada para definir o quão aleatório é a escolha das instalações a serem fechadas
         // Usado na perturbação PGP para aumentar um pouco a lista de instalações aumentando a aleatoridade
@@ -39,6 +43,17 @@ class ILS
 
         // É usado para controlar qual perturbação ou busca local aplicar
         int iteration = 0;
+        int it_to_best = 0;
+
+        // É usado para controlar o pior valor, o tempo e as iterações até a melhor solução encontrada
+        int worst_value = 0;
+        int improvement_iterations = 0;
+        double time_to_best = 0.0;
+
+        // Constantes usadas no critério de aceitação para ajustar o tamanho da perturbação
+        int c2 = 5;
+        int c3 = 1;
+        int c4 = 3;
 
         int SEED;
 
@@ -62,6 +77,7 @@ class ILS
             LocalSearch ls(inst, solucao);
             ls.improveByBatchRelocation();
             ls.improveBySingleClientRelocation();
+
             solucao = ls.getSolution();
         };
 
@@ -120,7 +136,7 @@ class ILS
             // =========================================================================
             // Seleciona as instalações para fechar
             // Fecha uma quantidade de instalações baseada no tamanho da perturbação
-            int num_to_close = min(perturbsize, (int)facilitys_to_close.size());
+            int num_to_close = min(perturbsize, (int)facilitys_to_close.size() - 1);
 
             // Vetor para armazenar a penalidade total associada a cada instalação
             vector<int> penality_for_facility(m, 0);
@@ -236,7 +252,17 @@ class ILS
         // ===============================
         // Escolhe qual perturbação aplicar
         // ===============================
-        
+        void choosePerturbation(Srepresentation& solucao)
+        {
+            if(perturbationAndlocalsearchType)
+            {
+                PGP(solucao);
+            }
+            else
+            {
+                RCRP(solucao);
+            }
+        }
         // ===============================
 
 
@@ -267,12 +293,52 @@ class ILS
 
         // ===============================
         // Critério de aceitação
-        //! MODIFICAR AQUI PARA DEIXAR A ATUALIZACAO DE PERTURBSIZE MAIS DINÂMICA, DEIXAR DO TIPO ANEALING
+        //! Implementar uma função que escolhe a perturbação a ser aplicada
         // ===============================
-        bool acceptanceCriterion(const Srepresentation& candidate)
+        void acceptanceCriterion(double elapsed_time)
         {
-            double margem = 0.2;
-            return candidate.totalCost < atual_solution.totalCost /* (1 + margem)*/;
+            int solution_size = atual_solution.info.amountOpenFacilities;
+
+            if(candidate_solution.totalCost < atual_solution.totalCost)
+            {
+                perturbsize = 1;
+                atual_solution = candidate_solution;
+                solution_size = atual_solution.info.amountOpenFacilities;
+
+                //Melhorou o ótimo local
+                if(atual_solution.totalCost < localBestcost)
+                {
+                    perturbsize = max(1, perturbsize - (solution_size / c2));
+                    localBestcost = atual_solution.totalCost;
+                }
+                
+                //Melhorou o ótimo global
+                if(atual_solution.totalCost < global_solution.totalCost)
+                {
+                    global_solution = atual_solution;
+                    perturbsize = max(1, perturbsize - solution_size * c3);
+                    improvement_iterations++;
+                    time_to_best = elapsed_time;
+                    it_to_best = iteration;
+                }
+            }
+            else if(perturbsize <= solution_size / 2)
+            {
+                perturbsize++;
+            }
+            else
+            {
+                localBestcost = atual_solution.totalCost;
+                perturbsize = c4;
+                
+                // Alterna entre as perturbações para diversificar a busca
+                perturbationAndlocalsearchType = rand() % 2;
+                choosePerturbation(atual_solution);
+                reconstruction(atual_solution);
+                perturbsize = 1;
+            }
+
+            return;
         };
         // ===============================
 
@@ -307,12 +373,14 @@ class ILS
             using clock = std::chrono::steady_clock;
             auto start_time = clock::now();
 
-            int worst_value = 0;
-            int iterations_to_the_best_solution = 0;
-            int improvement_iterations = 0;
-            double time_to_best = 0.0;
             // ===========================================
 
+
+            // ===========================================
+            // Inicializa estrutura auxiliar para armazenar informações da solução
+            // ===========================================
+            atual_solution.info.initializePerFacility(inst.qtd_instalacoes);
+            // ===========================================
 
             // ===========================================
             // Gera solução inicial usando o método guloso
@@ -336,6 +404,7 @@ class ILS
             // Define a melhor solução como a solução atual
             // ===========================================
             global_solution = atual_solution;
+            localBestcost = atual_solution.totalCost;
             // ===========================================
 
 
@@ -357,8 +426,8 @@ class ILS
 
                 // Aplica perturbação jogando um cliente aleatório para outra instalação
                 //! MODIFICAR AQUI PARA PARA DEIXAR DINÂMICO O TIPO DE PERTURBAÇÃO A SER APLICADA
-                PGP(candidate_solution);
-                RCRP(candidate_solution);
+                perturbationAndlocalsearchType = rand() % 2;
+                choosePerturbation(candidate_solution);
 
                 // Reconstrói a solução para ajustar instalações abertas e fechadas
                 reconstruction(candidate_solution);
@@ -367,18 +436,8 @@ class ILS
                 localSearch(candidate_solution);
                 
                 // Critério de aceitação
-                if(acceptanceCriterion(candidate_solution))
-                {
-                    atual_solution = candidate_solution;
+                acceptanceCriterion(elapsed_time);
 
-                    if(atual_solution.totalCost < global_solution.totalCost)
-                    {
-                        global_solution = atual_solution;
-                        improvement_iterations++;
-                        time_to_best = elapsed_time;
-                        iterations_to_the_best_solution = iteration;
-                    }
-                }
                 if(candidate_solution.totalCost > worst_value)
                 {
                     worst_value = candidate_solution.totalCost;
@@ -395,7 +454,7 @@ class ILS
             cout << "Total de iterações: " << iteration << endl;
             cout << "Melhorias: " << improvement_iterations << endl;
             cout << "Tempo até a melhor solução: " << time_to_best << " segundos" << endl;
-            cout << "Iterações até a melhor solução: " << iterations_to_the_best_solution << endl;
+            cout << "Iterações até a melhor solução: " << it_to_best << endl;
             cout << "Pior valor encontrado: " << worst_value << endl;
 
             atual_solution = global_solution;

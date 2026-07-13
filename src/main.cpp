@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <cstdlib>
 #include "ils/ils.hpp"
+#include "Asserts/automatizedtests.hpp"
 
 using namespace std;
 
@@ -80,8 +81,11 @@ int main(int argc, char *argv[])
     ILS ils_solver(instance_data, tempo, pertubacao, seed);
     ils_solver.run();
 
-    solucao = ils_solver.getBestSolution();
+    solucao = ils_solver.getglobal_solution();
     
+    asserts assert_checker;
+    assert_checker.checkresult(solucao, instance_data);
+
     return 0;
 }
 //----------------------------------------------------------------------//

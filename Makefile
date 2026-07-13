@@ -8,7 +8,7 @@ OBJS_DIR := obj
 BIN := main
 
 # Subdiretórios de fontes
-SRCS_SUBFILES := greedy ils io localsearch strutures utils
+SRCS_SUBFILES := greedy ils io localsearch strutures utils Asserts
 
 # Pega a lista de arquivos fonte
 SRC := $(SRCS_DIR)/main.cpp
@@ -42,7 +42,7 @@ execute: $(BIN)
 	for i in $$(seq 1 10); do \
 		echo "---------Execução $$i---------"; \
 		echo "------------------------------"; \
-		./$(BIN) -T $$tempo -s $$i -P $$pertubacao "Data/examples/wlp18-convertida.txt" >"Data/examples/wlp18-convertida_heuristic_seed_$${i}.log";\
+		./$(BIN) -T $$tempo -s $$i -P $$pertubacao "Data/raw/50_P5_M0_Continuo_1.txt" >"50_P5_M0_Continuo_1_$${i}.log";\
 		echo "------------------------------"; \
 	done
 
