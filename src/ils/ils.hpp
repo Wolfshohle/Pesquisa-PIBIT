@@ -110,20 +110,13 @@ class ILS
         // ===============================
         // Pertubação Penality-Guided Perturbation (PGP)
         // Ou perturbação guiada por penalidades
-        //! Modificar e implementar a estrutura solutioninfo para otimizar
         // ===============================
         void PGP(Srepresentation& solucao)
         {
             int n = inst.qtd_clientes;
             int m = inst.qtd_instalacoes;
 
-            vector<int> facilitys_to_close;
-
-            for(int i = 0; i < m; i++)
-            {
-                if(solucao.openfacilities[i] == 1)
-                    facilitys_to_close.push_back(i);
-            }
+            vector<int> facilitys_to_close = solucao.info.OpenFacilities;
 
             // Se não houver instalações abertas, não há o que perturbar
             if(facilitys_to_close.empty())
@@ -225,9 +218,10 @@ class ILS
                     }
                 }
 
+                // Se não houver instalações abertas para realocar, passa para o próximo cliente
                 if(candidate_facilities.empty())
                 {
-                    continue; // Se não houver instalações abertas para realocar, passa para o próximo cliente
+                    continue;
                 }
 
                 // Ordena as instalações candidatas pelo custo de conexão
@@ -422,7 +416,6 @@ class ILS
                 candidate_solution = atual_solution;
 
                 // Aplica perturbação jogando um cliente aleatório para outra instalação
-                //! MODIFICAR AQUI PARA PARA DEIXAR DINÂMICO O TIPO DE PERTURBAÇÃO A SER APLICADA
                 perturbationAndlocalsearchType = rand() % 2;
                 choosePerturbation(candidate_solution);
 

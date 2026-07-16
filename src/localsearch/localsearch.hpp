@@ -305,26 +305,11 @@ class LocalSearch
             // ----------------------------------------------------------
 
 
-            //! Pode ser removido com a implementação da nova estrutura de dados
-            // -----------------------------------------------------------
-            // Escolhe as instalações candidatas para mover os clientes
-            // -----------------------------------------------------------
-            std::vector<int> facilitys_to_open;
-            for(int f = 0; f < inst.qtd_instalacoes; f++)
-            {
-                if(sol.openfacilities[f] == 0)
-                {
-                    facilitys_to_open.push_back(f);
-                }
-            }
-            // -----------------------------------------------------------
-
-
-            //! Aqui eu posso inserir apenas o sol.info.ClosedFacilities
             // -----------------------------------------------------------
             // Ordena as instalações candidatas por custo de abertura
             // -----------------------------------------------------------
-            std::sort(facilitys_to_open.begin(), facilitys_to_open.end(),
+            std::vector ClosedFacilities = sol.info.ClosedFacilities;
+            std::sort(ClosedFacilities.begin(), ClosedFacilities.end(),
                 [this](int a, int b) {
                     return inst.instalacoes[a].custo_abertura <
                         inst.instalacoes[b].custo_abertura;
@@ -332,11 +317,10 @@ class LocalSearch
             // -----------------------------------------------------------
 
 
-            //! Aqui deve ser feito a mesma alteração em facilitys_to_open
             // -----------------------------------------------------------
             // Itera sobre as instalações candidatas para encontrar a melhor movimentação
             // -----------------------------------------------------------
-            for(int facility : facilitys_to_open)
+            for(int facility : ClosedFacilities)
             {
                 int open_cost = inst.instalacoes[facility].custo_abertura; // Custo de abrir a nova instalação
                 //double limit = 0.1 * open_cost; // Limite para considerar uma movimentação como viável (pode ser ajustado)
