@@ -5,20 +5,18 @@
 #include <iostream>
 #include "../structures/instance.hpp"
 #include "../structures/solution.hpp"
+#include "../Asserts/automatizedtests.hpp"
 
 
 class LocalSearch 
 {
     private:
         instance &inst; // Dados da instância
-        Srepresentation sol; // Solução atual
+        Srepresentation &sol; // Solução atual
 
-        std::vector<int> ocupacao; // Quantos clientes estão atribuídos a cada instalação
-        std::vector<short int> openflag; // Flag de instalações abertas
 
         // ===============================
         // Calcula a diferença de custo ao mover um cliente para uma nova instalação (Versão para movimentação cliente a cliente)
-        //! Modificar aqui com a estrutura solutioninfo
         // ===============================
         int calculateSingleClientRelocationDelta(int client, int new_facility)
         {
@@ -34,18 +32,8 @@ class LocalSearch
                 delta += inst.instalacoes[new_facility].custo_abertura;
 
             // Se vai fechar a instalação antiga
-            bool has_other_client = false;
 
-            for(int i = 0; i < inst.qtd_clientes; i++)
-            {
-                if(i != client && sol.assignments[i] == current_facility)
-                {
-                    has_other_client = true;
-                    break;
-                }
-            }
-
-            if(!has_other_client)
+            if(sol.info.ClientsPerFacility[current_facility] == 1)
             {
                 delta -= inst.instalacoes[current_facility].custo_abertura;
             }
@@ -73,7 +61,7 @@ class LocalSearch
 
         // ===============================
         // Calcula a diferença de custo ao mover um cliente para uma nova instalação (versão para movimentação em lote)
-        //! Verificar se tem o que modificar aqui com a estrutura solutioninfo
+        // TODO: Devido ao fato de ser uma movimentação em lote, o uso da estrutura solutioninfo não é possível
         // ===============================
         int calculateBatchRelocationDelta(int client, int new_facility, std::vector<int>& assignments_backup)
         {
@@ -125,7 +113,6 @@ class LocalSearch
 
         // ===============================
         // Aplica a movimentação (Versão para movimentação cliente a cliente)
-        //! Modificar aqui com a estrutura solutioninfo
         // ===============================
         void applySingleClientRelocation(int best_client, int best_facility, int best_delta)
         {
@@ -138,28 +125,43 @@ class LocalSearch
             sol.totalCost += best_delta;
 
             // Atualiza a ocupação das instalações
-            bool has_other_client = false;
+            sol.info.ClientsPerFacility[current_facility]--;
+            sol.info.ClientsPerFacility[best_facility]++;
 
-            for(int i = 0; i < inst.qtd_clientes; i++)
+            // Fecha a instalação antiga se necessário
+            if(sol.info.ClientsPerFacility[current_facility] == 0)
             {
-                if(i != best_client && sol.assignments[i] == current_facility)
-                {
-                    has_other_client = true;
-                    break;
-                }
-            }
-
-            if(!has_other_client)
-            {
-                sol.openfacilities[current_facility] = 0;
                 sol.info.decrementFacilitiesCount();
+                sol.info.atualizeOnePositionOpenClose(current_facility);
+
+                sol.openfacilities[current_facility] = 0;
             }
 
-            // Verifica se a instalação nova precisa ser marcada como aberta
+            // Abre a instalação antiga se necessáro
             if(sol.openfacilities[best_facility] == 0)
             {
-                sol.openfacilities[best_facility] = 1;
                 sol.info.incrementFacilitiesCount();
+                sol.info.atualizeOnePositionOpenClose(best_facility);
+
+                sol.openfacilities[best_facility] = 1;
+            }
+
+            // Atualiza as penalidades para a instalação antiga e nova
+            for(auto conflito : inst.penalidades_grafo[best_client])
+            {
+                int conflicted_client = conflito.first;
+                int penality_cost = conflito.second;
+
+                // Atualiza a penalidade da instalação antiga
+                if(sol.assignments[conflicted_client] == current_facility)
+                {
+                    sol.info.PenalityPerFacility[current_facility] -= penality_cost;
+                }
+                // Atualiza a penalidade da nova instalação
+                if(sol.assignments[conflicted_client] == best_facility)
+                {
+                    sol.info.PenalityPerFacility[best_facility] += penality_cost;
+                }
             }
         }
         // ===============================
@@ -167,7 +169,7 @@ class LocalSearch
 
         // ===============================
         // Aplica a movimentação (Versão para movimentação em lote)
-        //! Modificar aqui com a estrutura solutioninfo
+        // TODO: Preciso urgentemente criar mais um dado na struct de solutioninfo para otimizar essa busca em batch. Atualmente a otimização é quase 0
         // ===============================
         void applyBatchRelocation(const std::vector<int>& clients, int facility, int delta_total)
         {
@@ -189,7 +191,17 @@ class LocalSearch
                 facilitys_to_close[sol.assignments[i]]++;
             }
             
+
+            // Reseta a contagem de instalações aberdas
             sol.info.resetFacilitiesCount();
+            // Limpa o vetor que armazena as instalações abertas
+            sol.info.OpenFacilities.clear();
+            // Limpa o vetor que armazena as instalações fechadas
+            sol.info.ClosedFacilities.clear();
+            // Zera a quantidade de clientes nas instalações
+            fill(sol.info.ClientsPerFacility.begin(), sol.info.ClientsPerFacility.end(), 0);
+            // Zera o valor total de penalidades em cada instalação
+            fill(sol.info.PenalityPerFacility.begin(), sol.info.PenalityPerFacility.end(), 0);
 
             // Verifica se é necessário fechar ou abrir instalações
             for(i = 0; i < inst.qtd_instalacoes; i++)
@@ -197,13 +209,33 @@ class LocalSearch
                 if(facilitys_to_close[i] > 0)
                 {
                     sol.openfacilities[i] = 1;
+
                     sol.info.incrementFacilitiesCount();
+                    sol.info.ClientsPerFacility[i] = facilitys_to_close[i];
+                    sol.info.OpenFacilities.push_back(i);
                 }
                 else
                 {
                     sol.openfacilities[i] = 0;
+
+                    sol.info.ClosedFacilities.push_back(i);
                 }
             }
+
+            // Atualiza as penalidades por instalações
+            for(const auto& pen: inst.penalidades_vetor)
+            {
+                int c1 = pen.clientes.first;
+                int c2 = pen.clientes.second;
+                
+                if(sol.assignments[c1] == sol.assignments[c2])
+                {
+                    sol.info.PenalityPerFacility[sol.assignments[c1]] += pen.custo;
+                }
+            }
+
+            // Atualiza a estrutura solutioninfo internamente
+            sol.info.atualizeAllPositionOpenClose();
         }
         // ===============================
 
@@ -273,6 +305,7 @@ class LocalSearch
             // ----------------------------------------------------------
 
 
+            //! Pode ser removido com a implementação da nova estrutura de dados
             // -----------------------------------------------------------
             // Escolhe as instalações candidatas para mover os clientes
             // -----------------------------------------------------------
@@ -287,6 +320,7 @@ class LocalSearch
             // -----------------------------------------------------------
 
 
+            //! Aqui eu posso inserir apenas o sol.info.ClosedFacilities
             // -----------------------------------------------------------
             // Ordena as instalações candidatas por custo de abertura
             // -----------------------------------------------------------
@@ -298,6 +332,7 @@ class LocalSearch
             // -----------------------------------------------------------
 
 
+            //! Aqui deve ser feito a mesma alteração em facilitys_to_open
             // -----------------------------------------------------------
             // Itera sobre as instalações candidatas para encontrar a melhor movimentação
             // -----------------------------------------------------------
@@ -415,39 +450,8 @@ class LocalSearch
         // ===============================
         // Construtor
         // ===============================
-        LocalSearch(instance &instancia, Srepresentation solucao):
-            inst(instancia), sol(solucao)
-            {
-                initializeAuxStructures();
-            }
-        // ===============================
-
-
-        // ===============================
-        // Inicializa estruturas auxiliares
-        //! REMOVER FUTURAMENTE
-        // ===============================
-        void initializeAuxStructures()
-        {
-            int f = inst.qtd_instalacoes;
-            ocupacao.assign(f, 0);
-            openflag.assign(f, 0);
-
-            // Marca instalações abertas e conta ocupações
-            for(long unsigned int i = 0; i < sol.openfacilities.size(); i++)
-            {
-                if(sol.openfacilities[i] == 1)
-                {
-                    openflag[i] = 1;
-                }
-            }
-
-            // Conta os clientes alocados em cada instalação
-            for(auto assignment : sol.assignments)
-            {
-                ocupacao[assignment]++;
-            }
-        }
+        LocalSearch(instance &instancia, Srepresentation &solucao):
+            inst(instancia), sol(solucao){}
         // ===============================
 
 
@@ -467,40 +471,6 @@ class LocalSearch
         Srepresentation getSolution()
         {
             return sol;
-        }
-        // ===============================
-
-
-        // ===============================
-        // Recalcula o custo para garantir que está correto
-        // ===============================
-        void recalculateCost()
-        {
-            sol.totalCost = 0;
-            
-            // Custo das instalações abertas
-            for(int i : sol.openfacilities)
-            {
-                sol.totalCost += inst.instalacoes[i].custo_abertura;
-            }
-            
-            // Custo das conexões
-            for(size_t cliente = 0; cliente < sol.assignments.size(); cliente++)
-            {
-                int instalacao_atribuida = sol.assignments[cliente];
-                sol.totalCost += inst.custo_conexao[instalacao_atribuida][cliente].first;
-            }
-            
-            // Custo das penalidades
-            for(const auto& pen : inst.penalidades_vetor)
-            {
-                int c1 = pen.clientes.first;
-                int c2 = pen.clientes.second;
-                if(sol.assignments[c1] == sol.assignments[c2])
-                {
-                    sol.totalCost += pen.custo;
-                }
-            }
         }
         // ===============================
 

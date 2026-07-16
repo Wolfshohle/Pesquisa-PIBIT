@@ -42,7 +42,7 @@ execute: $(BIN)
 	for i in $$(seq 1 10); do \
 		echo "---------Execução $$i---------"; \
 		echo "------------------------------"; \
-		./$(BIN) -T $$tempo -s $$i -P $$pertubacao "Data/raw/50_P5_M0_Continuo_1.txt" >"50_P5_M0_Continuo_1_$${i}.log";\
+		./$(BIN) -T $$tempo -s $$i -P $$pertubacao "Data/raw/50_P80_M0_Continuo_1.txt" >"50_P80_M0_Continuo_1_$${i}.log";\
 		echo "------------------------------"; \
 	done
 

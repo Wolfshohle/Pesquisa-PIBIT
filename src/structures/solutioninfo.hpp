@@ -42,23 +42,26 @@ struct solutioninfo
     std::vector<int> ClientsPerFacility;
 
     // Armazena a penalidade total por instalação
-    std::vector<int> PenaltyPerFacility;
+    std::vector<int> PenalityPerFacility;
 
     // Armazena posição das facilidades no vetor de facilidades abertas para acesso rápido
     std::vector<int> positionopen;
     // Armazena posição das facilidades no vetor de facilidades fechadas para acesso rápido
     std::vector<int> positionclose;
 
-    // inicializa as estruturas das facilidades
+    // Inicializa as estruturas das facilidades
     void initializePerFacility(int numFacilities)
     {
         ClientsPerFacility.resize(numFacilities, 0);
-        PenaltyPerFacility.resize(numFacilities, 0);
+        PenalityPerFacility.resize(numFacilities, 0);
         positionopen.resize(numFacilities, -1);
         positionclose.resize(numFacilities, -1);
     }
+    // ===================================================================
 
-    // atuailiza a opisção das facilidades abertas e fechadas para facilitar o acesso as variáveis
+
+    // ===================================================================
+    // Atuailiza a opisção das facilidades abertas e fechadas para facilitar o acesso as variáveis
     void atualizeAllPositionOpenClose()
     {
         int i;
@@ -81,9 +84,11 @@ struct solutioninfo
         }
     }
 
+    // Atualiza a posição de uma instalação específica no vetor de instalações abertas e fechadas
     void atualizeOnePositionOpenClose(int facility)
     {
         int last_facility;
+
         // Se a instalação estiver aberta, atualiza para a instalação fechada
         if(positionopen[facility] != -1)
         {

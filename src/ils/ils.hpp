@@ -70,15 +70,12 @@ class ILS
 
         // ===============================
         // Busca local na solução atual
-        //! MODIFICAR AQUI PARA DEIXAR A BUSCA LOCAL DINÂMICA, DEIXAR DO TIPO VND
         // ===============================
         void localSearch(Srepresentation& solucao)
         {
             LocalSearch ls(inst, solucao);
             ls.improveByBatchRelocation();
             ls.improveBySingleClientRelocation();
-
-            solucao = ls.getSolution();
         };
 
 
@@ -113,6 +110,7 @@ class ILS
         // ===============================
         // Pertubação Penality-Guided Perturbation (PGP)
         // Ou perturbação guiada por penalidades
+        //! Modificar e implementar a estrutura solutioninfo para otimizar
         // ===============================
         void PGP(Srepresentation& solucao)
         {
@@ -293,7 +291,6 @@ class ILS
 
         // ===============================
         // Critério de aceitação
-        //! Implementar uma função que escolhe a perturbação a ser aplicada
         // ===============================
         void acceptanceCriterion(double elapsed_time)
         {

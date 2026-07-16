@@ -6,14 +6,14 @@ int calculocusto(const instance& inst, Srepresentation& sol)
 {
     int custo_total = 0;
     int i, j, size;
-    std::vector<int> openedFacilities;
-    std::vector<int> closedFacilities;
 
 
 
     size = sol.openfacilities.size();
 
     sol.info.resetFacilitiesCount();
+    sol.info.OpenFacilities.clear();
+    sol.info.ClosedFacilities.clear();
 
     // Custo das instalações abertas
     for(i = 0; i < size; i++)
@@ -22,18 +22,16 @@ int calculocusto(const instance& inst, Srepresentation& sol)
         {
             custo_total += inst.instalacoes[i].custo_abertura;
 
-            openedFacilities.push_back(i);
+            sol.info.OpenFacilities.push_back(i);
             sol.info.incrementFacilitiesCount();
         }
         else
         {
-            closedFacilities.push_back(i);
+            sol.info.ClosedFacilities.push_back(i);
         }
     }
 
     // Atualiza as informações da solução
-    sol.info.OpenFacilities = openedFacilities;
-    sol.info.ClosedFacilities = closedFacilities;
     sol.info.atualizeAllPositionOpenClose();
 
     fill(sol.info.ClientsPerFacility.begin(), sol.info.ClientsPerFacility.end(), 0);
@@ -48,7 +46,7 @@ int calculocusto(const instance& inst, Srepresentation& sol)
         sol.info.ClientsPerFacility[instalacao_atribuida]++;
     }
 
-    fill(sol.info.PenaltyPerFacility.begin(), sol.info.PenaltyPerFacility.end(), 0);
+    fill(sol.info.PenalityPerFacility.begin(), sol.info.PenalityPerFacility.end(), 0);
 
     // Custo das penalidades
     for(const auto& pen : inst.penalidades_vetor)
@@ -59,7 +57,7 @@ int calculocusto(const instance& inst, Srepresentation& sol)
         {
             custo_total += pen.custo;
 
-            sol.info.PenaltyPerFacility[sol.assignments[c1]] += pen.custo;
+            sol.info.PenalityPerFacility[sol.assignments[c1]] += pen.custo;
         }
     }
 
