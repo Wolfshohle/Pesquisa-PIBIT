@@ -35,11 +35,11 @@ class ILS
 
         // É usada para definir o quão aleatório é a escolha das instalações a serem fechadas
         // Usado na perturbação PGP para aumentar um pouco a lista de instalações aumentando a aleatoridade
-        int restricted_candidate_list_factor = 2;
+        int restricted_candidate_list_factor;
 
         // É usada para definir o tamanho da lista de instalações consideradas para realocar os clientes
         // Usado na perturbação PGP para dar um limite máximo de instalações consideradas
-        int restricted_candidate_list_size = 10;
+        int restricted_candidate_list_size;
 
         // É usado para controlar qual perturbação ou busca local aplicar
         int iteration = 0;
@@ -51,9 +51,9 @@ class ILS
         double time_to_best = 0.0;
 
         // Constantes usadas no critério de aceitação para ajustar o tamanho da perturbação
-        int c2 = 5;
-        int c3 = 1;
-        int c4 = 3;
+        int c2;
+        int c3;
+        int c4;
 
         int SEED;
 
@@ -289,29 +289,29 @@ class ILS
         void acceptanceCriterion(double elapsed_time)
         {
             int solution_size = atual_solution.info.amountOpenFacilities;
+            int factor = perturbsize;
 
             if(candidate_solution.totalCost < atual_solution.totalCost)
             {
-                perturbsize = 1;
                 atual_solution = candidate_solution;
                 solution_size = atual_solution.info.amountOpenFacilities;
 
-                //Melhorou o ótimo local
                 if(atual_solution.totalCost < localBestcost)
                 {
-                    perturbsize = max(1, perturbsize - (solution_size / c2));
+                    factor -= (solution_size / c2);
                     localBestcost = atual_solution.totalCost;
                 }
-                
-                //Melhorou o ótimo global
+
                 if(atual_solution.totalCost < global_solution.totalCost)
                 {
                     global_solution = atual_solution;
-                    perturbsize = max(1, perturbsize - solution_size * c3);
+                    factor -= (solution_size * c3);
                     improvement_iterations++;
                     time_to_best = elapsed_time;
                     it_to_best = iteration;
                 }
+
+                perturbsize = max(1, factor);
             }
             else if(perturbsize <= solution_size / 2)
             {
@@ -321,15 +321,11 @@ class ILS
             {
                 localBestcost = atual_solution.totalCost;
                 perturbsize = c4;
-                
-                // Alterna entre as perturbações para diversificar a busca
                 perturbationAndlocalsearchType = rand() % 2;
                 choosePerturbation(atual_solution);
                 reconstruction(atual_solution);
                 perturbsize = 1;
             }
-
-            return;
         };
         // ===============================
 
@@ -338,8 +334,9 @@ class ILS
         // ==============================
         // Construtor
         // ==============================
-        ILS(instance& instancia, int timelimit, int perturbation_size, int seed):
-            inst(instancia), maxtime(timelimit), perturbsize(perturbation_size), SEED(seed)
+        ILS(instance& instancia, int timelimit, int perturbation_size, int seed,int rclf, int rcls, int const2, int const3, int const4):
+            inst(instancia), maxtime(timelimit), perturbsize(perturbation_size), restricted_candidate_list_factor(rclf),
+            restricted_candidate_list_size(rcls), c2(const2), c3(const3), c4(const4), SEED(seed)
             {
                 if(seed == -1)
                 {
